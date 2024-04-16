@@ -30,13 +30,13 @@ function Home() {
 
   return (
     <Container>
-      {/* <MainContentHome>
+      <MainContentHome>
         <CenterContent>
           <Left isVisible={isVisible}>
             <p>content</p>
           </Left>
         </CenterContent>
-      </MainContentHome> */}
+      </MainContentHome>
       
       
       <ParaQuem/>

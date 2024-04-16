@@ -7,7 +7,7 @@ import Home from '../Components/Home';
 export default function LandingPage() {
     return (
         <Container>
-            {/* <Header /> */}
+            <Header />
             <Home/>
             <Footer/>
         </Container>
