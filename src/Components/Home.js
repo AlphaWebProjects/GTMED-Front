@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import ParaQuem from './paraQuem/ParaQuem';
+import AoFimDoCurso from './aoFimDoCurso/AoFimDoCurso';
+import Oferta from './oferta/Oferta';
+import Vsl from './VSL/Vsl';
 
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,6 +37,13 @@ function Home() {
           </Left>
         </CenterContent>
       </MainContentHome>
+      
+      
+      <ParaQuem/>
+      <AoFimDoCurso/>
+      <Vsl />
+      <Oferta/>
+      
     </Container>
   );
 }
