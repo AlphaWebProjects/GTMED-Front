@@ -100,9 +100,8 @@ export default function Oferta(){
 const Container = styled.div`
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 10vh 10vw;  // Espaçamento vertical e horizontal adaptável
-    height: 105vh;  // Altura completa da viewport
+    align-items: start;
+    padding: 5vh 10vw;  // Espaçamento vertical e horizontal adaptável
     background-color: #000;
     color: #FFF;
     @media (max-width: 1200px) {
@@ -130,7 +129,7 @@ const OfferCard = styled.div`
     background-color: #0e0e0e;
     border-radius: 1rem;
     border: 2px solid ${props => props.color};
-    width: 500px;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
