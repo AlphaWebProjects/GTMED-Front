@@ -5,22 +5,61 @@ import bestPrice from "../../images/best-price.png";
 import sevenDays from "../../images/sevenDays.png";
 
 export default function Oferta(){
+
+    const body = {
+        title: "GASOMETRIA",
+        subtitle: "DESCOMPLICADA",
+        price: "1247,00",
+        discountedprice: "R$59,58",
+        fullpricediscount: "R$597",
+        buttontext: "QUERO DOMINAR GASOMETRIA",
+        buttoncolor: "#E42323",
+        buttonhovercolor: "#C73B3B",
+        color: "#ff0000",
+        topics: [
+            {
+                details: "Método didático, com aulas curtas e totalmente voltado à prática"
+            },
+            {
+                details: "Método didático, com aulas curtas e totalmente voltado à prática"
+            },
+            {
+                details: "Método didático, com aulas curtas e totalmente voltado à prática"
+            },
+            {
+                details: "Método didático, com aulas curtas e totalmente voltado à prática"
+            },
+        ]
+    }
+
   return (
     <Container >
         <LeftSide>
-            <OfferCard color="#ff0000">
-                <Title color="#ff0000">{"GASOMETRIA"}</Title>
-                <SubTitle>{"DESCOMPLICADA"}</SubTitle>
-                <p>{"De "}<StrikeThrough>{"1247,00"}</StrikeThrough>{" por:"}</p>
-                <p>{"12x de "}<DiscountedPrice>{"R$59,58"}</DiscountedPrice></p>
-                <p>{"ou R$597 À VISTA"}</p>
-                {[1,2,3,4].map(e => 
-                    <Option color="#ff0000">
+            <OfferCard color={body?.color}>
+                <Title color={body?.color}>{body?.title}</Title>
+                <SubTitle>{body?.subtitle}</SubTitle>
+
+                <p>{"De "}<StrikeThrough>{body?.price}</StrikeThrough>{" por:"}</p>
+                <p>{"12x de "}<DiscountedPrice>{body?.discountedprice}</DiscountedPrice></p>
+                <p>{"ou "}{body?.fullpricediscount}{" À VISTA"}</p>
+
+                {body?.topics?.map((topic, index) => (
+                    <Option key={index} color={body?.color}>
                         <div><MdMedicalServices /></div>
-                        <p>{"Método didático, com aulas curtas e totalmente voltado à prática"}</p>
+                        <p>{topic?.details}</p>
                     </Option>
-                )}
-                <StyledButton width={"100%"} height={"60px"} margintop={"30px !important"}>{"QUERO DOMINAR GASOMETRIA"}</StyledButton>
+                ))}
+
+                <StyledButton 
+                    width={"100%"} 
+                    height={"60px"} 
+                    margintop={"30px !important"}
+                    background={`${body?.buttoncolor} !important`}
+                    backgroundhover={`${body?.buttonhovercolor} !important`}
+                >
+                    {body?.buttontext}
+                </StyledButton>
+
                 <SevenDays src={sevenDays} top={"-30px"}/>
             </OfferCard>
         </LeftSide>
@@ -28,22 +67,28 @@ export default function Oferta(){
             <OfferCard color="#3CFF00">
                 <Title color="#3CFF00">{"GTMED"}</Title>
                 <SubTitle>{"Todos os Cursos"}</SubTitle>
+
                 <p>{"De "}<StrikeThrough>{"10.470,00"}</StrikeThrough>{" por:"}</p>
                 <p>{"12x de "}<DiscountedPrice>{"R$290,58"}</DiscountedPrice></p>
                 <p>{"ou R$2.970 À VISTA"}</p>
+
                 {[1,2,3,4,5,6].map(e => 
                     <Option color="#3CFF00">
                         <div><MdMedicalServices /></div>
                         <p>{"Método didático, com aulas curtas e totalmente voltado à prática"}</p>
                     </Option>
                 )}
+
                 <StyledButton 
                     width={"100%"} 
                     height={"60px"} 
                     margintop={"30px !important"} 
                     background="#309E0F !important" 
                     backgroundhover="#3CFF00 !important"
-                >{"QUERO DOMINAR GASOMETRIA"}</StyledButton>
+                >
+                    {"QUERO DOMINAR GASOMETRIA"}
+                </StyledButton>
+                
                 <BestPriceImage src={bestPrice}/>
                 <SevenDays src={sevenDays} top={"90px"}/>
             </OfferCard>
@@ -53,15 +98,14 @@ export default function Oferta(){
 }
 
 const Container = styled.div`
-    width: 100%;
-    padding: 10vh 10vw;
-    height: 100vh;
-    background-color: #000000;
-    color: #FFFFFF;
     display: flex;
-    align-items: center;
     justify-content: center;
-`
+    align-items: center;
+    padding: 10vh 10vw;  // Espaçamento vertical e horizontal adaptável
+    height: 105vh;  // Altura completa da viewport
+    background-color: #000;
+    color: #FFF;
+`;
 const LeftSide = styled.div`
     width: 40%;
     height: 100%;
@@ -72,38 +116,40 @@ const LeftSide = styled.div`
 const RightSide = styled(LeftSide)``
 
 const OfferCard = styled.div`
+    user-select: none;
     position: relative;
     background-color: #0e0e0e;
-    border-radius: 10px;
-    border: 2px solid;
-    border-color: ${props => props.color};
-    width: 500px;
+    border-radius: 1rem;  // Raio em rem para consistência
+    border: 2px solid ${props => props.color};
+    width: 500px;  // Considerar a conversão para rem ou % se necessário para responsividade
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 3vh 2vw;
-    row-gap: 10px;
+    padding: 3vh 2vw;  // Espaçamento interno adaptável
+    gap: 1rem;  // Consistência do espaçamento
+    transition: transform 0.3s;  // Transição suave para transformações
+    &:hover {
+        transform: scale(1.05);  // Efeito de aumento ao passar o mouse
+        background-color: #131313;
+    }
     > p {
         font-family: "Montserrat", Sans-serif;
-        font-size: 22px;
+        font-size: 1.2rem;  // Conversão para rem
         font-weight: 400;
-        padding-bottom: 2.5px;
     }
 `
 const Title = styled.h3`
     color: ${props => props.color};
     font-family: "Rajdhani", Sans-serif;
-    font-size: 43px;
+    font-size: 2.6875rem;  // Conversão para rem
     font-weight: 800;
-    padding-bottom: 5px;
 `
 const SubTitle = styled.h3`
     font-family: "Rajdhani", Sans-serif;
-    font-size: 26px;
+    font-size: 1.625rem;  // Conversão para rem
     font-weight: 500;
-    letter-spacing: 3.3px;
-    padding-bottom: 30px;
+    letter-spacing: 0.20625rem;  // Espaçamento em rem
+    margin-bottom: 0.8rem;  // Margem em rem
 `
 const StrikeThrough = styled.span`
     text-decoration: line-through;
@@ -113,26 +159,27 @@ const DiscountedPrice = styled.span`
     font-weight: 600;
 `;
 const Option = styled.div`
-    font-family: "Montserrat", Sans-serif;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 0.78125rem;  // Espaçamento em rem
+    font-family: "Montserrat", Sans-serif;
+    font-size: 1rem;  // Tamanho em rem
+    font-weight: 400;
+    padding-top: 1.25rem;  // Padding superior em rem
     width: 100%;
-    column-gap: 12.5px;
-    padding-top: 20px;
     > div {
-        width: 30px;
-        height: 30px;
-        border-radius: 10px;
+        width: 1.875rem;  // Tamanho em rem
+        height: 1.875rem;  // Tamanho em rem
+        border-radius: 0.625rem;  // Raio em rem
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 25px;
+        font-size: 1.5625rem;  // Tamanho da fonte em rem
         color: ${props => props.color};
-        font-weight: 700;
     }
     > p {
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 400;
         width: calc(100% - 30px);
     }

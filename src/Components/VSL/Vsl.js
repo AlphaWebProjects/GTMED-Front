@@ -3,50 +3,73 @@ import backgroundImage from "../../../src/images/vsl.png"
 import StyledButton from "../../common/form/Button";
 
 export default function Vsl(){
+    const body = {
+        backgroundimage: backgroundImage,
+        title1: "APRENDA SOBRE ",
+        titlehighlight: "A PROFISSÃO",
+        title2: " DE UMA FORMA UNICA",
+        videourl: "https://www.youtube-nocookie.com/embed/fO5dW2R2_a0?controls=0&rel=0&",
+        buttontext: "QUERO DOMINAR GASOMETRIA",
+        buttoncolor: "#E42323",
+        buttonhovercolor: "#C73B3B",
+        color: "#FF0000"
+    }
     return (
-        <Container backgroundImage={backgroundImage}>
-            <Title>{"APRENDA SOBRE "}<span>{"A PROFISSÃO"}</span>{" DE UMA FORMA UNICA"}</Title>
+        <Container backgroundImage={body?.backgroundimage}>
+            <Title>{body?.title1}<span>{body?.titlehighlight}</span>{body?.title2}</Title>
             <StyledIframe 
-                width={1920*.5} 
-                height={1080*.5} 
-                src="https://www.youtube-nocookie.com/embed/fO5dW2R2_a0?controls=0&rel=0&" 
-                title="PABLO MARÇAL VAI COLOCAR O SHAPE ? AVALIAMOS O FÍSICO PARA O NOVO PROJETO - CÓDIGO DO SHAPE 60 DIAS" 
+                color={body?.color}
+                width="960"
+                height="540"
+                src={body?.videourl}
                 frameborder="0" 
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                 referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen
-            ></StyledIframe>
-            <StyledButton width={"40%"} height={"80px"} margintop={"40px !important"} fontsize={"28px !important"}>{"QUERO DOMINAR GASOMETRIA"}</StyledButton>
+                allowFullScreen
+            />
+            <StyledButton 
+                width={"40%"} 
+                height={"80px"} 
+                margintop={"40px !important"} 
+                fontsize={"28px !important"}
+                background={`${body?.buttoncolor} !important`}
+                backgroundhover={`${body?.buttonhovercolor} !important`}
+            >
+                {body?.buttontext}
+            </StyledButton>
         </Container>
     )
 }
 
 const Container = styled.div`
+    user-select: none;
     width: 100%;
     padding: 10vh 10vw;
     height: 100vh;
-    //background-color: #000000;
-    color: #FFFFFF;
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: ${props => `url(${props.backgroundImage})`};
-`
+    background-image: url(${props => props.backgroundImage});
+`;
+
 const StyledIframe = styled.iframe`
-    border: 3px solid #FF0000;
+    border: 3px solid;
+    border-color: ${props => props.color};
     border-radius: 10px;
-`
+`;
+
 const Title = styled.h3`
     text-align: center;
     font-family: "Montserrat", Sans-serif;
-    font-size: 36px;
+    font-size: 2.25rem; // Conversão para rem
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 2rem; // Espaçamento consistente usando rem
     width: 50%;
-    line-height: 50px;
+    line-height: 3.125rem; // Uso de rem para line-height
     span {
         background-color: #FF0000;
-        padding: 0 .5vw;
+        padding: 0 0.5vw;
     }
-`
+`;
