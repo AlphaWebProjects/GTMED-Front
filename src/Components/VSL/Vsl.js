@@ -5,6 +5,7 @@ import StyledButton from "../../common/form/Button";
 export default function Vsl(){
     const body = {
         backgroundimage: backgroundImage,
+        backgroundimagemobile: backgroundImage,
         title1: "APRENDA SOBRE ",
         titlehighlight: "A PROFISSÃO",
         title2: " DE UMA FORMA UNICA",
@@ -15,7 +16,7 @@ export default function Vsl(){
         color: "#FF0000"
     }
     return (
-        <Container backgroundImage={body?.backgroundimage}>
+        <Container backgroundImage={body?.backgroundimage} backgroundImageMobile={body?.backgroundimagemobile}>
             <Title>{body?.title1}<span>{body?.titlehighlight}</span>{body?.title2}</Title>
             <StyledIframe 
                 color={body?.color}
@@ -29,9 +30,12 @@ export default function Vsl(){
             />
             <StyledButton 
                 width={"40%"} 
+                widthmobile={"80%"} 
                 height={"80px"} 
+                heightmobile={"80px"} 
                 margintop={"40px !important"} 
                 fontsize={"28px !important"}
+                fontsizemobile={"20px !important"}
                 background={`${body?.buttoncolor} !important`}
                 backgroundhover={`${body?.buttonhovercolor} !important`}
             >
@@ -52,12 +56,21 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     background-image: url(${props => props.backgroundImage});
+    @media (max-width: 1200px) {
+        height: auto;
+        padding: 5vh 4vw;
+        background-image: ${props => `url(${props.backgroundImageMobile})`};
+    }
 `;
 
 const StyledIframe = styled.iframe`
     border: 3px solid;
     border-color: ${props => props.color};
     border-radius: 10px;
+    @media (max-width: 1200px) {
+        width: 90vw !important;
+        height: 50.6vw !important;
+    }
 `;
 
 const Title = styled.h3`
@@ -71,5 +84,9 @@ const Title = styled.h3`
     span {
         background-color: #FF0000;
         padding: 0 0.5vw;
+    }
+    @media (max-width: 1200px) {
+        width: 100%;
+        font-size: 1.8rem;
     }
 `;

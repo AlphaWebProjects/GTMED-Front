@@ -1,9 +1,9 @@
 import Button from '@mui/material/Button';
 import styled from 'styled-components';
 
-export default function StyledButton({ variant='contained', width, height, fontsize, children, background, backgroundhover, fontColor, margintop, ...props }) {
+export default function StyledButton({ variant='contained', width, height, widthmobile, heightmobile, fontsize, fontsizemobile, children, background, backgroundhover, fontColor, margintop, ...props }) {
   return (
-    <StyledMuiButton variant={variant} width={width} height={height} fontsize={fontsize} background={background} backgroundhover={backgroundhover} fontColor={fontColor} margintop={margintop} {...props}>
+    <StyledMuiButton fontsizemobile={fontsizemobile} widthmobile={widthmobile} heightmobile={heightmobile} variant={variant} width={width} height={height} fontsize={fontsize} background={background} backgroundhover={backgroundhover} fontColor={fontColor} margintop={margintop} {...props}>
       {children}
     </StyledMuiButton>
   );
@@ -21,5 +21,10 @@ const StyledMuiButton = styled(Button)`
 
   &:hover {
     background-color: ${(props) => props.backgroundhover || '#C73B3B !important'};
+  }
+  @media (max-width: 1200px) {
+    width: ${(props) => props.widthmobile || 'auto'};
+    height: ${(props) => props.heightmobile || 'auto'};
+    font-size: ${(props) => props.fontsizemobile || '18px !important'};
   }
 `;

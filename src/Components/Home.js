@@ -30,13 +30,13 @@ function Home() {
 
   return (
     <Container>
-      <MainContentHome>
+      {/* <MainContentHome>
         <CenterContent>
           <Left isVisible={isVisible}>
             <p>content</p>
           </Left>
         </CenterContent>
-      </MainContentHome>
+      </MainContentHome> */}
       
       
       <ParaQuem/>
@@ -59,6 +59,8 @@ const Container = styled.div`
   @media (max-width: 1200px) {
     margin-top: 0;
     height: auto;
+    max-width: 100%;
+    overflow: hidden;
   }
 `;
 

@@ -6,6 +6,7 @@ export default function AoFimDoCurso(){
 
     const body = {
         backgroundimage: backgroundImage,
+        backgroundimagemobile: backgroundImage,
         title: "AO FINAL DO CURSO VOCÊ SERÁ CAPAZ DE:",
         topics: [
             {
@@ -36,7 +37,7 @@ export default function AoFimDoCurso(){
     }
 
     return (
-        <Container backgroundImage={body?.backgroundimage}>
+        <Container backgroundImage={body?.backgroundimage} backgroundImageMobile={body?.backgroundimagemobile}>
             <SubContainer>
             <Title>{body?.title}</Title>
             {body?.topics?.map((topic, index) => (
@@ -63,6 +64,11 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (max-width: 1200px) {
+        height: auto;
+        padding: 5vh 4vw;
+        background-image: ${props => `url(${props.backgroundImageMobile})`};
+    }
 `;
 
 const SubContainer = styled.div`
@@ -70,6 +76,9 @@ const SubContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (max-width: 1200px) {
+        width: 100%;
+    }
 `;
 
 const Title = styled.h3`
@@ -97,12 +106,21 @@ const Option = styled.div`
         justify-content: center;
         font-size: 2.5rem;
         color: red;
+        @media (max-width: 1200px) {
+            width: calc(3.75rem * .75);
+            height: calc(3.75rem * .75);
+        }
     }
     > p {
         font-size: 1rem;
         font-weight: 400;
         padding-left: 1rem;
         width: 70%;
+        @media (max-width: 1200px) {
+            font-weight: 600;
+            width: calc(100% - (3.75rem * .75));
+            font-size: calc(1.125rem * .75);
+        }
     }
     &:hover {
         background: linear-gradient(274deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.3) 40%, rgba(0,0,0,.3) 60%, rgba(0,0,0,0) 100%);

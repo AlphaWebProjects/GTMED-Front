@@ -9,7 +9,6 @@ export default function LandingPage() {
         <Container>
             {/* <Header /> */}
             <Home/>
-            <Header />
             <Footer/>
         </Container>
     );

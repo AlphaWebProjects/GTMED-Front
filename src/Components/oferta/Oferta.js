@@ -105,6 +105,12 @@ const Container = styled.div`
     height: 105vh;  // Altura completa da viewport
     background-color: #000;
     color: #FFF;
+    @media (max-width: 1200px) {
+        height: auto;
+        padding: 5vh 4vw;
+        flex-direction: column;
+        row-gap: 4vh;
+    }
 `;
 const LeftSide = styled.div`
     width: 40%;
@@ -112,6 +118,9 @@ const LeftSide = styled.div`
     display: flex;
     align-items: start;
     justify-content: center;
+    @media (max-width: 1200px) {
+        width: 100%;
+    }
 `
 const RightSide = styled(LeftSide)``
 
@@ -119,23 +128,27 @@ const OfferCard = styled.div`
     user-select: none;
     position: relative;
     background-color: #0e0e0e;
-    border-radius: 1rem;  // Raio em rem para consistência
+    border-radius: 1rem;
     border: 2px solid ${props => props.color};
-    width: 500px;  // Considerar a conversão para rem ou % se necessário para responsividade
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3vh 2vw;  // Espaçamento interno adaptável
-    gap: 1rem;  // Consistência do espaçamento
-    transition: transform 0.3s;  // Transição suave para transformações
+    padding: 3vh 2vw;
+    gap: 1rem;
+    transition: transform 0.3s;
     &:hover {
-        transform: scale(1.05);  // Efeito de aumento ao passar o mouse
+        transform: scale(1.05);
         background-color: #131313;
     }
     > p {
         font-family: "Montserrat", Sans-serif;
         font-size: 1.2rem;  // Conversão para rem
         font-weight: 400;
+    }
+    @media (max-width: 1200px) {
+        width: auto;
+        max-width: 500px;
     }
 `
 const Title = styled.h3`
@@ -182,6 +195,9 @@ const Option = styled.div`
         font-size: 1rem;
         font-weight: 400;
         width: calc(100% - 30px);
+        @media (max-width: 1200px) {
+            width: calc(95% - 1.875rem);
+        }
     }
 `
 const BestPriceImage = styled.img`
@@ -190,6 +206,12 @@ const BestPriceImage = styled.img`
     position: absolute;
     top: -38px;
     right: -75px;
+    @media (max-width: 1200px) {
+        width: calc(150px * .6);
+        height: calc(150px * .6);
+        top: -26px;
+        right: -30px;
+    }
 `
 const SevenDays = styled.img`
     width: 90px;
@@ -197,4 +219,10 @@ const SevenDays = styled.img`
     position: absolute;
     top: ${props => props.top};
     right: -45px;
+    @media (max-width: 1200px) {
+        width: calc(90px * .7);
+        height: calc(90px * .7);
+        top: ${props => `calc(${props.top} * .7)`};
+        right: -20px;
+    }
 `
