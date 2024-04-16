@@ -49,15 +49,16 @@ const Container = styled.div`
     user-select: none;
     width: 100%;
     padding: 10vh 10vw;
-    height: 100vh;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-image: url(${props => props.backgroundImage});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     @media (max-width: 1200px) {
-        height: auto;
         padding: 5vh 4vw;
         background-image: ${props => `url(${props.backgroundImageMobile})`};
     }
