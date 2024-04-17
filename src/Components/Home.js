@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Zoom,Fade } from 'react-awesome-reveal';
-import allScripts from '../allScripts.json';
+import allScripts from '../allScripts.json';import ParaQuem from './paraQuem/ParaQuem';
+import AoFimDoCurso from './aoFimDoCurso/AoFimDoCurso';
+import Oferta from './oferta/Oferta';
+import Vsl from './VSL/Vsl';
+import InitialPage from './initialPage/InitialPage';
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const [width, setWidth] = useState(window.innerWidth)
@@ -27,29 +31,13 @@ function Home() {
 
 
   return (
-    <Container>
-      <Zoom triggerOnce={true}>
-      <MainContentHome>
-        <CenterContent>
-          <Left isVisible={isVisible} corTitulo={curso.Gasometria.pagina1.corTitulo} corBotao={curso.Gasometria.pagina1.corBotao}>
-          <Fade delay={1e3} cascade damping={1e-1}>
-            <div>
-            <h1>{curso.Gasometria.pagina1.titulo}</h1>
-            <h2>{curso.Gasometria.pagina1.subtitulo}</h2>
-            </div>
-            <div>
-            <p>
-              {curso.Gasometria.pagina1.descricao}
-            </p>
-            </div>
-            <button>
-            {curso.Gasometria.pagina1.botao}
-            </button>
-            </Fade>
-          </Left>
-        </CenterContent>
-      </MainContentHome>
-      </Zoom>
+    <Container>     
+      <InitialPage/>
+      <ParaQuem/>
+      <AoFimDoCurso/>
+      <Vsl />
+      <Oferta/>
+      
     </Container>
   );
 }
@@ -65,6 +53,8 @@ const Container = styled.div`
   @media (max-width: 1200px) {
     margin-top: 0;
     height: auto;
+    max-width: 100%;
+    overflow: hidden;
   }
 `;
 
