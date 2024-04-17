@@ -1,0 +1,22 @@
+{
+    "Curso": {
+      "Gasometria": {
+        "pagina1": {
+          "titulo": "Gasometria",
+          "corTitulo": "#d82121",
+          "subtitulo": "Gasometria descomplicada",
+          "descricao":"Você tranquilo e seguro para interpretar qualquer gasometria arterial",
+          "botao": "Quero dominar gasometria",
+          "corBotao":"#f74242"
+        },
+        "pagina2": {
+          "titulo": "Conteúdo Principal",
+          "conteudo": "Nesta página, você encontrará o conteúdo principal do curso."
+        },
+        "pagina3": {
+          "titulo": "Conclusão",
+          "conteudo": "Parabéns, você concluiu o curso! Esperamos que tenha sido útil e informativo."
+        }
+      }
+    }
+  }

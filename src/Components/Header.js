@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Fade, Slide } from 'react-awesome-reveal';
 function Header() {
   const [activeHeader, setActiveHeader] = useState(1);
 
@@ -29,14 +30,16 @@ function Header() {
 
   return (
     <HeaderContainer>
-        <h1><img width="230" height="60" alt="Logo"/> </h1>
+      <Slide><h1><img width="230" height="60" alt="Logo"/> </h1></Slide>
       <MiddleHeader>
+        <Fade delay={0.5} cascade damping={0.3}>
         <StyledH2 active={activeHeader === 1} onClick={() => handleHeaderClick(1)}>none</StyledH2>
         <StyledH2 active={activeHeader === 2} onClick={() => handleHeaderClick(2)}>none</StyledH2>
         <StyledH2 active={activeHeader === 3} onClick={() => handleHeaderClick(3)}>none</StyledH2>
         <StyledH2 active={activeHeader === 4} onClick={() => handleHeaderClick(4)}>none</StyledH2>
         <StyledH2 active={activeHeader === 5} onClick={() => handleHeaderClick(5)}>none</StyledH2>
         <StyledH2 active={activeHeader === 6} onClick={() => handleHeaderClick(6)}>none</StyledH2>
+        </Fade>
         {/* <Indicator activeHeader={activeHeader} /> */}
       </MiddleHeader>
     </HeaderContainer>

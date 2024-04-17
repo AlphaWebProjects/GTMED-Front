@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-
+import { Zoom,Fade } from 'react-awesome-reveal';
+import allScripts from '../allScripts.json';
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const [width, setWidth] = useState(window.innerWidth)
-
+  const curso = allScripts.Curso;
+  console.log(curso.Gasometria.pagina1.titulo)
   useEffect(() => {
 
     setTimeout(() => {
@@ -26,13 +28,28 @@ function Home() {
 
   return (
     <Container>
+      <Zoom triggerOnce={true}>
       <MainContentHome>
         <CenterContent>
-          <Left isVisible={isVisible}>
-            <p>content</p>
+          <Left isVisible={isVisible} corTitulo={curso.Gasometria.pagina1.corTitulo} corBotao={curso.Gasometria.pagina1.corBotao}>
+          <Fade delay={1e3} cascade damping={1e-1}>
+            <div>
+            <h1>{curso.Gasometria.pagina1.titulo}</h1>
+            <h2>{curso.Gasometria.pagina1.subtitulo}</h2>
+            </div>
+            <div>
+            <p>
+              {curso.Gasometria.pagina1.descricao}
+            </p>
+            </div>
+            <button>
+            {curso.Gasometria.pagina1.botao}
+            </button>
+            </Fade>
           </Left>
         </CenterContent>
       </MainContentHome>
+      </Zoom>
     </Container>
   );
 }
@@ -79,7 +96,21 @@ const Left = styled.div`
     font-size: 40px;
     padding: 12px;
     border-radius: 12px;
-    border-bottom: 3px solid #158a7a;
+    color: ${({corTitulo})=>corTitulo};
+    border-bottom: 3px solid ${({corTitulo})=>corTitulo};
+  }
+  button{
+    background-color: ${({corBotao})=>corBotao};
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: scale 0.3s ease;
+    &:hover{
+      scale: 1.05;
+    }
   }
   img{
     display: none;
