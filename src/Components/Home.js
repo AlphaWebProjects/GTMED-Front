@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { Zoom,Fade } from 'react-awesome-reveal';
+import allScripts from '../allScripts.json';
 import ParaQuem from './paraQuem/ParaQuem';
 import AoFimDoCurso from './aoFimDoCurso/AoFimDoCurso';
 import Oferta from './oferta/Oferta';
 import Vsl from './VSL/Vsl';
-
+import InitialPage from './initialPage/InitialPage';
+import SecondPage from './secondPage/SecondPage';
+import PageQuestions from './pageQuestions/PageQuestions';
+import LastPage from './lastPage/LastPage';
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const [width, setWidth] = useState(window.innerWidth)
-
+  const curso = allScripts.Curso;
+  console.log(curso.Gasometria.pagina1.titulo)
   useEffect(() => {
 
     setTimeout(() => {
@@ -29,21 +35,15 @@ function Home() {
 
 
   return (
-    <Container>
-      <MainContentHome>
-        <CenterContent>
-          <Left isVisible={isVisible}>
-            <p>content</p>
-          </Left>
-        </CenterContent>
-      </MainContentHome>
-      
-      
+    <Container>     
+      <InitialPage/>
+      <SecondPage/>
       <ParaQuem/>
       <AoFimDoCurso/>
       <Vsl />
       <Oferta/>
-      
+      <PageQuestions/>
+      <LastPage/>
     </Container>
   );
 }
@@ -92,7 +92,21 @@ const Left = styled.div`
     font-size: 40px;
     padding: 12px;
     border-radius: 12px;
-    border-bottom: 3px solid #158a7a;
+    color: ${({corTitulo})=>corTitulo};
+    border-bottom: 3px solid ${({corTitulo})=>corTitulo};
+  }
+  button{
+    background-color: ${({corBotao})=>corBotao};
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: scale 0.3s ease;
+    &:hover{
+      scale: 1.05;
+    }
   }
   img{
     display: none;
