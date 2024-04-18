@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Zoom,Fade } from 'react-awesome-reveal';
-import allScripts from '../allScripts.json';import ParaQuem from './paraQuem/ParaQuem';
+import allScripts from '../allScripts.json';
+import ParaQuem from './paraQuem/ParaQuem';
 import AoFimDoCurso from './aoFimDoCurso/AoFimDoCurso';
 import Oferta from './oferta/Oferta';
 import Vsl from './VSL/Vsl';
 import InitialPage from './initialPage/InitialPage';
+import SecondPage from './secondPage/SecondPage';
+import PageQuestions from './pageQuestions/PageQuestions';
+import LastPage from './lastPage/LastPage';
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const [width, setWidth] = useState(window.innerWidth)
@@ -33,11 +37,13 @@ function Home() {
   return (
     <Container>     
       <InitialPage/>
+      <SecondPage/>
       <ParaQuem/>
       <AoFimDoCurso/>
       <Vsl />
       <Oferta/>
-      
+      <PageQuestions/>
+      <LastPage/>
     </Container>
   );
 }

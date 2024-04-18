@@ -10,8 +10,10 @@
           "corBotao":"#f74242"
         },
         "pagina2": {
-          "titulo": "Conteúdo Principal",
-          "conteudo": "Nesta página, você encontrará o conteúdo principal do curso."
+          "descricao1":"A verdade é que, para grande maioria dos médicos, gasometria é um bicho de sete cabeças invencível. Envolve Nefrologia, Matemática, fórmulas “decoradas”, ventilação mecânica e cálculos para prescrição.",
+          "descricao2":"Mas não é fácil admitir isso, certo? Imagina só assumir para alguém que você não saber ler uma gasometria arterial.",
+          "descricao3":"São “só” diversos números e letras (diga-se de passagem, corriqueiramente com uma fonte bem pequena) impressos em um papel que, a grande maioria dos médicos, passa os olhos rapidamente e finge normalidade… Como eu posso não saber?",
+          "descricao4":"A compreensão da gasometria não é um conhecimento solto, reservado apenas para os privilegiados intelectualmente, ou para os raros colegas que, após compreenderem e decifrarem como se estuda gasometria, fazem questão de manter seu conhecimento guardado, sem a menor chance de compartilhá-lo."
         },
         "pagina3": {
           "titulo": "Conclusão",
