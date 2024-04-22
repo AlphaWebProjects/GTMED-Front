@@ -6,9 +6,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import oftalmo from "../assets/images/oftalmo.jpg";
+import oftalmo from "../../assets/images/oftalmo.jpg"
 
-function Section3() {
+function SobreOCurso() {
   const [width, setWidth] = useState(window.innerWidth);
   const [isIntersecting, setIsIntersecting] = useState(false);
   const containerRef = useRef(null);
@@ -98,14 +98,17 @@ function Section3() {
   );
 }
 
-export default Section3;
+export default SobreOCurso;
 
 const Container = styled.div`
   width: 100%;
+  max-width: 100% !important;
   height: 90%;
   margin-top: 120px;
   background-size: cover;
   background-position: center;
+  max-height: 100% !important;
+  min-height: 100% !important;
   @media (max-width: 1200px) {
     margin-top: 0;
     height: auto;
@@ -114,18 +117,24 @@ const Container = styled.div`
 
 const MainContentHome = styled.div`
   width: 100%;
+  max-width: 100% !important;
   height: 100%;
+  max-height: 100% !important;
+  min-height: 100% !important;
   display: flex;
   padding: 2%;
 `;
 
 const CenterContent = styled.div`
   width: 100%;
+  max-width: 100% !important;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5vh;
+  max-height: 100% !important;
+  min-height: 100% !important;
   p {
     text-align: center;
     width: 50%;
@@ -207,14 +216,12 @@ const StyledSwiperSlide = styled(SwiperSlide)`
 `;
 
 const StyledSwiperContainer = styled(Swiper)`
-  max-width: 52%; 
+  max-width: 52% !important; 
   margin-top: 4vh;
   opacity: ${({ isIntersecting }) => (isIntersecting ? 1 : 0)};
-  transition: opacity 5s ease-in-out;
+  transition: opacity 4s ease-in-out;
   @media (max-width: 1500px) {
     max-width: 100% !important;
-    max-height: 60vh !important;
-    margin-top: 6vh;
   }
   .swiper-pagination-progressbar {
     background: black;
