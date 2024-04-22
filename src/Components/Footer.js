@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Slide, Fade } from "react-awesome-reveal";
 export default function Footer(){
   const instagram = "https://www.instagram.com"
   const whatsappNumber = "+553538216262";
@@ -13,7 +13,7 @@ export default function Footer(){
     <Container>
 
       <TitleContainer>
-        <h3>{"Conecte-se Conosco"}</h3>
+      <Slide  triggerOnce={true}><h3>{"Conecte-se Conosco"}</h3></Slide>
         <SocialContainer>
           <a href={instagram} target="_blank" rel="noopener noreferrer"></a>
           <a
@@ -21,7 +21,7 @@ export default function Footer(){
             onClick={(e) => e.stopPropagation()} rel="noopener noreferrer"></a>
         </SocialContainer>
       </TitleContainer>
-
+      <Fade delay={1} cascade damping={2}  triggerOnce={true} >
       <SubContainer>
         <ImageContainer>
           <img alt="Logo" />
@@ -45,11 +45,10 @@ export default function Footer(){
         </TextColumn>
 
       </SubContainer>
-
+      </Fade>
       <AboutContainer>
         <span>{"Todos Direitos Reservados ©"}</span>
       </AboutContainer>
-
     </Container>
   )
 }
@@ -57,9 +56,10 @@ export default function Footer(){
 const Container = styled.footer`
   border: 1px solid black;
   background-color: white;
-  width: 100%;
+  width: 99.5%;
   height: auto;
   display: flex;
+  margin-top: 40px;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
