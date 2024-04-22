@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import backgroundImage from "../../../src/images/Screenshot_27.png"
 import backgroundImageMobile from "../../../src/images/Screenshot_28.png"
-
+import { Fade, Slide } from 'react-awesome-reveal';
 export default function ParaQuem(){
 
     const body = {
@@ -31,12 +31,14 @@ export default function ParaQuem(){
             <RightSide>
                 <Title>{body?.title}</Title>
                 <SubTitle>{body?.subtitle}</SubTitle>
-                {body?.topics?.map((topic, index) => (
+                <Fade delay={0.5} cascade damping={0.3} triggerOnce={true}>
+                    {body?.topics?.map((topic, index) => (
                     <Option key={index}>
                         <div>{index + 1}</div>
                         <p>{topic?.details}</p>
                     </Option>
                 ))}
+                </Fade>
             </RightSide>
         </Container>
     )
