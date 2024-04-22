@@ -6,9 +6,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import oftalmo from "../assets/images/oftalmo.jpg";
+import oftalmo from "../../assets/images/oftalmo.jpg"
 
-function Section6() {
+function Depoimentos() {
   const [width, setWidth] = useState(window.innerWidth);
   const [isIntersecting, setIsIntersecting] = useState(false);
   const containerRef = useRef(null);
@@ -97,7 +97,7 @@ function Section6() {
   );
 }
 
-export default Section6;
+export default Depoimentos;
 
 const Container = styled.div`
   width: 100%;
@@ -204,7 +204,7 @@ margin-top: 5vh;
   align-items: center;
   justify-content: center;
   opacity: ${({ isIntersecting }) => (isIntersecting ? 1 : 0)};
-  transition: opacity 5s ease-in-out;
+  transition: opacity 3s ease-in-out;
   padding-bottom: 5vh; 
   .swiper-pagination-bullet-active {
  background-color: black; 

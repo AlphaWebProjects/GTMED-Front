@@ -1,14 +1,30 @@
 import styled from 'styled-components';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
-import Home from '../Components/Home';
+import InitialPage from '../Components/initialPage/InitialPage';
+import SecondPage from '../Components/secondPage/SecondPage';
+import SobreOCurso from '../Components/sobreOCurso/SobreOCurso';
+import ParaQuem from '../Components/paraQuem/ParaQuem';
+import AoFimDoCurso from '../Components/aoFimDoCurso/AoFimDoCurso';
+import Depoimentos from '../Components/Depoimentos/Depoimentos';
+import Oferta from '../Components/oferta/Oferta';
+import PageQuestions from '../Components/pageQuestions/PageQuestions';
+import LastPage from '../Components/lastPage/LastPage';
+
 
 
 export default function LandingPage() {
     return (
         <Container>
-            <Header />
-            <Home/>
+            <InitialPage />
+            <SecondPage />
+            <SobreOCurso />
+            <ParaQuem />
+            <AoFimDoCurso />
+            <Depoimentos />
+            <Oferta />
+            <PageQuestions />
+            <LastPage />
             <Footer/>
         </Container>
     );

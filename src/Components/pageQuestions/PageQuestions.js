@@ -49,12 +49,13 @@ export default function PageQuestions() {
 
 const PageQuestionsContainer = styled.div`
     background-color:black;
-    height: 80vh;
+    height: auto !important;
     display: flex;
     align-items: center;
     flex-direction: column; 
     justify-content: space-around;
     color: white;
+    padding: 10vh 0 !important;
     @media (max-width: 768px) {
         height: 100vh;
     }
