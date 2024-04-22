@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import backgroundImage from "../../../src/images/Screenshot_28.png"
 import { IoIosMedical } from "react-icons/io";
-
+import { Fade, Slide } from 'react-awesome-reveal';
 export default function AoFimDoCurso(){
 
     const body = {
@@ -39,13 +39,17 @@ export default function AoFimDoCurso(){
     return (
         <Container backgroundImage={body?.backgroundimage} backgroundImageMobile={body?.backgroundimagemobile}>
             <SubContainer>
-            <Title>{body?.title}</Title>
-            {body?.topics?.map((topic, index) => (
+            <Slide triggerOnce={true}><Title>{body?.title}</Title></Slide>
+            <Fade delay={0.5} cascade damping={0.3} triggerOnce={true} style={{width:'100%'}}>
+
+                {body?.topics?.map((topic, index) => (
                 <Option key={index}>
                     <div><IoIosMedical /></div>
                     <p>{topic?.details}</p>
                 </Option>
             ))}
+
+            </Fade>
             </SubContainer>
         </Container>
     )
