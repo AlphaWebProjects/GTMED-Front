@@ -7,6 +7,7 @@ import 'swiper/css/scrollbar';
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import oftalmo from "../../assets/images/oftalmo.jpg"
+import { Fade } from 'react-awesome-reveal';
 
 function SobreOCurso() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -42,13 +43,19 @@ function SobreOCurso() {
       <MainContentHome>
 
         <CenterContent>
-          <p className={isIntersecting ? 'visible' : ''}>
-            Het begrijpen van de gasometrie is niets anders dan een strak en uitgelijnd stapsgewijs proces, met zeer goed gedefinieerde redeneerstappen, die, als ze op de juiste manier begrepen en bestudeerd worden, geen twijfel meer zullen laten bestaan bij het lezen van de talloze mogelijke stoornissen.
-          </p>
+          <Fade delay={0.5} cascade  damping={0.3} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }} triggerOnce={true} direction='left'>
+            <p>
+              Het begrijpen van de gasometrie is niets anders dan een strak en uitgelijnd stapsgewijs proces, met zeer goed gedefinieerde redeneerstappen, die, als ze op de juiste manier begrepen en bestudeerd worden, geen twijfel meer zullen laten bestaan bij het lezen van de talloze mogelijke stoornissen.
+            </p>
+          </Fade>
 
-          <h1 className={isIntersecting ? 'visible' : ''}>
+          <Fade delay={2} cascade  damping={0.3} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }} triggerOnce={true} direction='right'>
+          <h1>
             Het begrijpen van de gasometrie is niets anders dan een strak en uitgelijnd stapsgewijs proces, met zeer goed gedefinieerde redeneerstappen, die, als ze op de juiste manier begrepen.
           </h1>
+          </Fade>
+          
+          
 
           <StyledSwiperContainer
             ref={containerRef}
@@ -104,7 +111,7 @@ const Container = styled.div`
   width: 100%;
   max-width: 100% !important;
   height: 90%;
-  margin-top: 120px;
+  margin-top: 25px;
   background-size: cover;
   background-position: center;
   max-height: 100% !important;
@@ -142,9 +149,6 @@ const CenterContent = styled.div`
     padding: 3vh;
     border: 2px solid black;
     border-radius: 30px;
-    opacity: 0;
-    transition: opacity 1.2s, transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), scale 0.3s;
-    transform: translateX(400px);
     margin-bottom: 4vh;
     margin-top: 0;
     @media (max-width: 1200px) {
@@ -157,19 +161,12 @@ const CenterContent = styled.div`
       cursor: pointer;
     }
   }
-  .visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
   h1{
     text-align: center;
     width: 50%;
     font-size: 22px;
     padding: 1vh;
     border-radius: 30px;
-    opacity: 0;
-    transition: opacity 1.2s, transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 1s, scale 0.3s;
-    transform: translateX(-2000px);
     margin-bottom: 0;
     margin-top: 0;
     @media (max-width: 1200px) {
@@ -181,10 +178,6 @@ const CenterContent = styled.div`
       scale: 1.05;
       cursor: pointer;
     }
-  }
-  .visible {
-    opacity: 1;
-    transform: translateX(0);
   }
   @media (max-width: 420px) {
     margin-top: 10px;
@@ -219,7 +212,7 @@ const StyledSwiperContainer = styled(Swiper)`
   max-width: 52% !important; 
   margin-top: 4vh;
   opacity: ${({ isIntersecting }) => (isIntersecting ? 1 : 0)};
-  transition: opacity 4s ease-in-out;
+  transition: opacity 2s ease-in-out;
   @media (max-width: 1500px) {
     max-width: 100% !important;
   }

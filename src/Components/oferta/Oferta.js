@@ -99,7 +99,7 @@ export default function Oferta(){
 
 const Container = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: start;
     padding: 5vh 10vw;  // Espaçamento vertical e horizontal adaptável
     background-color: #000;
