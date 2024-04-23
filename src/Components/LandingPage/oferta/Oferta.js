@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { MdMedicalServices } from "react-icons/md";
-import StyledButton from "../../common/form/Button";
-import bestPrice from "../../images/best-price.png";
-import sevenDays from "../../images/sevenDays.png";
+import StyledButton from "../../../common/form/Button";
+import bestPrice from "../../../assets/images/best-price.png";
+import sevenDays from "../../../assets/images/sevenDays.png";
 
 export default function Oferta(){
 

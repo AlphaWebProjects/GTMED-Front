@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import backgroundImage from "../../../src/images/Screenshot_28.png"
+import backgroundImage from "../../../assets/images/Screenshot_28.png"
 import { IoIosMedical } from "react-icons/io";
 import { Fade, Slide } from 'react-awesome-reveal';
 export default function AoFimDoCurso(){

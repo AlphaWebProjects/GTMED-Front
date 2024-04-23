@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import backgroundImage from "../../../src/images/vsl.png"
-import StyledButton from "../../common/form/Button";
+import StyledButton from "../../../common/form/Button";
 
 export default function Vsl(){
     const body = {
