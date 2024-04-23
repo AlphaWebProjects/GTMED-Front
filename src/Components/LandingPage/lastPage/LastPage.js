@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Tutor2 from '../../images/Tutor2.png';
-import tutor1 from '../../images/tutor1.png';
+import Tutor2 from '../../../assets/images/Tutor2.png'
+import tutor1 from '../../../assets/images/tutor1.png';
 export default function LastPage() {
     const isMobile = window.innerWidth <= 768;
     return (

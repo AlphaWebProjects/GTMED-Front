@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { MdMedicalServices } from "react-icons/md";
-import StyledButton from "../../common/form/Button";
-import bestPrice from "../../images/best-price.png";
-import sevenDays from "../../images/sevenDays.png";
+import StyledButton from "../../../common/form/Button";
+import bestPrice from "../../../assets/images/best-price.png";
+import sevenDays from "../../../assets/images/sevenDays.png";
 
 export default function Oferta(){
 
@@ -99,7 +99,7 @@ export default function Oferta(){
 
 const Container = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: start;
     padding: 5vh 10vw;  // Espaçamento vertical e horizontal adaptável
     background-color: #000;

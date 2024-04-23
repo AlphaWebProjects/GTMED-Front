@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import initialPageBackground from '../../images/initialPageBackground.png';
-import allScripts from '../../allScripts.json';
+import initialPageBackground from '../../../assets/images/initialPageBackground.png';
+import allScripts from '../../../allScripts.json';
 import { Fade } from 'react-awesome-reveal';
 export default function InitialPage() {
     console.log(allScripts)

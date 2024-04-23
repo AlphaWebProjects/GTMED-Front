@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
-import backgroundImage from "../../../src/images/Screenshot_27.png"
-import backgroundImageMobile from "../../../src/images/Screenshot_28.png"
+import backgroundImage from "../../../assets/images/Screenshot_27.png"
+import backgroundImageMobile from "../../../assets/images/Screenshot_28.png"
 import { Fade, Slide } from 'react-awesome-reveal';
 export default function ParaQuem(){
 

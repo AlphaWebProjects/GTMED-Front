@@ -30,7 +30,7 @@ export default function PageQuestions() {
               </Title>
                 </Slide>
               <QuestionList>
-              <Fade delay={0.3} cascade damping={0.3} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', textAlign:'center',width:'100%' }} triggerOnce={true}>
+              <Fade delay={0.3} cascade damping={0.3} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', textAlign:'center',width:'100%'}} triggerOnce={true}>
                 {perguntas.map((pergunta, index) => (
                 <React.Fragment key={index}>
                     <QuestionItem onClick={() => handleQuestionClick(index)}>
@@ -81,11 +81,12 @@ const QuestionItem = styled.li`
 `;
 
 const Answer = styled.div`
-  max-height: ${({ open }) => (open ? '100px' : '0')};
+  max-height: ${({ open }) => (open ? '90px' : '0')};
   overflow: hidden;
   transition: max-height 0.4s ease-in-out;
   border-bottom: 1px solid white;
   width:100%;
+  padding-bottom: 5.0px;
   margin-bottom: 10px;
 `;
 

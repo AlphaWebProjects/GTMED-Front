@@ -6,7 +6,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import oftalmo from "../../assets/images/oftalmo.jpg"
+import oftalmo from "../../../assets/images/oftalmo.jpg"
 
 function Depoimentos() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -57,7 +57,7 @@ function Depoimentos() {
                     stretch: 0,
                     depth: 100,
                     modifier: 1,
-                    slideShadows: width > 1200 ? true : false,
+                    slideShadows: false,
                   }}
                 pagination={true}
                 autoplay={{

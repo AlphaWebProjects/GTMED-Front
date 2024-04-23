@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import allScripts from '../../allScripts.json';
+import allScripts from '../../../allScripts.json';
 import { FaAngleDown } from "react-icons/fa";
 import { Fade } from 'react-awesome-reveal';
 export default function SecondPage() {
