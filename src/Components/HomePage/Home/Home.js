@@ -6,26 +6,16 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import doctor from "../../../assets/images/doctor.jpg"
-import doctors from "../../../assets/images/doctors.avif"
+import backgroundHome from "../../../assets/images/BackgroundHome.png"
 import { Fade } from 'react-awesome-reveal';
+import logo1nobg from '../../../assets/images/logo1nobg.png'
+import logo2 from '../../../assets/images/logo2.jpg'
 
 function Home() {
   const [width, setWidth] = useState(window.innerWidth);
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const containerRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsIntersecting(true);
-        }
-      });
-    });
-
-    observer.observe(containerRef.current);
-
+    
     const handleResize = () => {
       setWidth(window.innerWidth);
     };
@@ -33,46 +23,37 @@ function Home() {
     window.addEventListener('resize', handleResize);
 
     return () => {
-      observer.disconnect();
+
       window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   return (
-    <Container>
+    <Fade delay={0.5} cascade  damping={0.3} triggerOnce={true}>
+      <Container backgroundImage={backgroundHome}>
 
-        <CenterContent> 
+          <CenterContent> 
 
-            <p>oi oi oi oi oi </p>    
+                <span>
 
-          <StyledSwiperContainer
-            ref={containerRef}
-            isIntersecting={isIntersecting}
-            spaceBetween={0}
-            autoplay={{
-                delay: 6000,
-                disableOnInteraction: false
-              }}
-              speed={500}
-            modules={[EffectFade, Navigation, Autoplay]}
-          >
-            <StyledSwiperSlide>
-              
-                <img src={doctor} alt="doctor" />
-              
-            </StyledSwiperSlide>
+                  <Fade delay={300} cascade  damping={0.3} triggerOnce={true} direction='down' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                    <img src={logo1nobg} alt='Logo'/>
+                  </Fade>
 
-            <StyledSwiperSlide>
-              
-                <img src={doctors} alt="doctors" />
-              
-            </StyledSwiperSlide>
+                  <Fade delay={800} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                  <p>
+                  Oferecendo uma experiência única e enriquecedora para médicos em formação e profissionais. 
+                  </p> 
+                  </Fade>
 
-          </StyledSwiperContainer>
+                </span>
 
-        </CenterContent>
+            
 
-    </Container>
+          </CenterContent>
+
+      </Container>
+    </Fade>
   );
 }
 
@@ -80,17 +61,20 @@ export default Home;
 
 const Container = styled.div`
   width: 100%;
-  height: 80vh;
-  max-height: 100vh !important;
-  margin-top: 120px;
-  background-size: cover;
+  height: 102.2vh;
+  background-image: ${props => `url(${props.backgroundImage})`};
   background-position: center;
-  max-height: 100% !important;
-  min-height: 100% !important;
-  overflow: hidden !important;
-  background-color: red;
-  p{
-    z-index: 100;
+  background-size: cover;     
+  background-repeat: no-repeat;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
   }
   @media (max-width: 1200px) {
     margin-top: 0;
@@ -101,10 +85,33 @@ const Container = styled.div`
 const CenterContent = styled.div`
   width: 100%;
   max-width: 100% !important;
+  max-height: 90vh !important;
   height: 100% !important;
   display: flex;
   align-items: center;
   justify-content: center;
+  span{
+    z-index: 10;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 94%;
+    min-height: 100%;
+    img{
+      width: 100%;
+      height: 50% !important;
+    }
+    p{
+      font-size: 3.2vh;
+      font-weight: 700;
+      text-align: center;
+      max-width: 65%;
+      color: black;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+  }
   @media (max-width: 420px) {
     margin-top: 10px;
   }
@@ -120,6 +127,7 @@ display: flex;
     width: 100%;
     height: 100% !important;
     min-height: 100vh;
+    max-height: 107vh;
     min-width: 130vh !important;
     text-align: center;
   }
