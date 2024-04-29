@@ -2,14 +2,12 @@ import styled from 'styled-components';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import Home from '../Components/HomePage/Home/Home';
-import SobreGTMED from '../Components/HomePage/SobreGTMed/SobreGTMED';
-
-
+import TodosCursos from '../Components/HomePage/TodosCursos/TodosCursos';
 export default function HomePage() {
     return (
         <Container>
             <Home />
-            <SobreGTMED />
+            <TodosCursos />
             <Footer />
         </Container>
     );
