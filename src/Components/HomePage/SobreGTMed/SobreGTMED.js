@@ -1,24 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import oftalmo from "../../../assets/images/oftalmo.jpg"
 import { Fade } from 'react-awesome-reveal';
 import sobregtmed from '../../../assets/images/sobregtmed.png'
+import logo2 from '../../../assets/images/logo2.jpg'
 
 function SobreGTMED() {
   const [width, setWidth] = useState(window.innerWidth);
+
+
 
   return (
     <Fade delay={0.5} cascade  damping={0.3} triggerOnce={true}>
 
       <Container>
 
-        <img src={sobregtmed}/>
+        <img src={logo2}/>
 
 
         <span>
@@ -34,7 +30,7 @@ function SobreGTMED() {
         <Fade delay={800} cascade damping={0.3} triggerOnce={true} direction='right'>       
 
           <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum eros vitae tellus convallis, nec laoreet velit feugiat. Nulla facilisi. Suspendisse potenti. Sed vel sapien vel odio tincidunt posuere. Phasellus euismod magna ac diam commodo, ac convallis arcu volutpat. Sed auctor dui vel dui pharetra, quis scelerisque ligula dictum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum eros vitae tellus convallis, nec laoreet velit feugiat. Nulla facilisi. 
           </p>
 
         </Fade>
@@ -42,7 +38,7 @@ function SobreGTMED() {
         <Fade delay={1200} cascade  damping={0.3} triggerOnce={true} direction='right'>       
 
           <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum eros vitae tellus convallis, nec laoreet velit feugiat. Nulla facilisi. Suspendisse potenti. Sed vel sapien vel odio tincidunt posuere. Phasellus euismod magna ac diam commodo, ac convallis arcu volutpat. Sed auctor dui vel dui pharetra, quis scelerisque ligula dictum.
+          Suspendisse potenti. Sed vel sapien vel odio tincidunt posuere. Phasellus euismod magna ac diam commodo, ac convallis arcu volutpat. Sed auctor dui vel dui pharetra, quis scelerisque ligula dictum.
           </p>
 
         </Fade>
@@ -59,35 +55,49 @@ export default SobreGTMED;
 
 const Container = styled.div`
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   padding: 15vh 0;
   justify-content: center;
   flex-direction: row;
-  background: linear-gradient(to bottom, #FBFFFF, #b1c8cd);
-  
+  background-color: black;
   img{
-    width: 25%;
-    height: 15%;
+    width: 35%;
+    height: 25%;
     transition: 1s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    margin-right: 10vh;
     &:hover{
       scale: 1.05;
       cursor: pointer;
-      box-shadow: 0 8px 12px rgba(125, 169, 236, 0.5), 0 3px 6px rgba(125, 169, 236, 0.3);
       border-radius: 20px;
     }
+    @media (max-width: 1200px) {
+    margin: 0 !important;
+    width: 100%;
+    height: 50%;
+    border-radius: 0;
+  }
   }
   span{
     display: flex;
     flex-direction: column;
     max-width: 30%;
-    margin-left: 7vh;
     backdrop-filter: blur(10px);
+    margin-left: 10vh;
+    color: white;
+    @media (max-width: 1200px) {
+    margin: 0 !important;
+    max-width: 80%;
+  }
   }
   h1{
     font-size: 4vh;
     margin-bottom: 4vh;
+    border-bottom: 5px solid black;
+    border-radius: 15px;
+    padding-bottom: 1vh;
   }
   p{
     margin-bottom: 1.5vh;
@@ -97,6 +107,9 @@ const Container = styled.div`
   @media (max-width: 1200px) {
     margin-top: 0;
     height: auto;
+    flex-direction: column;
+    margin: 0 !important;
+    padding: 5vh 0;
   }
 `;
 
