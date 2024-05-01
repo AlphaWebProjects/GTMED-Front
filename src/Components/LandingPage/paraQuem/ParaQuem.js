@@ -2,10 +2,12 @@ import styled, { keyframes } from "styled-components";
 import backgroundImage from "../../../assets/images/Screenshot_27.png"
 import backgroundImageMobile from "../../../assets/images/Screenshot_28.png"
 import { Fade, Slide } from 'react-awesome-reveal';
-export default function ParaQuem(){
+export default function ParaQuem({paraQuem}){
+
+    console.log(paraQuem)
 
     const body = {
-        backgroundimage: backgroundImage,
+        backgroundimage: paraQuem.backgroundImage,
         backgroundimagemobile: backgroundImageMobile,
         title: "PARA QUEM É O",
         subtitle: "Gasometria Descomplicada?",

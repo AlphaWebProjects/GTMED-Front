@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Fade } from 'react-awesome-reveal';
 import sobregtmed from '../../../assets/images/sobregtmed.png'
 import logo2 from '../../../assets/images/logo2.jpg'
+import logo1 from '../../../assets/images/logo1.jpg'
 
 function SobreGTMED() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -14,7 +15,7 @@ function SobreGTMED() {
 
       <Container>
 
-        <img src={logo2}/>
+        <img src={logo1}/>
 
 
         <span>

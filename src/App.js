@@ -5,16 +5,21 @@ import LandingPage from './Pages/LandingPage';
 import HomePage from './Pages/HomePage';
 import NotFound from './Pages/NotFound';
 import { UserProvider } from './context/UserContext';
+import React, { useEffect, useState } from 'react';
+import scripts from './scripts'
 
 //pasta de imagens está em assets
 
 function App() {
+
+  const [script, setScript] = useState(scripts.Curso.Clinica);
+
   return (
     <UserProvider>
       <Router>
         <Routes>
-          <Route path="/landing" element={<LandingPage />} />
-          <Route path="/" element={<HomePage />} />
+          <Route path="/landing" element={<LandingPage script={script}/>} />
+          <Route path="/" element={<HomePage script={script} setScript={setScript}/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
 

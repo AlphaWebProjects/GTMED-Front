@@ -3,11 +3,18 @@ import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import Home from '../Components/HomePage/Home/Home';
 import TodosCursos from '../Components/HomePage/TodosCursos/TodosCursos';
-export default function HomePage() {
+import SobreGTMED from '../Components/HomePage/SobreGTMed/SobreGTMED'
+
+
+export default function HomePage({script, setScript}) {
+
+
+
     return (
         <Container>
             <Home />
-            <TodosCursos />
+            <TodosCursos setScript={setScript}/>
+            <SobreGTMED />
             <Footer />
         </Container>
     );

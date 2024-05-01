@@ -1,60 +1,84 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Fade, Slide } from 'react-awesome-reveal';
-export default function TodosCursos() {
+import allScripts from '../../../allScripts.json'
+import background from '../../../assets/images/backgroundTelaCursos.png'
+import cardClinica from '../../../assets/images/clinicamedica/cardClinica.png'
+import cardOftalmo from '../../../assets/images/oftalmo/cardOftalmo.png'
+import cardOrtopedia from '../../../assets/images/ortopedia/cardOrtopedia.png'
+import cardPediatria from "../../../assets/images/pediatria/cardPediatria.png"
+import cardRadiologia from '../../../assets/images/radiologia/cardRadiologia.png'
+
+
+export default function TodosCursos({setScript}) {
     const cursos = [
-        { nome: 'Gasometria', background: 'blue' },
-        { nome: 'Eletrocardiograma', background: 'blue' },
-        { nome: 'Radiologia', background: 'blue' },
-        { nome: 'Anatomia', background: 'blue' },
-        { nome: 'Farmacologia', background: 'blue' },
-        { nome: 'Patologia', background: 'red' },
-        { nome: 'Imunologia', background: 'red' },
-        { nome: 'Neurologia', background: 'red' },
-        { nome: 'Ginecologia', background: 'red' },
-        { nome: 'Cardiologia', background: 'red' },
-        { nome: 'Oftalmologia', background: 'green' },
-        { nome: 'Pediatria', background: 'green' },
-        { nome: 'Endocrinologia', background: 'green' },
-        { nome: 'Dermatologia', background: 'green' },
-        { nome: 'Ortopedia', background: 'green' },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardOftalmo },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardOrtopedia },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardPediatria },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardRadiologia },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardClinica},
+        { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
     ];
 
     return (
-        <ContainerCursos>         
-            <Fade delay={0.3} cascade damping={0.3} triggerOnce={true} style={{width:'100%'}}>
-            {cursos.map((curso, index) => (
-                <Div key={index} background={curso.background}>{curso.nome}</Div>
-            ))}
-            </Fade>
-        </ContainerCursos>
+        <Container backgroundImage={background}>  
+            
+            <Cursos>
+
+                <Fade delay={0.3} cascade damping={0.3} triggerOnce={true} style={{width:'100%'}}>
+                {cursos.map((curso, index) => (
+                    <Div onClick={() => setScript(curso.area)} key={index} background={curso.background}>{curso.nome}</Div>
+                ))}
+                </Fade>
+
+            </Cursos>
+
+        </Container>
     );
 }
 
-const ContainerCursos = styled.div`
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    height: 120vh;
-    padding: 150px;
-    padding-left: 250px;
-    @media (max-width: 1200px) {
-        grid-template-columns: repeat(3, 1fr); /* Altera para 2 colunas em dispositivos menores */
-        padding-left: 15px;
-        height: 100vh;
-        padding-top: 40px;
-    }
+const Container = styled.div`
+width: 100%;
+height: auto;
+display: flex;
+align-items: center;
+justify-content: center;
+background-image: ${props => `url(${props.backgroundImage})`};
+background-position: center;
+background-size: cover;     
+background-repeat: no-repeat;
+`;
+
+const Cursos = styled.div`
+width: 50%;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+grid-gap: 10px;
+justify-content: center;
+padding: 10vh 0;
 `;
 
 const Div = styled.div`
-    background-color: ${props => props.background};
-    height: 250px;
-    width: 150px;
+    background-image: ${props => `url(${props.background})`};
+    background-position: center;
+    background-size: cover;     
+    background-repeat: no-repeat;
+    height: 32vh;
+    width: 19vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    border-radius: 20px;
+    border-radius: 12px;
     transition: scale 0.5s ease;
     cursor: pointer;
     @media (max-width: 1200px) {
