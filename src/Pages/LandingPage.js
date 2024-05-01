@@ -10,14 +10,14 @@ import Oferta from '../Components/LandingPage/oferta/Oferta';
 import PageQuestions from '../Components/LandingPage/pageQuestions/PageQuestions';
 import LastPage from '../Components/LandingPage/lastPage/LastPage';
 
-export default function LandingPage() {
+export default function LandingPage({script}) {
     return (
         <Container>
-            <InitialPage />
-            <SecondPage />
-            <SobreOCurso />
-            <ParaQuem />
-            <AoFimDoCurso />
+            <InitialPage intro={script.intro} />
+            <SecondPage pontuacoes={script.pontuacoes} />
+            <SobreOCurso sobreOCurso={script.sobreOCurso}/>
+            <ParaQuem paraQuem={script.paraQuem}/>
+            <AoFimDoCurso aoFimDoCurso={script.aoFimDoCurso}/>
             <Depoimentos />
             <Oferta />
             <PageQuestions />

@@ -143,6 +143,7 @@ const CenterContent = styled.div`
   max-height: 100% !important;
   min-height: 100% !important;
   p {
+    transition: transform 0.8s ease;
     text-align: center;
     width: 50%;
     font-size: 22px;
@@ -157,7 +158,7 @@ const CenterContent = styled.div`
       padding: 2vh;
   }
     &:hover{
-      scale: 1.05;
+      transform: scale(1.05);
       cursor: pointer;
     }
   }
@@ -169,13 +170,14 @@ const CenterContent = styled.div`
     border-radius: 30px;
     margin-bottom: 0;
     margin-top: 0;
+    transition: transform 0.8s ease;
     @media (max-width: 1200px) {
       width: 100%;
       font-size: 17px;
       padding: 2vh;
   }
     &:hover{
-      scale: 1.05;
+      transform: scale(1.05);
       cursor: pointer;
     }
   }

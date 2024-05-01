@@ -2,23 +2,20 @@ import styled from 'styled-components';
 import allScripts from '../../../allScripts.json';
 import { FaAngleDown } from "react-icons/fa";
 import { Fade } from 'react-awesome-reveal';
-export default function SecondPage() {
-    const curso = allScripts.Curso.Gasometria.pagina2;
-    console.log(curso)
-
+export default function SecondPage({pontuacoes}) {
     return (
         <SecondPageContainer>
             <Fade delay={0.3} cascade damping={0.3} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }} triggerOnce={true}>
             <Description style={{fontWeight:'bold'}}>
-            {curso.descricao1}
+            {pontuacoes.descricao1}
             </Description>
             
             <Description>
-            {curso.descricao2}
+            {pontuacoes.descricao2}
             </Description>
 
             <Description style={{backgroundColor:'red',borderRadius:"20px",fontWeight:'bold'}}>
-            {curso.descricao3}
+            {pontuacoes.descricao3}
             </Description>
             <ButtonDown>
             <FaAngleDown color='white' size={40}/>
@@ -36,6 +33,9 @@ flex-direction: column;
 justify-content: space-evenly;
 align-items: center;
 box-shadow: rgba(255, 0, 0, 0.35) 0px -50px 36px -28px inset;
+@media (max-width: 768px) {
+     height:auto;
+}
 `
 
 const Description = styled.div`
