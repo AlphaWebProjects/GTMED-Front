@@ -27,7 +27,7 @@ function SobreGTMED() {
   return (
     <Fade delay={0.5} cascade  damping={0.3} triggerOnce={true} >
 
-      <Container backgroundImage={width > 1000 ? background : backgroundMobile}>
+      <Container backgroundImage={backgroundMobile}>
 
         <img src={logo} alt='Logo'/>
 
@@ -84,7 +84,7 @@ const Container = styled.div`
     flex-direction: column;
     max-width: 40%;
     @media (max-width: 1200px) {
-    margin: 0 !important;;
+    margin: 0 !important;
     max-width: 100%;
   }
   }
@@ -104,8 +104,8 @@ const Container = styled.div`
     display: none;
     @media (max-width: 1200px) {
     display: flex;
-    height: 40vh;
-    width: 55vh;
+    height: 38vh;
+    width: 50vh;
   }
   }
   @media (max-width: 1200px) {
