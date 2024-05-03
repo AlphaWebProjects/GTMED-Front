@@ -3,12 +3,14 @@ import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import Home from '../Components/HomePage/Home/Home';
 import TodosCursos from '../Components/HomePage/Home/TodosCursos';
+import PerguntasHome from '../Components/HomePage/Home/PerguntasHome';
 export default function HomePage() {
     return (
         <Container>
             <Header />
             <Home />
             <TodosCursos />
+            <PerguntasHome />
             <Footer />
         </Container>
     );
