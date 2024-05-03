@@ -8,6 +8,10 @@ import cardOftalmo from '../../../assets/images/oftalmo/cardOftalmo.png'
 import cardOrtopedia from '../../../assets/images/ortopedia/cardOrtopedia.png'
 import cardPediatria from "../../../assets/images/pediatria/cardPediatria.png"
 import cardRadiologia from '../../../assets/images/radiologia/cardRadiologia.png'
+import cardAnestesia from "../../../assets/images/anestesia/cardAnestesia.png"
+import cardEmergencia1 from '../../../assets/images/emergencia/cardEmergencia1.png'
+import cardEmergencia2 from '../../../assets/images/emergencia/cardEmergencia2.png'
+import cardDermato from '../../../assets/images/dermato/cardDermato.png'
 
 
 export default function TodosCursos({setScript}) {
@@ -17,13 +21,12 @@ export default function TodosCursos({setScript}) {
         { nome: '', area: allScripts.Curso.Clinica, background: cardOrtopedia },
         { nome: '', area: allScripts.Curso.Clinica, background: cardPediatria },
         { nome: '', area: allScripts.Curso.Clinica, background: cardRadiologia },
-        { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
-        { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
-        { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
-        { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardAnestesia },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardEmergencia1 },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardEmergencia2 },
+        { nome: '', area: allScripts.Curso.Clinica, background: cardDermato },
         { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
         { nome: '', area: allScripts.Curso.Clinica, background: cardClinica},
-        { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
         { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
         { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
         { nome: '', area: allScripts.Curso.Clinica, background: cardClinica },
@@ -61,10 +64,21 @@ background-repeat: no-repeat;
 const Cursos = styled.div`
 width: 50%;
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 grid-gap: 10px;
-justify-content: center;
+justify-content: space-between;
 padding: 10vh 0;
+@media (max-width: 1200px) {
+    padding: 2.5vh 0;
+    width: 90%;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+    @media (max-width: 700px) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
 `;
 
 const Div = styled.div`
@@ -73,7 +87,7 @@ const Div = styled.div`
     background-size: cover;     
     background-repeat: no-repeat;
     height: 32vh;
-    width: 19vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,8 +96,8 @@ const Div = styled.div`
     transition: scale 0.5s ease;
     cursor: pointer;
     @media (max-width: 1200px) {
-        height: 150px;
-        width: 120px;
+        height: 38vh;
+        min-width: 18vh !important;
     }
     &:hover {
         scale: 1.05;
