@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Fade, Slide } from 'react-awesome-reveal';
+import logo1nobg from '../assets/images/logo1nobg.png'
+
 function Header() {
   const [activeHeader, setActiveHeader] = useState(1);
 
@@ -30,7 +32,7 @@ function Header() {
 
   return (
     <HeaderContainer>
-      <Slide><h1><img width="230" height="60" alt="Logo"/> </h1></Slide>
+      <Slide><h1><img src={logo1nobg} width="230" height="150" alt="Logo"/> </h1></Slide>
       <MiddleHeader>
         <Fade delay={0.5} cascade damping={0.3}>
         <StyledH2 active={activeHeader === 1} onClick={() => handleHeaderClick(1)}>none</StyledH2>
@@ -47,20 +49,23 @@ function Header() {
 }
 
 const HeaderContainer = styled.div`
-z-index: 2;
+z-index: 11;
   width: 100%;
-  background-color: rgb(255,255,255,0.9);
+  background-color: #b1c8cd;
   position:fixed;
   top:0;
   left:0;
   color:black;
-  height: 100px;
+  height: 140px;
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   backdrop-filter: blur(5px);
+  img{
+    border-radius: 20px;
+  }
   @media (max-width: 1200px) {
     display: none;
   }
