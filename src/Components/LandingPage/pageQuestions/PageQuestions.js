@@ -4,6 +4,8 @@ import React from 'react';
 import { Fade,Slide } from 'react-awesome-reveal';
 export default function PageQuestions() {
 
+        //aqui é a tela de FAQ
+
         const [selectedQuestion, setSelectedQuestion] = useState(null);
       
         const handleQuestionClick = (index) => {
