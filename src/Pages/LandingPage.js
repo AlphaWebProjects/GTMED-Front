@@ -23,7 +23,7 @@ export default function LandingPage({script}) {
             <Oferta oferta={script.oferta}/>
             <PageQuestions />
             <LastPage />
-            <Footer/>
+            {/* <Footer/> por enquanto mantém sem footer*/}
         </Container>
     );
 }

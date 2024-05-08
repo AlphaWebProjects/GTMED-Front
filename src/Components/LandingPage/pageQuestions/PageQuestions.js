@@ -86,7 +86,6 @@ const Answer = styled.div`
   transition: max-height 0.4s ease-in-out;
   border-bottom: 1px solid white;
   width:100%;
-  padding-bottom: 5.0px;
   margin-bottom: 10px;
 `;
 
