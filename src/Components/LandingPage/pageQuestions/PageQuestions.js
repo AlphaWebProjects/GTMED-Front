@@ -4,7 +4,7 @@ import React from 'react';
 import { Fade,Slide } from 'react-awesome-reveal';
 export default function PageQuestions() {
 
-        //aqui é a tela de FAQ
+        //aqui é a tela de FAQ - ajustar responsividade
 
         const [selectedQuestion, setSelectedQuestion] = useState(null);
       
