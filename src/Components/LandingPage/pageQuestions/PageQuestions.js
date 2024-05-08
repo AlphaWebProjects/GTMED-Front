@@ -14,7 +14,7 @@ export default function PageQuestions() {
             }
           };
         const perguntas = [
-            { pergunta: 'Para quem é destinado esse curso?', resposta: 'O Gasometria Descomplicada é destinado a médicos, estudantes de medicina, fisioterapeutas e profissionais de enfermagem, de forma exclusiva.' },
+            { pergunta: 'Para quem é destinado esse curso?', resposta: 'O  Clínica Médica é destinado a médicos, estudantes de medicina, fisioterapeutas e profissionais de enfermagem, de forma exclusiva.' },
             { pergunta: 'Quanto tempo de acesso?', resposta: 'O acesso é livre por 1 ano. Pode ver e rever quantas vezes quiser.' },
             { pergunta: 'O curso é todo liberado desde o início?', resposta: 'Os módulos são liberados 75% inicialmente, e 25% restantes, após 15 dias, para proteção do curso. Entretanto, não se preocupe, você poderá assistir quantas vezes for necessário, por 1 ano.' },
             { pergunta: 'Como funciona o acesso?', resposta: 'Após a compra, você receberá um e-mail para definição de login e senha. Caso não tenha recebido, cheque na sua caixa de spam e/ou lixeira. O acesso é inteiramente feito no site:' },
@@ -86,7 +86,6 @@ const Answer = styled.div`
   transition: max-height 0.4s ease-in-out;
   border-bottom: 1px solid white;
   width:100%;
-  padding-bottom: 5.0px;
   margin-bottom: 10px;
 `;
 

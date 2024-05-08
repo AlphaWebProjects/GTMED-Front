@@ -36,7 +36,6 @@ const LastPageContainer = styled.div`
     justify-content: space-evenly;
     padding: 20px 27%;
     align-items: center;
-    box-shadow: rgba(255, 0, 0, 0.35) 0px -50px 36px -28px inset;
     @media (max-width: 768px) {
         display: flex;
         flex-direction: column;

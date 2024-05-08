@@ -107,8 +107,8 @@ const CenterContent = styled.div`
       height: 57.057vh;
       width: 79.075vh;
       @media (max-width: 1200px) {
-        height: 39.94vh;
-        width: 55.3525vh;
+        height: 35.95vh;
+        width: 50.05vh;
       }
     }
     p{
