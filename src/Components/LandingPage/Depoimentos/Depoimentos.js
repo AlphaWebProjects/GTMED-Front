@@ -8,7 +8,7 @@ import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import oftalmo from "../../../assets/images/oftalmo.jpg"
 
-function Depoimentos() {
+function Depoimentos({depoimentos}) {
   const [width, setWidth] = useState(window.innerWidth);
   const [isIntersecting, setIsIntersecting] = useState(false);
   const containerRef = useRef(null);
@@ -39,7 +39,7 @@ function Depoimentos() {
   return (
     <Container>
       <MainContentHome>
-        <CenterContent>
+        <CenterContent color={depoimentos.cores.corTitulo}>
 
         <h1 className={isIntersecting ? 'visible' : ''}>
             Como é a experiência dos nossos alunos ?
@@ -66,29 +66,16 @@ function Depoimentos() {
                   }}
                 modules={[EffectCoverflow, Pagination, Autoplay]}
             >
-                <StyledSwiperSlide>
+
+                  {depoimentos.prints.map(print => (
+
+                    <StyledSwiperSlide>
                 
-                    <img src={oftalmo} width="150" height="150" alt="Logo" />
+                      <img src={print} width="150" height="150" alt="Logo" />
 
-                </StyledSwiperSlide>
+                    </StyledSwiperSlide>
 
-                <StyledSwiperSlide>
-                
-                    <img src={oftalmo} width="150" height="150" alt="Logo" />
-
-                </StyledSwiperSlide>
-
-                <StyledSwiperSlide>
-                
-                    <img src={oftalmo} width="150" height="150" alt="Logo" />
-
-                </StyledSwiperSlide>
-
-                <StyledSwiperSlide>
-                
-                    <img src={oftalmo} width="150" height="150" alt="Logo" />
-
-                </StyledSwiperSlide>
+                  ))}
             </StyledSwiperContainer>
 
         </CenterContent>
@@ -153,6 +140,7 @@ const CenterContent = styled.div`
     transform: translateX(0);
   }
   h1{
+    color: ${props => props.color};
     text-align: center;
     width: 50%;
     font-size: 30px;
@@ -179,6 +167,7 @@ const CenterContent = styled.div`
   }
   @media (max-width: 420px) {
     margin-top: 10px;
+    width: 150% !important;
   }
 `;
 
@@ -190,15 +179,18 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     border-radius: 2%;
     transition: transform 0.8s;
     width: 100%;
-    height: 100%;
     }
     @media (max-width: 1200px) {
         padding: 3vh 1.5vh;
+        img{
+          width: 100%;
+          height: 100%;
+        }
     }
 `;
 
 const StyledSwiperContainer = styled(Swiper)`
-max-width: 40%;
+max-width: 60%;
 margin-top: 5vh;
   display: flex;
   align-items: center;
@@ -210,7 +202,7 @@ margin-top: 5vh;
  background-color: black; 
 }
   @media (max-width: 1500px) {
-    max-width: 45vh;
+    max-width: 100% !important;
     margin-top: 0vh;
     padding-bottom: 1.5vh; 
   }

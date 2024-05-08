@@ -1,43 +1,18 @@
 import styled, { keyframes } from "styled-components";
-import backgroundImage from "../../../assets/images/Screenshot_27.png"
-import backgroundImageMobile from "../../../assets/images/Screenshot_28.png"
 import { Fade, Slide } from 'react-awesome-reveal';
 export default function ParaQuem({paraQuem}){
 
-    console.log(paraQuem)
-
-    const body = {
-        backgroundimage: paraQuem.backgroundImage,
-        backgroundimagemobile: backgroundImageMobile,
-        title: "PARA QUEM É O",
-        subtitle: "Gasometria Descomplicada?",
-        topics: [
-            {
-                details: "Para quem fica totalmente perdido ao olhar para uma gasometria e não sabe, muitas vezes, nem por onde iniciar o diagnóstico;"
-            },
-            {
-                details: "Para quem fica totalmente perdido ao olhar para uma gasometria e não sabe, muitas vezes, nem por onde iniciar o diagnóstico;"
-            },
-            {
-                details: "Para quem fica totalmente perdido ao olhar para uma gasometria e não sabe, muitas vezes, nem por onde iniciar o diagnóstico;"
-            },
-            {
-                details: "Para quem fica totalmente perdido ao olhar para uma gasometria e não sabe, muitas vezes, nem por onde iniciar o diagnóstico;"
-            },
-        ]
-    }
-
     return (
-        <Container backgroundImage={body?.backgroundimage} backgroundImageMobile={body?.backgroundimagemobile}>
+        <Container backgroundImage={paraQuem.backgroundImage} backgroundImageMobile={paraQuem.backgroundImageMobile}>
             <LeftSide></LeftSide>
             <RightSide>
-                <Title>{body?.title}</Title>
-                <SubTitle>{body?.subtitle}</SubTitle>
+                <Title>PARA QUEM É O</Title>
+                <SubTitle>{paraQuem.titulo}</SubTitle>
                 <Fade delay={0.5} cascade damping={0.3} triggerOnce={true}>
-                    {body?.topics?.map((topic, index) => (
-                    <Option key={index}>
+                    {paraQuem.topicos.map((topic, index) => (
+                    <Option backgroundColor={paraQuem.cores.corTopicos} key={index}>
                         <div>{index + 1}</div>
-                        <p>{topic?.details}</p>
+                        <p>{topic}</p>
                     </Option>
                 ))}
                 </Fade>
@@ -70,7 +45,7 @@ const Container = styled.div`
     height: 45rem;
     background-image: ${props => `url(${props.backgroundImage})`};
     background-position: center;
-    background-size: cover;
+
     background-repeat: no-repeat;
     color: white;
     display: flex;
@@ -79,6 +54,7 @@ const Container = styled.div`
     @media (max-width: 1200px) {
         height: auto;
         padding: 5vh 4vw;
+        background-position: center;
         background-image: ${props => `url(${props.backgroundImageMobile})`};
     }
 `
@@ -136,7 +112,7 @@ const Option = styled.div`
     > div {
         width: 3.75rem;
         height: 3.75rem;
-        background-color: red;
+        background-color: ${props => props.backgroundColor};
         border-radius: 0.625rem;
         display: flex;
         align-items: center;

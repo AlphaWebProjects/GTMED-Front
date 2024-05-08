@@ -1,18 +1,36 @@
 import styled from 'styled-components';
 import { Fade } from 'react-awesome-reveal';
 import imagem from "../../../assets/images/clinicamedica/inicio.png"
+import React, { useEffect, useState } from 'react';
 
 
 export default function InitialPage({intro}) {
+
+    const [width, setWidth] = useState(window.innerWidth);
+  
+
+  useEffect(() => {
+
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+    //style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}
     
     return (
-        <InitialContainer backgroundImage={intro.backgroundImage}>
+        <InitialContainer backgroundImage={width > 810 ? intro.backgroundImage : intro.backgroundImageMobile}>
             <MainContent cores={intro.cores[0]}>
-            <Fade delay={0.5} cascade damping={0.3} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }} triggerOnce={true}>
-                <h1>{intro.titulo}</h1>
-                <h2>{intro.subtitulo}</h2>
-                <h3>{intro.descricao}</h3>
-                <button>{intro.botao}</button>
+                <Fade delay={500} cascade damping={0.4} style={{ display: width > 1200 ? '' : 'flex', alignItems: width > 1200 ? '' : 'center', flexDirection: width > 1200 ? '' : 'center' }} triggerOnce={true}>
+                    <img src={intro.logo} alt='logo'/>
+                    <p>{intro.descricao}.</p>
+                    <button>{intro.botao}</button>
                 </Fade>
             </MainContent>
         </InitialContainer>
@@ -20,50 +38,42 @@ export default function InitialPage({intro}) {
 }
 
 const InitialContainer = styled.div`
-    width: 100%;
-    height: 100vh;
+    width: auto;
+    height: 103vh;
     background-image: url(${props => `${props.backgroundImage}`}) ;
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: left;
-    @media (max-width: 768px) {
+    text-align: left;
+    padding: 20vh 0 0 20%;
+    @media (max-width: 810px) {
         align-items: flex-end;
-        background-position: calc(100% + 490px) center; /* Ajuste o valor 20px conforme necessário */
+        background-position: calc(100% + 20px) right; /* Ajuste o valor 20px conforme necessário */
+        padding: 0;
     }
 `;
 
 const MainContent = styled.div`
-    height: 38vh;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px; 
-    border-radius: 35px;
-    margin-left: 8%;
-    margin-top: 12%;
-    h1{
-        color:${props => `${props.cores.corTitulo}`};
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        letter-spacing: 5px;
-        font-size: 12vh;
-        transition: scale 0.3s ease;
+    img{
+        width: 42vh;
+        height: 24vh;
     }
     h2{
         color:#FFFFFF;
         font-weight:200 ;
         transition: scale 0.3s ease;
-        
+        margin: 0;
     }
-    h3{
+    p{
         color:#FFFFFF;
         font-weight:500 ;
         margin:20px 0;
-        width: 70%;
+        width: 40%;
         transition: scale 0.3s ease;
         font-size: 3vh;
-        text-align: center;
+        font-family: "Montserrat", sans-serif !important;
+        cursor: pointer;
     }
     button {
     margin: 20px 0;
@@ -78,9 +88,10 @@ const MainContent = styled.div`
     fill: #FFFFFF;
     background-color: ${props => `${props.cores.backgroundColorBotao}`};
     border-radius: 8px;
-    box-shadow: 0px 0px 21px 0px rgba(255, 29.999999999999893, 0, 0.6);
+    box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.6);
     padding: 24px;
     width: 350px;
+    border: none;
     cursor: pointer;
     transition: scale 0.3s ease;
 }
@@ -88,16 +99,25 @@ const MainContent = styled.div`
         scale:1.05;
         background-image: ${props => `${props.cores.backgroundImageBotaoHover}`};
     }
-    h1:hover,h2:hover,h3:hover{
+    h1:hover,h2:hover,p:hover{
         scale:1.05;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 810px) {
     background-color: rgba(0, 0, 0, 0.4); /* Adiciona um fundo escuro */
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     margin-left: 0%;
     margin-top: 0%;
     height: auto;
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    p{
+        width: 80% !important;
+        margin-left: 12%;
+    }
     }
 
 @keyframes textura {

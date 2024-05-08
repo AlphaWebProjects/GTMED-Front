@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import backgroundHome from "../../../assets/images/BackgroundHome.png"
 import backgroundHomeMobile from '../../../assets/images/backgroundHomeMobile.png'
 import { Fade, Zoom } from 'react-awesome-reveal';
-import logo1nobg from '../../../assets/images/logo1nobg.png'
+import logo from '../../../assets/images/logoGTMEDmelhorada.png'
 import { BiSolidDownArrow } from "react-icons/bi";
 
 function Home() {
@@ -32,7 +32,7 @@ function Home() {
                 <span>
 
                   <Fade delay={300} cascade  damping={0.3} triggerOnce={true} direction='down' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                    <img src={logo1nobg} alt='Logo'/>
+                    <img src={logo} alt='Logo'/>
                   </Fade>
 
                   <Fade delay={800} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
@@ -93,6 +93,7 @@ const CenterContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 10vh !important;
   span{
     z-index: 10;
     border-radius: 8px;
@@ -103,7 +104,12 @@ const CenterContent = styled.div`
     max-width: 94%;
     min-height: 100%;
     img{
-      width: 100%;
+      height: 57.057vh;
+      width: 79.075vh;
+      @media (max-width: 1200px) {
+        height: 39.94vh;
+        width: 55.3525vh;
+      }
     }
     p{
       font-size: 3.2vh;

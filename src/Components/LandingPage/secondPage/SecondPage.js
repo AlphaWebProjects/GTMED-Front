@@ -11,10 +11,10 @@ export default function SecondPage({pontuacoes}) {
             </Description>
             
             <Description>
-            {pontuacoes.descricao2}
+            <h3>{pontuacoes.descricao2}</h3>
             </Description>
 
-            <Description style={{backgroundColor:'red',borderRadius:"20px",fontWeight:'bold'}}>
+            <Description style={{backgroundColor: pontuacoes.cores[0].fundoDescricao3,borderRadius:"20px",fontWeight:'bold'}}>
             {pontuacoes.descricao3}
             </Description>
             <ButtonDown>
@@ -32,7 +32,7 @@ display: flex;
 flex-direction: column;
 justify-content: space-evenly;
 align-items: center;
-box-shadow: rgba(255, 0, 0, 0.35) 0px -50px 36px -28px inset;
+box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 @media (max-width: 768px) {
      height:auto;
 }
@@ -49,8 +49,15 @@ justify-content: center;
 align-items: center;
 text-align:center;
 transition: scale 0.3s ease;
+h3{
+    font-size: 35px;
+    letter-spacing: 1px;
+}
 @media (max-width: 768px) {
      width:90%;
+     h3{
+        font-size: 20px;
+     }
     }
 cursor: pointer;
 &:hover {

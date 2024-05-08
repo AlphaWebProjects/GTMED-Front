@@ -11,6 +11,7 @@ import PageQuestions from '../Components/LandingPage/pageQuestions/PageQuestions
 import LastPage from '../Components/LandingPage/lastPage/LastPage';
 
 export default function LandingPage({script}) {
+
     return (
         <Container>
             <InitialPage intro={script.intro} />
@@ -18,8 +19,8 @@ export default function LandingPage({script}) {
             <SobreOCurso sobreOCurso={script.sobreOCurso}/>
             <ParaQuem paraQuem={script.paraQuem}/>
             <AoFimDoCurso aoFimDoCurso={script.aoFimDoCurso}/>
-            <Depoimentos />
-            <Oferta />
+            {/* <Depoimentos depoimentos={script.depoimentos}/> RETIRADO ATÉ DECIDIREM QUE TERÃO DEPOIMENTOS*/}
+            <Oferta oferta={script.oferta}/>
             <PageQuestions />
             <LastPage />
             <Footer/>
