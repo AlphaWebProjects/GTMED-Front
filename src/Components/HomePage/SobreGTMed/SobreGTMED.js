@@ -27,9 +27,13 @@ function SobreGTMED() {
   return (
     <Fade delay={0.5} cascade  damping={0.3} triggerOnce={true} >
 
-      <Container backgroundImage={width > 1000 ? background : backgroundMobile}>
+      <Container backgroundImage={width > 1200 ? background : backgroundMobile}>
 
-        <img src={logo} alt='Logo'/>
+        <Fade delay={300} cascade  damping={0.3} triggerOnce={true}>
+
+          <img src={logo} alt='Logo'/>
+
+        </Fade>
 
         <span>
 
@@ -45,7 +49,7 @@ function SobreGTMED() {
 
         </Fade>
 
-        <Fade delay={1500} cascade damping={0.3} triggerOnce={true} direction='left'>       
+        <Fade delay={1500} cascade damping={0.3} triggerOnce={true} direction='right'>       
 
           <p>Fusce ultrices metus vel eros molestie, id blandit quam volutpat. Proin eu ligula eget magna venenatis tempus. Curabitur fermentum mauris eget ante ultricies, ut sollicitudin ligula eleifend. Quisque et tellus auctor, blandit quam sit amet, venenatis elit. Ut vel congue eros, at tincidunt arcu.</p>
 
@@ -71,20 +75,20 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: reverse;
   align-items: center;
   position: right !important;
   background-image: ${props => `url(${props.backgroundImage})`};
   background-position: center;
   background-size: cover;     
   background-repeat: no-repeat;
-  padding-right: 12vh;
+  padding: 0 0 0 4vh;
   span{
     display: flex;
     flex-direction: column;
     max-width: 40%;
     @media (max-width: 1200px) {
-    margin: 0 !important;;
+    margin: 0 !important;
     max-width: 100%;
   }
   }
@@ -101,11 +105,15 @@ const Container = styled.div`
     text-align: center;
   }
   img{
-    display: none;
+    display: flex;
+    height: 74.1vh;
+    width: 97.5vh;
+    margin-right: 5vh;
     @media (max-width: 1200px) {
     display: flex;
-    height: 40vh;
-    width: 55vh;
+    height: 38vh;
+    width: 50vh;
+    margin-right: 0vh !important;
   }
   }
   @media (max-width: 1200px) {

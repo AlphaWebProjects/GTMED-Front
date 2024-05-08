@@ -76,7 +76,7 @@ const QuestionItem = styled.li`
   width:100%;
   &:hover {
     scale:1.05;
-    color:red;
+    color:#3D989B;
   }
 `;
 
@@ -101,7 +101,7 @@ transition: scale 0.3s ease;
         font-size: 45px;
     }
     h2{
-        color:red;
+        color:#3D989B;
         font-size: 40px;
         font-weight: bold;
     }
