@@ -101,7 +101,7 @@ const Container = styled.div`
     margin-bottom: 1.5vh;
     font-size: 2.5vh;
     font-weight: 550;
-    color: black;
+    color: white;
     text-align: center;
   }
   img{
