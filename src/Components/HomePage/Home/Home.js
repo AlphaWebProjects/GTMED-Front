@@ -9,6 +9,8 @@ import { BiSolidDownArrow } from "react-icons/bi";
 function Home() {
   const [width, setWidth] = useState(window.innerWidth);
 
+  //backgroundMobile descartado
+
   useEffect(() => {
     
     const handleResize = () => {
