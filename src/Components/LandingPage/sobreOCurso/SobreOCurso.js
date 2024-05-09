@@ -55,7 +55,7 @@ function SobreOCurso(sobreOCurso) {
             color={sobreOCurso.sobreOCurso.cores.bordaDescricao1}
             grabCursor={true}
             freeMode={true}
-            slidesPerView={width > 1200 ? 3.5 : 2}
+            slidesPerView={width > 1200 ? 3.5 : 2.2}
             navigation={width > 1200 ? true : false}
             pagination={{
               clickable: true,
@@ -68,37 +68,37 @@ function SobreOCurso(sobreOCurso) {
           >
             <StyledSwiperSlide>
               <div>
-                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} alt="Logo" />
               </div>
             </StyledSwiperSlide>
 
             <StyledSwiperSlide>
               <div>
-                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} alt="Logo" />
               </div>
             </StyledSwiperSlide>
 
             <StyledSwiperSlide>
               <div>
-                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} alt="Logo" />
               </div>
             </StyledSwiperSlide>
 
             <StyledSwiperSlide>
               <div>
-                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} alt="Logo" />
               </div>
             </StyledSwiperSlide>
 
             <StyledSwiperSlide>
               <div>
-                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} alt="Logo" />
               </div>
             </StyledSwiperSlide>
 
             <StyledSwiperSlide>
               <div>
-                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} alt="Logo" />
               </div>
             </StyledSwiperSlide>
 
@@ -149,7 +149,6 @@ const MainContentHome = styled.div`
   max-height: 100% !important;
   min-height: 100% !important;
   display: flex;
-  padding: 2%;
 `;
 
 const CenterContent = styled.div`
@@ -175,7 +174,7 @@ const CenterContent = styled.div`
     @media (max-width: 1200px) {
       width: 99%;
       font-size: 17px;
-      padding: 2vh;
+      padding: 2.5vh;
   }
     &:hover{
       transform: scale(1.05);
@@ -192,7 +191,7 @@ const CenterContent = styled.div`
     margin-top: 0;
     transition: transform 0.8s ease;
     @media (max-width: 1200px) {
-      width: 100%;
+      width: 95%;
       font-size: 17px;
       padding: 2vh;
   }
@@ -203,6 +202,7 @@ const CenterContent = styled.div`
   }
   @media (max-width: 420px) {
     margin-top: 10px;
+    padding: 2.5vh !important;
   }
 `;
 
