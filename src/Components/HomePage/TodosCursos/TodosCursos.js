@@ -80,7 +80,7 @@ export default function TodosCursos({setScript}) {
               clickable: true,
             }}
             autoplay={{
-                delay: 2000,
+                delay: 2500,
                 disableOnInteraction: true,
               }}
             modules={[Pagination, Navigation, Autoplay, FreeMode]}
