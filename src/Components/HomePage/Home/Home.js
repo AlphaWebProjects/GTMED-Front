@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import backgroundHome from "../../../assets/images/BackgroundHome.png"
+import backgroundHome from "../../../assets/images/backgroundHome.png"
 import backgroundHomeMobile from '../../../assets/images/backgroundHomeMobile.png'
 import { Fade, Zoom } from 'react-awesome-reveal';
 import logo from '../../../assets/images/logoGTMEDmelhorada.png'
@@ -25,7 +25,7 @@ function Home() {
 
   return (
     <Fade delay={0.5} cascade  damping={0.3} triggerOnce={true}>
-      <Container backgroundImage={width > 1200 ? backgroundHome : backgroundHomeMobile} backgroundPosition={width > 1200 ? 'center' : 'right'}>
+      <Container backgroundImage={backgroundHome} backgroundPosition={width > 1200 ? 'center' : 'left'}>
 
           <CenterContent> 
 
@@ -107,8 +107,8 @@ const CenterContent = styled.div`
       height: 57.057vh;
       width: 79.075vh;
       @media (max-width: 1200px) {
-        height: 35.95vh;
-        width: 50.05vh;
+        height: 35.1512vh;
+        width: 48.729vh;
       }
     }
     p{
@@ -117,7 +117,7 @@ const CenterContent = styled.div`
       text-align: center;
       max-width: 53%;
       letter-spacing: 1.5px;
-      color: black;
+      color: white;
       font-family: "Montserrat", sans-serif;
       margin-bottom:8vh;
       @media (max-width: 1200px) {

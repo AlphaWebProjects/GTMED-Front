@@ -6,6 +6,7 @@ import TodosCursos from '../Components/HomePage/TodosCursos/TodosCursos';
 import SobreGTMED from '../Components/HomePage/SobreGTMed/SobreGTMED'
 
 
+
 import PerguntasHome from '../Components/HomePage/Home/PerguntasHome';
 export default function HomePage({script, setScript}) {
 

@@ -53,13 +53,13 @@ const PageQuestionsContainer = styled.div`
     background-image: ${props => `url(${props.background})`};
     background-position: center;     
     background-repeat: no-repeat;
-    background-color:#FFFFFF;
+    background-color:black;
     height: 120vh;
     display: flex;
     align-items: center;
     flex-direction: column; 
     justify-content: space-around;
-    color: black;
+    color: white;
     padding: 10vh 0 !important;
     @media (max-width: 768px) {
         height: auto !important;
@@ -101,7 +101,7 @@ align-items: center;
 justify-content: space-around;
 transition: scale 0.3s ease;
     h1{
-        color:Black;
+        color:white;
         font-size: 45px;
     }
     h2{

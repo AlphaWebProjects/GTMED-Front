@@ -19,10 +19,11 @@ export default function LandingPage({script}) {
             <SobreOCurso sobreOCurso={script.sobreOCurso}/>
             <ParaQuem paraQuem={script.paraQuem}/>
             <AoFimDoCurso aoFimDoCurso={script.aoFimDoCurso}/>
-            {/* <Depoimentos depoimentos={script.depoimentos}/> RETIRADO ATÉ DECIDIREM QUE TERÃO DEPOIMENTOS*/}
+            {/* <Depoimentos depoimentos={script.depoimentos}/> */}
             <Oferta oferta={script.oferta}/>
             <PageQuestions />
             <LastPage />
+            {/* <Footer/> por enquanto mantém sem footer*/}
         </Container>
     );
 }

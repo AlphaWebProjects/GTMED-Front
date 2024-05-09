@@ -27,7 +27,7 @@ function SobreGTMED() {
   return (
     <Fade delay={0.5} cascade  damping={0.3} triggerOnce={true} >
 
-      <Container backgroundImage={width > 1200 ? background : backgroundMobile}>
+      <Container backgroundImage={background}>
 
         <Fade delay={300} cascade  damping={0.3} triggerOnce={true}>
 
@@ -45,15 +45,33 @@ function SobreGTMED() {
 
         <Fade delay={1000} cascade  damping={0.3} triggerOnce={true} direction='right'>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum dui vel justo vulputate, a pretium nisi fermentum. Nulla facilisi. Integer vehicula quam a nulla vestibulum, nec ullamcorper lorem viverra.</p>
+          <p>Bem-vindo à equipe médica do GTMed! Aqui na nossa plataforma, contamos com uma equipe excepcional de médicos, todos com formação na prestigiada Universidade de São Paulo (USP). Nossa equipe é verdadeiramente diversificada, abrangendo médicos de todas as especialidades imagináveis.
+          </p>
 
         </Fade>
 
         <Fade delay={1500} cascade damping={0.3} triggerOnce={true} direction='right'>       
 
-          <p>Fusce ultrices metus vel eros molestie, id blandit quam volutpat. Proin eu ligula eget magna venenatis tempus. Curabitur fermentum mauris eget ante ultricies, ut sollicitudin ligula eleifend. Quisque et tellus auctor, blandit quam sit amet, venenatis elit. Ut vel congue eros, at tincidunt arcu.</p>
+          <p>Nossa plataforma é projetada para fornecer cursos abrangentes que cobrem todas as áreas da medicina. Desde Clínica Médica até Cirurgia, passando por Pediatria, Ginecologia, Psiquiatria, Radio, Derma, Infecto, Ortopedia, Neuro, Cardio e muito mais, nossos cursos são desenvolvidos por especialistas em cada campo. Isso garante que nossos médicos recebam treinamento completo e atualizado em suas respectivas áreas de atuação.
+          </p>
 
         </Fade>
+
+        <Fade delay={2000} cascade damping={0.3} triggerOnce={true} direction='right'> 
+
+          <p>Os cursos oferecidos em nossa plataforma são cuidadosamente elaborados para fornecer aos médicos as habilidades e o conhecimento necessários para enfrentar os desafios do mundo médico moderno. Cobrimos desde os fundamentos básicos até as técnicas mais avançadas, garantindo que nossos profissionais estejam preparados para oferecer o melhor cuidado possível aos seus pacientes.
+          </p>
+
+        </Fade>
+
+
+        <Fade delay={2500} cascade damping={0.3} triggerOnce={true} direction='right'> 
+
+          <p>Na equipe do GTMed, estamos comprometidos em promover a excelência na prática médica. Nossos cursos são ministrados por especialistas líderes em suas áreas, garantindo um ensino de alta qualidade e relevância prática. Seja para atualizar habilidades, explorar novas áreas de especialização ou simplesmente aprimorar o conhecimento existente, nossa plataforma oferece os recursos necessários para impulsionar a carreira de qualquer médico.
+          </p>
+
+        </Fade>
+        
 
         <Fade delay={1200} cascade  damping={0.3} triggerOnce={true} direction='right'>       
 
@@ -94,15 +112,20 @@ const Container = styled.div`
   }
   h1{
     text-align: center;
-    margin-bottom: 3vh;
-    font-size: 5vh;
+    margin-bottom: 2vh;
+    font-size: 4vh;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 2.5px;
   }
   p{
     margin-bottom: 1.5vh;
-    font-size: 2.5vh;
+    font-size: 1.9vh;
     font-weight: 550;
-    color: black;
+    color: white;
     text-align: center;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 2.2px;
   }
   img{
     display: flex;

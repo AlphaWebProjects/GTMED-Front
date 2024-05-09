@@ -58,7 +58,7 @@ export default function Footer(){
 }
 
 const Container = styled.footer`
-  border-top: 1px solid black;
+  border-top: 1px solid white;
   background-image: ${props => `url(${props.backgroundImage})`};
   background-position: center;
   background-size: cover;     
@@ -70,7 +70,7 @@ const Container = styled.footer`
   justify-content: center;
   flex-wrap: wrap;
   padding: 2vh 0;
-  color: black;
+  color: white;
   row-gap: 4vh;
   @media (max-width: 850px) {
     padding: 2vh 0vw;

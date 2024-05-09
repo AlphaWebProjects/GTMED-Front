@@ -1,11 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css/free-mode';
+import { Autoplay, Navigation, Pagination, FreeMode } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import aula1Clinica2 from '../../../assets/images/clinicamedica/aula1Clinica2.png'
 import aula1Clinica from '../../../assets/images/clinicamedica/aula1Clinica.png'
 import { Fade } from 'react-awesome-reveal';
@@ -13,19 +16,9 @@ import { Fade } from 'react-awesome-reveal';
 function SobreOCurso(sobreOCurso) {
 
   const [width, setWidth] = useState(window.innerWidth);
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const containerRef = useRef(null);
+  
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsIntersecting(true);
-        }
-      });
-    });
-
-    observer.observe(containerRef.current);
 
     const handleResize = () => {
       setWidth(window.innerWidth);
@@ -34,7 +27,6 @@ function SobreOCurso(sobreOCurso) {
     window.addEventListener('resize', handleResize);
 
     return () => {
-      observer.disconnect();
       window.removeEventListener('resize', handleResize);
     };
   }, []);
@@ -61,23 +53,22 @@ function SobreOCurso(sobreOCurso) {
 
           <StyledSwiperContainer
             color={sobreOCurso.sobreOCurso.cores.bordaDescricao1}
-            ref={containerRef}
-            isIntersecting={isIntersecting}
+            grabCursor={true}
+            freeMode={true}
+            slidesPerView={width > 1200 ? 3.5 : 2}
+            navigation={width > 1200 ? true : false}
             pagination={{
-              type: 'progressbar',
+              clickable: true,
             }}
-            navigation={true}
-            modules={[Pagination, Navigation, Autoplay, EffectFade]}
-            slidesPerView={width > 1500 ? 3 : 1}
-            spaceBetween={0}
             autoplay={{
-              delay: 4000,
-              disableOnInteraction: true,
-            }}
+                delay: 3000,
+                disableOnInteraction: true,
+              }}
+            modules={[Pagination, Navigation, Autoplay, FreeMode]}
           >
             <StyledSwiperSlide>
               <div>
-                <img src={aula1Clinica} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
               </div>
             </StyledSwiperSlide>
 
@@ -89,7 +80,31 @@ function SobreOCurso(sobreOCurso) {
 
             <StyledSwiperSlide>
               <div>
-                <img src={aula1Clinica} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
+              </div>
+            </StyledSwiperSlide>
+
+            <StyledSwiperSlide>
+              <div>
+                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
+              </div>
+            </StyledSwiperSlide>
+
+            <StyledSwiperSlide>
+              <div>
+                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
+              </div>
+            </StyledSwiperSlide>
+
+            <StyledSwiperSlide>
+              <div>
+                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
+              </div>
+            </StyledSwiperSlide>
+
+            <StyledSwiperSlide>
+              <div>
+                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
               </div>
             </StyledSwiperSlide>
 
@@ -194,10 +209,14 @@ const CenterContent = styled.div`
 const StyledSwiperSlide = styled(SwiperSlide)`
   padding-top: 5vh !important;
   img {
-    width: 30vh;
-    height: 50vh;
+    width: 30vh !important;
+    height: 50vh !important;
     border-radius: 2%;
     transition: transform 0.8s;
+    @media (max-width: 1200px) {
+      width: 22vh !important;
+      height: 36.57vh !important;
+  }
     &:hover{
       transform: scale(1.03);
       cursor: grab;
@@ -210,28 +229,26 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     height: 90% !important;
     text-align: center !important;
   }
-  @media (max-width: 1200px) {
-    padding: 3vh 1.5vh;
-  }
 `;
 
 const StyledSwiperContainer = styled(Swiper)`
-  max-width: 52% !important; 
-  margin-top: 4vh;
-  opacity: ${({ isIntersecting }) => (isIntersecting ? 1 : 0)};
-  transition: opacity 2s ease-in-out;
+  max-width: 80% !important; 
+  height: auto;
+  margin-top: 1.5vh;
+  padding-bottom: 4vh;
   @media (max-width: 1500px) {
     max-width: 100% !important;
+    height: auto;
   }
-  .swiper-pagination-progressbar {
-    background: ${props => `${props.color}`};
-  }
-  .swiper-pagination-progressbar-fill {
-    background: lightgray !important;
+  .swiper-pagination-bullet {
+    background: white;
   }
   .swiper-button-next,
   .swiper-button-prev {
     color: ${props => `${props.color}`};
+    margin-right: 50px;
+    width: 9vh;
+    height: 6vh;
     @media (max-width: 1500px) {
     width: 2vh;
     height: 1vh;

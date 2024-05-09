@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { Fade, Slide } from 'react-awesome-reveal';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/free-mode';
+import { Autoplay, Navigation, Pagination, FreeMode } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { Fade } from 'react-awesome-reveal';
 import scripts from '../../../scripts';
 import { BrowserRouter as Router, Route, Link, useNavigate } from 'react-router-dom';
 import background from '../../../assets/images/backgroundTelaCursos.png'
@@ -16,6 +25,22 @@ import cardDermato from '../../../assets/images/dermato/cardDermato.png'
 
 
 export default function TodosCursos({setScript}) {
+
+    const [width, setWidth] = useState(window.innerWidth);
+  
+
+  useEffect(() => {
+
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
     const navigate = useNavigate();
 
@@ -44,16 +69,34 @@ export default function TodosCursos({setScript}) {
 
     return (
         <Container backgroundImage={background}>  
+
+            <h1>PLANTÃO GTMED</h1>
             
-            <Cursos>
+            <StyledSwiperContainer
+            freeMode={true}
+            slidesPerView={width > 1200 ? 5.5 : 2.2}
+            navigation={true}
+            pagination={{
+              clickable: true,
+            }}
+            autoplay={{
+                delay: 2000,
+                disableOnInteraction: true,
+              }}
+            modules={[Pagination, Navigation, Autoplay, FreeMode]}
+          >
 
-                <Fade delay={0.3} cascade damping={0.3} triggerOnce={true} style={{width:'100%'}}>
-                {cursos.map((curso, index) => (
-                    <Div onClick={() => setPage(curso.area)} key={index} background={curso.background}>{curso.nome}</Div>
-                ))}
-                </Fade>
-
-            </Cursos>
+            {cursos.map((curso) => (
+                <StyledSwiperSlide onClick={() => setPage(curso.area)}>
+                <div>
+                  <img src={curso.background} width="150" height="150" alt="Logo" />
+                </div>
+              </StyledSwiperSlide>
+            )
+                
+            )}
+        
+          </StyledSwiperContainer>
 
         </Container>
     );
@@ -63,54 +106,75 @@ const Container = styled.div`
 width: 100%;
 height: auto;
 display: flex;
-align-items: center;
+flex-direction: column;
 justify-content: center;
 background-image: ${props => `url(${props.backgroundImage})`};
 background-position: center;
 background-size: cover;     
 background-repeat: no-repeat;
+padding: 9vh 0 4vh 0;
+h1{
+  color: lightgrey;
+  margin-left: 3.5%;
+}
 `;
 
-const Cursos = styled.div`
-width: 50%;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-grid-gap: 10px;
-justify-content: space-between;
-padding: 10vh 0;
-@media (max-width: 1200px) {
-    padding: 2.5vh 0;
-    width: 90%;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    }
-    @media (max-width: 700px) {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-`;
-
-const Div = styled.div`
-    background-image: ${props => `url(${props.background})`};
-    background-position: center;
-    background-size: cover;     
-    background-repeat: no-repeat;
-    height: 32vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    border-radius: 12px;
-    transition: scale 0.5s ease;
-    cursor: pointer;
+const StyledSwiperSlide = styled(SwiperSlide)`
+background-color: none !important;
+  padding-top: 2vh !important;
+  img {
+    width: 30vh !important;
+    height: 50vh !important;
+    border-radius: 2%;
+    transition: transform 0.8s;
     @media (max-width: 1200px) {
-        height: 38vh;
-        min-width: 18vh !important;
+      width: 22vh !important;
+      height: 36.57vh !important;
+  }
+    &:hover{
+      transform: scale(1.03);
+      cursor: pointer;
+      @media (max-width: 1200px) {
+        transform: scale(1.0);
+  }
+
+  }
+  &:active{
+    cursor: pointer;
+  }
+  }
+  div {
+    height: 90% !important;
+    text-align: center !important;
+  }
+`;
+
+const StyledSwiperContainer = styled(Swiper)`
+  max-width: 95% !important; 
+  background-color: none !important;
+  height: auto;
+  margin-top: 1.5vh;
+  padding-bottom: 4vh;
+  @media (max-width: 1500px) {
+    max-width: 100% !important;
+    height: auto;
+  }
+  .swiper-pagination-bullet {
+    background: white;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: lightblue;
+    margin-right: 50px;
+    width: 9vh;
+    height: 6vh;
+    @media (max-width: 1500px) {
+    width: 3vh;
+    height: 1vh;
+    margin: 0 !important;
+  }
+    &:hover{
+      cursor: pointer;
     }
-    &:hover {
-        scale: 1.05;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
+  }
 `;
