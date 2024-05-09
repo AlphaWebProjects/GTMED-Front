@@ -1,11 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { Autoplay, EffectFade, Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
+import 'swiper/css/free-mode';
+import { Autoplay, Navigation, Pagination, FreeMode } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import aula1Clinica2 from '../../../assets/images/clinicamedica/aula1Clinica2.png'
 import aula1Clinica from '../../../assets/images/clinicamedica/aula1Clinica.png'
 import { Fade } from 'react-awesome-reveal';
@@ -51,23 +54,17 @@ function SobreOCurso(sobreOCurso) {
           <StyledSwiperContainer
             color={sobreOCurso.sobreOCurso.cores.bordaDescricao1}
             grabCursor={true}
-            effect={'coverflow'}
-            centeredSlides={true}
-            slidesPerView={width > 1200 ? 3 : 2}
+            freeMode={true}
+            slidesPerView={width > 1200 ? 3.5 : 2}
             navigation={width > 1200 ? true : false}
-            coverflowEffect={{
-                rotate: width > 1200 ? 25 : 50,
-                stretch: 0,
-                depth: width > 1200 ? 300 : 100,
-                modifier: 1,
-                slideShadows: false,
-              }}
-            pagination={true}
+            pagination={{
+              clickable: true,
+            }}
             autoplay={{
                 delay: 3000,
                 disableOnInteraction: true,
               }}
-            modules={[Pagination, Navigation, Autoplay, EffectFade, EffectCoverflow]}
+            modules={[Pagination, Navigation, Autoplay, FreeMode]}
           >
             <StyledSwiperSlide>
               <div>
@@ -235,7 +232,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
 `;
 
 const StyledSwiperContainer = styled(Swiper)`
-  max-width: 50% !important; 
+  max-width: 80% !important; 
   height: auto;
   margin-top: 1.5vh;
   padding-bottom: 4vh;

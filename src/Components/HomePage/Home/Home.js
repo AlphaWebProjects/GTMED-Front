@@ -25,7 +25,7 @@ function Home() {
 
   return (
     <Fade delay={0.5} cascade  damping={0.3} triggerOnce={true}>
-      <Container backgroundImage={width > 1200 ? backgroundHome : backgroundHomeMobile} backgroundPosition={width > 1200 ? 'center' : 'right'}>
+      <Container backgroundImage={backgroundHome} backgroundPosition={width > 1200 ? 'center' : 'left'}>
 
           <CenterContent> 
 
