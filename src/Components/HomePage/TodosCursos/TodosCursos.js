@@ -11,6 +11,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Fade } from 'react-awesome-reveal';
 import scripts from '../../../scripts';
+import { CgMoreO } from "react-icons/cg";
 import { BrowserRouter as Router, Route, Link, useNavigate } from 'react-router-dom';
 import background from '../../../assets/images/backgroundTelaCursos.png'
 import cardClinica from '../../../assets/images/clinicamedica/cardClinica.png'
@@ -70,11 +71,15 @@ export default function TodosCursos({setScript}) {
     return (
         <Container backgroundImage={background}>  
 
+
+        <Fade delay={500} cascade  damping={0.3} triggerOnce={true} >
             <h1>PLANTÃO GTMED</h1>
+        </Fade>
             
+        <Fade delay={1000} cascade  damping={0.3} triggerOnce={true} >
             <StyledSwiperContainer
             freeMode={true}
-            slidesPerView={width > 1200 ? 5.5 : 2.2}
+            slidesPerView={width > 1200 ? 5.5 : 2.4}
             navigation={true}
             pagination={{
               clickable: true,
@@ -83,20 +88,23 @@ export default function TodosCursos({setScript}) {
                 delay: 2500,
                 disableOnInteraction: true,
               }}
+              spaceBetween={width > 1200 ? '20' : '8'}
             modules={[Pagination, Navigation, Autoplay, FreeMode]}
           >
 
             {cursos.map((curso) => (
-                <StyledSwiperSlide onClick={() => setPage(curso.area)}>
-                <div>
-                  <img src={curso.background} width="150" height="150" alt="Logo" />
-                </div>
+                <StyledSwiperSlide onClick={() => setPage(curso.area)} background={curso.background}>
+                <span>
+                  <p>Saiba mais</p>
+                  <More />
+                </span>
               </StyledSwiperSlide>
             )
                 
             )}
         
           </StyledSwiperContainer>
+        </Fade>
 
         </Container>
     );
@@ -112,7 +120,7 @@ background-image: ${props => `url(${props.backgroundImage})`};
 background-position: center;
 background-size: cover;     
 background-repeat: no-repeat;
-padding: 9vh 0 4vh 0;
+padding: 15vh 0 8vh 0;
 h1{
   color: lightgrey;
   margin-left: 3.5%;
@@ -120,32 +128,51 @@ h1{
 `;
 
 const StyledSwiperSlide = styled(SwiperSlide)`
-background-color: none !important;
+  background-color: none !important;
   padding-top: 2vh !important;
-  img {
-    width: 30vh !important;
-    height: 50vh !important;
-    border-radius: 2%;
-    transition: transform 0.8s;
-    @media (max-width: 1200px) {
+  background-image: ${props => `url(${props.background})`};
+  background-position: center;
+  background-size: cover;     
+  background-repeat: no-repeat;
+  width: 30vh !important;
+  height: 50vh !important;
+  border-radius: 2%;
+  transition: transform 0.8s;
+  display: flex;
+  flex-direction: column-reverse;
+  span {
+    height: 12% !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    backdrop-filter: blur(5px); 
+    background-color: rgba(50, 50, 50, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    p{
+      font-size: 3vh;
+      color:  RGB(180, 180, 180);
+    }
+  }
+  @media (max-width: 1200px) {
       width: 22vh !important;
       height: 36.57vh !important;
+      span{
+        opacity: 1;
+      }
   }
-    &:hover{
+  &:hover{
       transform: scale(1.03);
       cursor: pointer;
+      span{
+        opacity: 1;
+      }
       @media (max-width: 1200px) {
         transform: scale(1.0);
-  }
-
   }
   &:active{
     cursor: pointer;
   }
-  }
-  div {
-    height: 90% !important;
-    text-align: center !important;
   }
 `;
 
@@ -158,6 +185,7 @@ const StyledSwiperContainer = styled(Swiper)`
   @media (max-width: 1500px) {
     max-width: 100% !important;
     height: auto;
+    padding-bottom: 8vh;
   }
   .swiper-pagination-bullet {
     background: white;
@@ -178,3 +206,10 @@ const StyledSwiperContainer = styled(Swiper)`
     }
   }
 `;
+
+const More = styled(CgMoreO)`
+width: 3vh;
+height: 3vh;
+color:  RGB(180, 180, 180)
+`
+  

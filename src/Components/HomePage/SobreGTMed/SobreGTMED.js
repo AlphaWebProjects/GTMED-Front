@@ -71,13 +71,7 @@ function SobreGTMED() {
           </p>
 
         </Fade>
-        
-
-        <Fade delay={1200} cascade  damping={0.3} triggerOnce={true} direction='right'>       
-
-          
-
-        </Fade>
+      
 
         </span>
 

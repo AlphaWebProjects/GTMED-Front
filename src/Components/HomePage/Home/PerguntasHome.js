@@ -54,11 +54,11 @@ const PageQuestionsContainer = styled.div`
     background-position: center;     
     background-repeat: no-repeat;
     background-color:black;
-    height: 120vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     flex-direction: column; 
-    justify-content: space-around;
+    justify-content: center;
     color: white;
     padding: 10vh 0 !important;
     @media (max-width: 768px) {
@@ -69,20 +69,30 @@ const QuestionList = styled.ul`
   list-style: none;
   padding: 0;
   width:40%;
+  margin-top: 8vh;
   @media (max-width: 768px) {
      width:90%;
+     margin-top: 4vh;
     }
 `;
 
 const QuestionItem = styled.li`
-  margin: 20px 0 ;
+  margin: 10px 0 ;
   cursor: pointer;
   transition: scale 0.3s ease, color 0.3s ease;
   width:100%;
+  h1{
+    font-size: 25px !important;
+  }
   &:hover {
     scale:1.05;
     color:rgb(0,100,255);
   }
+  @media (max-width: 800px) {
+     h1{
+      font-size: 16px !important;
+     }
+    }
 `;
 
 const Answer = styled.div`
@@ -116,5 +126,11 @@ transition: scale 0.3s ease;
      flex-direction: column;
      width: 250px;
      text-align: center;
+     h1{
+      font-size: 35px !important;
+     }
+     h2{
+      font-size: 30px !important;
+     }
     }
 `

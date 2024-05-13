@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import backgroundHome from "../../../assets/images/BackgroundHome.png"
+import backgroundHome from "../../../assets/images/backgroundHome.png"
 import backgroundHomeMobile from '../../../assets/images/backgroundHomeMobile.png'
 import { Fade, Zoom } from 'react-awesome-reveal';
 import logo from '../../../assets/images/logoGTMEDmelhorada.png'
@@ -122,7 +122,7 @@ const CenterContent = styled.div`
       margin-bottom:8vh;
       @media (max-width: 1200px) {
         font-size: 2.8vh !important;
-        max-width: 88%;
+        max-width: 99%;
       }
     }
   }
