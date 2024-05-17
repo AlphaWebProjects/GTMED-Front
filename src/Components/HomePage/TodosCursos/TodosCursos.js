@@ -23,6 +23,7 @@ import cardAnestesia from "../../../assets/images/anestesia/cardAnestesia.png"
 import cardEmergencia1 from '../../../assets/images/emergencia/cardEmergencia1.png'
 import cardEmergencia2 from '../../../assets/images/emergencia/cardEmergencia2.png'
 import cardDermato from '../../../assets/images/dermato/cardDermato.png'
+import click from '../../../assets/images/clickScreen.png'
 
 
 export default function TodosCursos({setScript}) {
@@ -96,7 +97,7 @@ export default function TodosCursos({setScript}) {
                 <StyledSwiperSlide onClick={() => setPage(curso.area)} background={curso.background}>
                 <span>
                   <p>Saiba mais</p>
-                  <More />
+                  <img src={click} alt='Click'/>
                 </span>
               </StyledSwiperSlide>
             )
@@ -146,12 +147,17 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     align-items: center;
     justify-content: space-around;
     backdrop-filter: blur(5px); 
-    background-color: rgba(50, 50, 50, 0.5);
+    background-color: rgba(50, 50, 50, 0.3);
     opacity: 0;
     transition: opacity 0.3s ease;
+    transition: transform 0.8s;
     p{
       font-size: 3vh;
       color:  RGB(180, 180, 180);
+    }
+    img{
+      width: 3vh;
+      height: 3vh;
     }
   }
   @media (max-width: 1200px) {
@@ -159,13 +165,20 @@ const StyledSwiperSlide = styled(SwiperSlide)`
       height: 36.57vh !important;
       span{
         opacity: 1;
+        background-color: rgba(50, 50, 50, 0.15);
+        right: 0 !important;
+        p{
+          display: none;
+        }
       }
   }
   &:hover{
-      transform: scale(1.03);
+      transform: scale(1.05);
       cursor: pointer;
       span{
         opacity: 1;
+        border-radius: 4% !important;
+
       }
       @media (max-width: 1200px) {
         transform: scale(1.0);
