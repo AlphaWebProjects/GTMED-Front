@@ -1,16 +1,20 @@
 import styled from "styled-components";
 import { Slide, Fade } from "react-awesome-reveal";
+import logo from '../assets/images/logoGTMEDmelhorada.png'
+import background from '../assets/images/backgroundFooterHome.png'
+
+
 export default function Footer(){
   const instagram = "https://www.instagram.com"
-  const whatsappNumber = "+553538216262";
-  const whatsappMessage = `Olá, eu gostaria de fazer uma cotação com o comercial da Rodrimar.`;
+  const whatsappNumber = "";
+  const whatsappMessage = ``;
 
   const handleItemClick = (item) => {
     window.scrollTo({ top: item.position, behavior: 'smooth' })
   };
 
   return (
-    <Container>
+    <Container backgroundImage={background}>
 
       <TitleContainer>
       <Slide  triggerOnce={true}><h3>{"Conecte-se Conosco"}</h3></Slide>
@@ -24,7 +28,7 @@ export default function Footer(){
       <Fade delay={1} cascade damping={2}  triggerOnce={true} >
       <SubContainer>
         <ImageContainer>
-          <img alt="Logo" />
+          <img src={logo} alt="Logo" />
         </ImageContainer>
 
         <TextColumn>
@@ -54,17 +58,19 @@ export default function Footer(){
 }
 
 const Container = styled.footer`
-  border: 1px solid black;
-  background-color: white;
-  width: 99.5%;
+  border-top: 1px solid white;
+  background-image: ${props => `url(${props.backgroundImage})`};
+  background-position: center;
+  background-size: cover;     
+  background-repeat: no-repeat;
+  width: 100%;
   height: auto;
   display: flex;
-  margin-top: 40px;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   padding: 2vh 0;
-  color: black;
+  color: white;
   row-gap: 4vh;
   @media (max-width: 850px) {
     padding: 2vh 0vw;
@@ -129,12 +135,11 @@ const SubContainer = styled.div`
   }
 `
 const ImageContainer = styled.div`
-background-color: white !important;
 border-radius: 15px;
 margin: 0 !important;
   img {
-    height: 15vh;
-    width: 42vh;
+    height: 34.2342vh;
+    width: 47.445vh;
     cursor: pointer;
   }
   @media (max-width: 850px) {

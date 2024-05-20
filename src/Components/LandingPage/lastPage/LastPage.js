@@ -1,21 +1,25 @@
 import styled from 'styled-components';
-import Tutor2 from '../../../assets/images/Tutor2.png'
-import tutor1 from '../../../assets/images/tutor1.png';
+import tutor1 from '../../../assets/images/clinicamedica/tutor1Clinica.png'
+import tutor2 from '../../../assets/images/clinicamedica/tutor2Clinica.png';
+
+
 export default function LastPage() {
+
     const isMobile = window.innerWidth <= 768;
+
     return (
         <LastPageContainer>
             <Foto style={{ backgroundImage: `url(${tutor1})` }}></Foto>
             <Texto>
-                <h1>Danielle Bastos</h1>
-                <h3>Médica pela Universidade Federal do Estado do Rio de Janeiro – UNIRIO, e Anestesiologista pelo Hospital Federal dos Servidores do Estado do Rio de Janeiro – TEA/SBA.</h3>
-                <h3>Idealizadora e Co-fundadora do Projeto Intub(ação). Co-autora do livro “Manual Avançado de Via Aérea” e professora de mais de 1000 alunos.</h3>
+                <h1>Pedro Santos</h1>
+                <h3>Bacharel em Biomedicina pela Universidade Federal de São Paulo - UNIFESP, e Especialista em Neurociência Clínica pela Universidade de Brasília - UnB.</h3>
+                <h3>Fundador e Coordenador do Programa NeuroCura. Co-autor do livro "Neurociência Aplicada: Avanços e Perspectivas" e instrutor de mais de 800 estudantes e profissionais da saúde.</h3>
             </Texto>
-            <Foto2 style={{ backgroundImage: `url(${Tutor2})` }}></Foto2>
+            <Foto2 style={{ backgroundImage: `url(${tutor2})` }}></Foto2>
             <Texto>
-            <h1>Samantha Ceccon</h1>
-            <h3>Médica pela Escola de Medicina Souza Marques- FTESM e Anestesiologista pelo Hospital Federal dos Servidores do Estado do Rio de Janeiro- TEA/SBA.</h3>
-            <h3>Idealizadora e Co-fundadora do Projeto Intub(ação). Co-autora do livro “Manual Avançado de Via Aérea” e professora de mais de 1000 alunos.</h3>
+            <h1>José de Alcântra</h1>
+            <h3>Graduado em Medicina pela Universidade de São Paulo - USP, e Especialista em Clínica Médica pelo Hospital das Clínicas da Faculdade de Medicina de São Paulo - HCFMUSP.</h3>
+            <h3>Co-fundador e Diretor Médico da Clínica Médica Integrada Saúde Total. Autor do livro "Práticas Atuais em Clínica Médica" e instrutor de mais de 700 profissionais de saúde.</h3>
             </Texto>
         </LastPageContainer>
     )
@@ -32,7 +36,6 @@ const LastPageContainer = styled.div`
     justify-content: space-evenly;
     padding: 20px 27%;
     align-items: center;
-    box-shadow: rgba(255, 0, 0, 0.35) 0px -50px 36px -28px inset;
     @media (max-width: 768px) {
         display: flex;
         flex-direction: column;
@@ -42,7 +45,8 @@ const LastPageContainer = styled.div`
 `;
 
 const Foto = styled.div`
-    background-color: red;
+    background-position: center;
+    background-size: cover;
     width: 90%;
     height: 80%;
     justify-self: center;
@@ -55,7 +59,6 @@ const Foto = styled.div`
     }
 `;
 const Foto2 = styled.div`
-    background-color: red;
     width: 90%;
     height: 80%;
     justify-self: center;

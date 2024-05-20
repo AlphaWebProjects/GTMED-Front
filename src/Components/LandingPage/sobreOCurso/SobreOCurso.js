@@ -1,29 +1,24 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css/free-mode';
+import { Autoplay, Navigation, Pagination, FreeMode } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import oftalmo from "../../../assets/images/oftalmo.jpg"
+
+import aula1Clinica2 from '../../../assets/images/clinicamedica/aula1Clinica2.png'
+import aula1Clinica from '../../../assets/images/clinicamedica/aula1Clinica.png'
 import { Fade } from 'react-awesome-reveal';
 
-function SobreOCurso() {
+function SobreOCurso(sobreOCurso) {
+
   const [width, setWidth] = useState(window.innerWidth);
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const containerRef = useRef(null);
+  
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsIntersecting(true);
-        }
-      });
-    });
-
-    observer.observe(containerRef.current);
 
     const handleResize = () => {
       setWidth(window.innerWidth);
@@ -32,7 +27,6 @@ function SobreOCurso() {
     window.addEventListener('resize', handleResize);
 
     return () => {
-      observer.disconnect();
       window.removeEventListener('resize', handleResize);
     };
   }, []);
@@ -42,57 +36,81 @@ function SobreOCurso() {
       
       <MainContentHome>
 
-        <CenterContent>
+        <CenterContent borderColor={sobreOCurso.sobreOCurso.cores.bordaDescricao1}>
           <Fade delay={0.5} cascade  damping={0.3} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }} triggerOnce={true} direction='left'>
             <p>
-              Het begrijpen van de gasometrie is niets anders dan een strak en uitgelijnd stapsgewijs proces, met zeer goed gedefinieerde redeneerstappen, die, als ze op de juiste manier begrepen en bestudeerd worden, geen twijfel meer zullen laten bestaan bij het lezen van de talloze mogelijke stoornissen.
+              {sobreOCurso.sobreOCurso.descricao1}
             </p>
           </Fade>
 
           <Fade delay={2} cascade  damping={0.3} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }} triggerOnce={true} direction='right'>
           <h1>
-            Het begrijpen van de gasometrie is niets anders dan een strak en uitgelijnd stapsgewijs proces, met zeer goed gedefinieerde redeneerstappen, die, als ze op de juiste manier begrepen.
+            {sobreOCurso.sobreOCurso.descricao2}
           </h1>
           </Fade>
           
           
 
           <StyledSwiperContainer
-            ref={containerRef}
-            isIntersecting={isIntersecting}
+            color={sobreOCurso.sobreOCurso.cores.bordaDescricao1}
+            grabCursor={true}
+            freeMode={true}
+            slidesPerView={width > 1200 ? 3.5 : 2.2}
+            navigation={width > 1200 ? true : false}
             pagination={{
-              type: 'progressbar',
+              clickable: true,
             }}
-            navigation={true}
-            modules={[Pagination, Navigation, Autoplay, EffectFade]}
-            slidesPerView={width > 1500 ? 3 : 1}
-            spaceBetween={0}
             autoplay={{
-              delay: width > 1200 ? 5500 : 4000,
-              disableOnInteraction: true,
-            }}
+                delay: 3000,
+                disableOnInteraction: true,
+              }}
+            modules={[Pagination, Navigation, Autoplay, FreeMode]}
           >
             <StyledSwiperSlide>
               <div>
-                <img src={oftalmo} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} alt="Logo" />
               </div>
             </StyledSwiperSlide>
 
             <StyledSwiperSlide>
               <div>
-                <img src={oftalmo} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} alt="Logo" />
               </div>
             </StyledSwiperSlide>
 
             <StyledSwiperSlide>
               <div>
-                <img src={oftalmo} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} alt="Logo" />
               </div>
             </StyledSwiperSlide>
 
             <StyledSwiperSlide>
               <div>
-                <img src={oftalmo} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} alt="Logo" />
+              </div>
+            </StyledSwiperSlide>
+
+            <StyledSwiperSlide>
+              <div>
+                <img src={aula1Clinica2} alt="Logo" />
+              </div>
+            </StyledSwiperSlide>
+
+            <StyledSwiperSlide>
+              <div>
+                <img src={aula1Clinica2} alt="Logo" />
+              </div>
+            </StyledSwiperSlide>
+
+            <StyledSwiperSlide>
+              <div>
+                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
+              </div>
+            </StyledSwiperSlide>
+
+            <StyledSwiperSlide>
+              <div>
+                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
               </div>
             </StyledSwiperSlide>
           </StyledSwiperContainer>
@@ -108,10 +126,11 @@ function SobreOCurso() {
 export default SobreOCurso;
 
 const Container = styled.div`
+  background-color: black;
+  color: white;
   width: 100%;
   max-width: 100% !important;
-  height: 90%;
-  margin-top: 25px;
+  height: 100%;
   background-size: cover;
   background-position: center;
   max-height: 100% !important;
@@ -123,13 +142,13 @@ const Container = styled.div`
 `;
 
 const MainContentHome = styled.div`
+  background-color: black;
   width: 100%;
   max-width: 100% !important;
   height: 100%;
   max-height: 100% !important;
   min-height: 100% !important;
   display: flex;
-  padding: 2%;
 `;
 
 const CenterContent = styled.div`
@@ -148,14 +167,14 @@ const CenterContent = styled.div`
     width: 50%;
     font-size: 22px;
     padding: 3vh;
-    border: 2px solid black;
+    border: 4px solid ${props => `${props.borderColor}`};
     border-radius: 30px;
     margin-bottom: 4vh;
     margin-top: 0;
     @media (max-width: 1200px) {
       width: 99%;
       font-size: 17px;
-      padding: 2vh;
+      padding: 2.5vh;
   }
     &:hover{
       transform: scale(1.05);
@@ -172,7 +191,7 @@ const CenterContent = styled.div`
     margin-top: 0;
     transition: transform 0.8s ease;
     @media (max-width: 1200px) {
-      width: 100%;
+      width: 95%;
       font-size: 17px;
       padding: 2vh;
   }
@@ -183,16 +202,21 @@ const CenterContent = styled.div`
   }
   @media (max-width: 420px) {
     margin-top: 10px;
+    padding: 2.5vh !important;
   }
 `;
 
 const StyledSwiperSlide = styled(SwiperSlide)`
   padding-top: 5vh !important;
   img {
-    width: 30vh;
-    height: 50vh;
+    width: 30vh !important;
+    height: 50vh !important;
     border-radius: 2%;
     transition: transform 0.8s;
+    @media (max-width: 1200px) {
+      width: 22vh !important;
+      height: 36.57vh !important;
+  }
     &:hover{
       transform: scale(1.03);
       cursor: grab;
@@ -205,28 +229,26 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     height: 90% !important;
     text-align: center !important;
   }
-  @media (max-width: 1200px) {
-    padding: 3vh 1.5vh;
-  }
 `;
 
 const StyledSwiperContainer = styled(Swiper)`
-  max-width: 52% !important; 
-  margin-top: 4vh;
-  opacity: ${({ isIntersecting }) => (isIntersecting ? 1 : 0)};
-  transition: opacity 2s ease-in-out;
+  max-width: 80% !important; 
+  height: auto;
+  margin-top: 1.5vh;
+  padding-bottom: 4vh;
   @media (max-width: 1500px) {
     max-width: 100% !important;
+    height: auto;
   }
-  .swiper-pagination-progressbar {
-    background: black;
-  }
-  .swiper-pagination-progressbar-fill {
-    background: lightgray !important;
+  .swiper-pagination-bullet {
+    background: white;
   }
   .swiper-button-next,
   .swiper-button-prev {
-    color: black;
+    color: ${props => `${props.color}`};
+    margin-right: 50px;
+    width: 9vh;
+    height: 6vh;
     @media (max-width: 1500px) {
     width: 2vh;
     height: 1vh;

@@ -2,7 +2,9 @@ import styled from "styled-components";
 import backgroundImage from "../../../assets/images/Screenshot_28.png"
 import { IoIosMedical } from "react-icons/io";
 import { Fade, Slide } from 'react-awesome-reveal';
-export default function AoFimDoCurso(){
+export default function AoFimDoCurso({aoFimDoCurso}){
+
+    console.log(aoFimDoCurso)
 
     const body = {
         backgroundimage: backgroundImage,
@@ -37,15 +39,15 @@ export default function AoFimDoCurso(){
     }
 
     return (
-        <Container backgroundImage={body?.backgroundimage} backgroundImageMobile={body?.backgroundimagemobile}>
+        <Container backgroundImage={aoFimDoCurso.backgroundImage}>
             <SubContainer>
-            <Slide triggerOnce={true}><Title>{body?.title}</Title></Slide>
+            <Slide triggerOnce={true}><Title>AO FIM DO CURSO VOCÊ SERÁ CAPAZ DE:</Title></Slide>
             <Fade delay={0.5} cascade damping={0.3} triggerOnce={true} style={{width:'100%'}}>
 
-                {body?.topics?.map((topic, index) => (
-                <Option key={index}>
-                    <div><IoIosMedical /></div>
-                    <p>{topic?.details}</p>
+                {aoFimDoCurso.topicos.map((topic, index) => (
+                <Option color={aoFimDoCurso.cores.corTopicos} key={index}>
+                    <div><IoIosMedical/></div>
+                    <p>{topic}</p>
                 </Option>
             ))}
 
@@ -71,7 +73,7 @@ const Container = styled.div`
     @media (max-width: 1200px) {
         height: auto;
         padding: 5vh 4vw;
-        background-image: ${props => `url(${props.backgroundImageMobile})`};
+        background-position: top;
     }
 `;
 
@@ -109,7 +111,7 @@ const Option = styled.div`
         align-items: center;
         justify-content: center;
         font-size: 2.5rem;
-        color: red;
+        color: ${props => props.color};
         @media (max-width: 1200px) {
             width: calc(3.75rem * .75);
             height: calc(3.75rem * .75);

@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import React from 'react';
 import { Fade,Slide } from 'react-awesome-reveal';
-import faqBackground from '../../../assets/images/faqBackground.png';
+import background from '../../../assets/images/backgroundFAQ.png'
+
 export default function PerguntasHome() {
 
         const [selectedQuestion, setSelectedQuestion] = useState(null);
@@ -15,7 +16,7 @@ export default function PerguntasHome() {
             }
           };
         const perguntas = [
-            { pergunta: 'Para quem é destinado esse curso?', resposta: 'O Gasometria Descomplicada é destinado a médicos, estudantes de medicina, fisioterapeutas e profissionais de enfermagem, de forma exclusiva.' },
+            { pergunta: 'Para quem é destinado esse curso?', resposta: 'Os cursos GTMED são destinados a médicos, estudantes de medicina, fisioterapeutas e profissionais de enfermagem, de forma exclusiva.' },
             { pergunta: 'Quanto tempo de acesso?', resposta: 'O acesso é livre por 1 ano. Pode ver e rever quantas vezes quiser.' },
             { pergunta: 'O curso é todo liberado desde o início?', resposta: 'Os módulos são liberados 75% inicialmente, e 25% restantes, após 15 dias, para proteção do curso. Entretanto, não se preocupe, você poderá assistir quantas vezes for necessário, por 1 ano.' },
             { pergunta: 'Como funciona o acesso?', resposta: 'Após a compra, você receberá um e-mail para definição de login e senha. Caso não tenha recebido, cheque na sua caixa de spam e/ou lixeira. O acesso é inteiramente feito no site:' },
@@ -23,7 +24,7 @@ export default function PerguntasHome() {
           ];
         
           return (
-            <PageQuestionsContainer>
+            <PageQuestionsContainer background={background}>
                 <Slide triggerOnce={true}>
                 <Title>
                 <h1>Perguntas</h1>
@@ -49,38 +50,49 @@ export default function PerguntasHome() {
 }
 
 const PageQuestionsContainer = styled.div`
-  background-image: url(${faqBackground});
-  background-size: cover;     
-  background-repeat: no-repeat;
-    height: auto !important;
+    background-image: ${props => `url(${props.background})`};
+    background-position: center;     
+    background-repeat: no-repeat;
+    background-color:black;
+    height: 90vh;
     display: flex;
     align-items: center;
     flex-direction: column; 
-    justify-content: space-around;
-    color: black;
+    justify-content: center;
+    color: white;
     padding: 10vh 0 !important;
     @media (max-width: 768px) {
-        height: 100vh;
+        height: auto !important;
     }
 `
 const QuestionList = styled.ul`
   list-style: none;
   padding: 0;
   width:40%;
+  margin-top: 8vh;
   @media (max-width: 768px) {
      width:90%;
+     margin-top: 4vh;
     }
 `;
 
 const QuestionItem = styled.li`
-  margin: 20px 0 ;
+  margin: 10px 0 ;
   cursor: pointer;
   transition: scale 0.3s ease, color 0.3s ease;
   width:100%;
+  h1{
+    font-size: 25px !important;
+  }
   &:hover {
     scale:1.05;
     color:rgb(0,100,255);
   }
+  @media (max-width: 800px) {
+     h1{
+      font-size: 16px !important;
+     }
+    }
 `;
 
 const Answer = styled.div`
@@ -100,7 +112,7 @@ align-items: center;
 justify-content: space-around;
 transition: scale 0.3s ease;
     h1{
-        color:Black;
+        color:white;
         font-size: 45px;
     }
     h2{
@@ -115,5 +127,11 @@ transition: scale 0.3s ease;
      flex-direction: column;
      width: 250px;
      text-align: center;
+     h1{
+      font-size: 35px !important;
+     }
+     h2{
+      font-size: 30px !important;
+     }
     }
 `

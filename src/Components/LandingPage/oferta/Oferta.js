@@ -4,18 +4,18 @@ import StyledButton from "../../../common/form/Button";
 import bestPrice from "../../../assets/images/best-price.png";
 import sevenDays from "../../../assets/images/sevenDays.png";
 
-export default function Oferta(){
+export default function Oferta({oferta}){
 
     const body = {
-        title: "GASOMETRIA",
-        subtitle: "DESCOMPLICADA",
+        title: "CLÍNICA MÉDICA",
+        subtitle: "DE PLANTÃO",
         price: "1247,00",
         discountedprice: "R$59,58",
         fullpricediscount: "R$597",
-        buttontext: "QUERO DOMINAR GASOMETRIA",
-        buttoncolor: "#E42323",
-        buttonhovercolor: "#C73B3B",
-        color: "#ff0000",
+        buttontext: "QUERO DOMINAR CLÍNICA MÉDICA",
+        buttoncolor: "#3D989B",
+        buttonhovercolor: "#3D989B",
+        color: "#3D989B",
         topics: [
             {
                 details: "Método didático, com aulas curtas e totalmente voltado à prática"
@@ -86,7 +86,7 @@ export default function Oferta(){
                     background="#309E0F !important" 
                     backgroundhover="#3CFF00 !important"
                 >
-                    {"QUERO DOMINAR GASOMETRIA"}
+                    {"QUERO DOMINAR PLANTÕES"}
                 </StyledButton>
                 
                 <BestPriceImage src={bestPrice}/>
@@ -118,7 +118,7 @@ const LeftSide = styled.div`
     align-items: start;
     justify-content: center;
     @media (max-width: 1200px) {
-        width: 100%;
+        width: 96%;
     }
 `
 const RightSide = styled(LeftSide)``
@@ -153,7 +153,7 @@ const OfferCard = styled.div`
 const Title = styled.h3`
     color: ${props => props.color};
     font-family: "Rajdhani", Sans-serif;
-    font-size: 2.6875rem;  // Conversão para rem
+    font-size: 2.0rem;  // Conversão para rem
     font-weight: 800;
 `
 const SubTitle = styled.h3`

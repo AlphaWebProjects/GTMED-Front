@@ -1,5 +1,10 @@
-import clinicamedicabackground1 from "./assets/images/clinicamedica/inicio.png"
-import clinicamedicabackground2 from "./assets/images/clinicamedica/paraQuem.png"
+import clinicamedicabackground1 from "./assets/images/clinicamedica/inicioClinica.png"
+import clinicamedicabackground2 from "./assets/images/clinicamedica/paraQuemClinica.png"
+import logoClinica from './assets/images/clinicamedica/logoClinica.png'
+import inicioClinicaMobile from './assets/images/clinicamedica/inicioClinicaMobile.png'
+import backgroundAoFimDoCursoClinica from './assets/images/clinicamedica/backgroundAoFimDoCursoClinica.png'
+import backgroundParaQuemClinicaMobile from './assets/images/clinicamedica/paraQuemClinicaMobile.png'
+import depoimento1clinica from './assets/images/clinicamedica/depoimento1.png'
 
 
 const scripts = {
@@ -73,16 +78,16 @@ const scripts = {
         Clinica: {
             intro: {
                 titulo: "Clínica Médica",
-                corTitulo: "#007eff",
-                subTitulo: "de plantão",
                 botao: "Quero dominar clínica médica",
                 descricao: "Você MAIS PREPARADO para enfrentar os desafios nos plantões de clínica médica",
                 backgroundImage: clinicamedicabackground1,
+                backgroundImageMobile: inicioClinicaMobile,
+                logo: logoClinica,
                 cores: [
                     {
                         corTitulo: "#475DDB", 
-                        backgroundImageBotao: "linear-gradient(45deg, #7B8CE9, #576DE7, #7B8CE9, #576DE7)",
-                        backgroundImageBotaoHover: "linear-gradient(45deg, #8E9CEB, #6C7FE9, #919EE7, #6E81E9)",
+                        backgroundImageBotao: "linear-gradient(45deg, #5ce1e6, #56CDD1, #41A2A3, #43A5A8)",
+                        backgroundImageBotaoHover: "linear-gradient(45deg, #5ce1e6, #4CBBBE, #3D989B, #5ABBBE)",
                         backgroundColorBotao: "#8593E7"
                     }
                 ]
@@ -91,18 +96,32 @@ const scripts = {
                 descricao1: "Para muitos médicos que trabalham em plantões de clínica médica, lidar com emergências médicas representa um desafio significativo. Isso implica compreender uma variedade de condições e procedimentos específicos, desde a diferenciação de diagnósticos até a implementação de tratamentos, o que pode ser desconcertante devido à sua complexidade.",
                 descricao2: "Cremos que pode ser difícil reconhecer isso. Imagina só ter que admitir para alguém que você não sabe diagnosticar uma condição específica durante um plantão.",
                 descricao3: "Para muitos médicos em plantões de clínica médica, os sinais e sintomas apresentados pelos pacientes são considerados rotineiros e muitas vezes são rapidamente avaliados e tratados como algo trivial. No entanto, será que é realmente tão difícil identificar algo que parece tão básico?",
-                descricao4: "O conhecimento sobre questões clínicas em plantões não é exclusivo de alguns poucos privilegiados intelectualmente ou de colegas que optam por não compartilhar o que aprenderam. É uma habilidade acessível a todos, que pode ser adquirida e compartilhada para benefício de todos os profissionais da área médica."
+                descricao4: "O conhecimento sobre questões clínicas em plantões não é exclusivo de alguns poucos privilegiados intelectualmente ou de colegas que optam por não compartilhar o que aprenderam. É uma habilidade acessível a todos, que pode ser adquirida e compartilhada para benefício de todos os profissionais da área médica.",
+                cores: [
+                    {
+                        fundoDescricao3: "#43A5A8"
+                    }
+                ]
             },
             sobreOCurso: {
                 descricao1: "A interpretação dos sinais clínicos durante plantões segue um processo meticuloso e bem definido. Cada passo é essencial e, ao ser compreendido e estudado minuciosamente, resolve todas as dúvidas que possam surgir ao diagnosticar uma ampla gama de condições médicas. É como seguir um guia claro que nos conduz pelas complexidades da prática médica, revelando os detalhes de cada situação.",
                 descricao2: "Exploramos minuciosamente e nos dedicamos a estruturar e apresentar nosso método de raciocínio para análises médicas em plantões de clínica, com foco especial na resolução de questões clínicas.",
-                imagensAulas: []
+                imagensAulas: [],
+                cores:
+                {
+                    bordaDescricao1:  '#43A5A8'
+                }
             },
             paraQuem: {
                 titulo: "Clínica Médica de Plantão",
-                topico1: "Para aqueles que se sentem completamente perdidos ao lidar com questões clínicas durante plantões, sem saber por onde começar o diagnóstico em situações de emergência;",
-                topico2: "Para quem já possui conecimento acerca de questões básicas, mas se sentem confusos e perdidos ao lidar com distúrbios secundários, mesmo que mínimos, durante o processo de raciocínio.",
-                backgroundImage: clinicamedicabackground2
+                topicos: [
+                    "Para aqueles que se sentem completamente perdidos ao lidar com questões clínicas durante plantões, sem saber por onde começar o diagnóstico em situações de emergência;", "Para quem já possui conecimento acerca de questões básicas, mas se sentem confusos e perdidos ao lidar com distúrbios secundários, mesmo que mínimos, durante o processo de raciocínio."
+                ],
+                backgroundImage: clinicamedicabackground2,
+                backgroundImageMobile: backgroundParaQuemClinicaMobile,
+                cores: {
+                    corTopicos: '#43A5A8'
+                }
             },
             aoFimDoCurso: {
                 topicos: [
@@ -115,14 +134,33 @@ const scripts = {
                     "Abordar broncoespasmo em diferentes contextos clínicos", 
                     "Manejar complicações agudas das neoplasias no Pronto Atendimento", 
                     "Estabilizar e tratar complicações agudas da cirrose hepática"
+                ],
+                cores: {
+                    corTopicos: '#43A5A8'
+                },
+                backgroundImage: backgroundAoFimDoCursoClinica
+            },
+            depoimentos: {
+                cores: {
+                    corTitulo: '#3D989B',
+                },
+                prints: [
+                    depoimento1clinica, depoimento1clinica, depoimento1clinica, depoimento1clinica
                 ]
             },
-            pagina3: {
+            oferta: {
+                cores: {
+                    corTema: '#3D989B',
+                },
+                titulo: 'Clínica Médica',
+                subTitulo: 'de Plantão'
+            },
+             pagina3: {
                 titulo: "Conclusão",
                 conteudo: "Parabéns, você concluiu o curso! Esperamos que tenha sido útil e informativo."
             }
         }
     }
-            }
+}
 
 export default scripts

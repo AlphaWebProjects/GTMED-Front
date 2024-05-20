@@ -1,25 +1,15 @@
 import styled from 'styled-components';
-import Footer from '../Components/Footer';
-import Header from '../Components/Header';
-import Home from '../Components/HomePage/Home/Home';
-import TodosCursos from '../Components/HomePage/TodosCursos/TodosCursos';
-import SobreGTMED from '../Components/HomePage/SobreGTMed/SobreGTMED'
-import Eventos from '../Components/HomePage/Eventos/Eventos';
+import Leads from '../Components/LeadsPage/Leads';
 import { FaWhatsapp } from 'react-icons/fa';
-import PerguntasHome from '../Components/HomePage/Home/PerguntasHome';
+import OQueEsperar from '../Components/LeadsPage/OQueEsperar';
 
-export default function HomePage({script, setScript}) {
 
+export default function LeadsPage({script, setScript}) {
 
 
     return (
         <Container>
-            <Home />
-            <TodosCursos setScript={setScript}/>
-            <SobreGTMED />
-            <Eventos />
-            <PerguntasHome />
-            <Footer />
+            <Leads />
             <WhatsAppButton
             // href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
             target="_blank"
