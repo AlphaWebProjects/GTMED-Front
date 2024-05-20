@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import React from 'react';
 import { Fade,Slide } from 'react-awesome-reveal';
+import faqBackground from '../../../assets/images/faqBackground.png';
 export default function PerguntasHome() {
 
         const [selectedQuestion, setSelectedQuestion] = useState(null);
@@ -48,7 +49,9 @@ export default function PerguntasHome() {
 }
 
 const PageQuestionsContainer = styled.div`
-    background-color:#FFFFFF;
+  background-image: url(${faqBackground});
+  background-size: cover;     
+  background-repeat: no-repeat;
     height: auto !important;
     display: flex;
     align-items: center;
@@ -87,6 +90,7 @@ const Answer = styled.div`
   border-bottom: 1px solid white;
   width:100%;
   margin-bottom: 10px;
+  font-weight: 500;
 `;
 
 const Title = styled.div`
