@@ -89,16 +89,12 @@ export default function TodosCursos({setScript}) {
                 delay: 2500,
                 disableOnInteraction: true,
               }}
-              spaceBetween={width > 1200 ? '20' : '8'}
+              spaceBetween={width > 1200 ? '10' : '8'}
             modules={[Pagination, Navigation, Autoplay, FreeMode]}
           >
 
             {cursos.map((curso) => (
                 <StyledSwiperSlide onClick={() => setPage(curso.area)} background={curso.background}>
-                <span>
-                  <p>Saiba mais</p>
-                  <img src={click} alt='Click'/>
-                </span>
               </StyledSwiperSlide>
             )
                 

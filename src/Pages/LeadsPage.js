@@ -10,7 +10,6 @@ export default function LeadsPage({script, setScript}) {
     return (
         <Container>
             <Leads />
-            <OQueEsperar />
             <WhatsAppButton
             // href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
             target="_blank"

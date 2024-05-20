@@ -7,6 +7,7 @@ import SobreGTMED from '../Components/HomePage/SobreGTMed/SobreGTMED'
 import Eventos from '../Components/HomePage/Eventos/Eventos';
 import { FaWhatsapp } from 'react-icons/fa';
 import PerguntasHome from '../Components/HomePage/Home/PerguntasHome';
+
 export default function HomePage({script, setScript}) {
 
 
