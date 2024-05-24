@@ -2,10 +2,13 @@ import styled from "styled-components";
 import { IoIosMedical } from "react-icons/io";
 import { Fade, Slide } from 'react-awesome-reveal';
 import background from '../../assets/images/backgroundHome.png'
+import { MdOutlineWorkspacePremium } from "react-icons/md";
+import { BiUserVoice } from "react-icons/bi";
+import { BsPlusSquare } from "react-icons/bs";
 import { MdCheckCircleOutline } from "react-icons/md";
 
 
-export default function OQueEsperar(){
+export default function PorqueParticipar(){
 
 
     const body = {
@@ -13,15 +16,19 @@ export default function OQueEsperar(){
         topics: [
             {
                 details: " Seja um dos primeiros a conhecer essa abordagem revolucionária de ensino médico",
+                icon: <MdOutlineWorkspacePremium/>
             },
             {
                 details: "Tenha a oportunidade de interagir com professores altamente capacitados",
+                icon: <BiUserVoice/>
             },
             {
                 details: "Descubra como a GTMED pode ajudá-lo a ganhar confiança e competência para enfrentar os plantões",
+                icon: <BsPlusSquare/>
             },
             {
                 details: "Garanta vantagens exclusivas ao se inscrever durante o evento de lançamento",
+                icon: <MdCheckCircleOutline/>
             },
         ]
     }
@@ -29,12 +36,12 @@ export default function OQueEsperar(){
     return (
         <Container backgroundImage={background}>
             <SubContainer>
-            <Slide triggerOnce={true}><Title>O que esperar do evento?</Title></Slide>
+            <Slide triggerOnce={true}><Title>Porque participar?</Title></Slide>
             <Fade delay={0.5} cascade damping={0.3} triggerOnce={true} style={{width:'100%'}}>
 
                 {body.topics.map((topic, index) => (
                 <Option key={index}>
-                    <div><MdCheckCircleOutline/></div>
+                    <div>{topic.icon}</div>
                     <p>{topic.details}</p>
                 </Option>
             ))}
