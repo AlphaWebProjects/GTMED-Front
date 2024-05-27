@@ -24,6 +24,8 @@ import cardEmergencia1 from '../../../assets/images/emergencia/cardEmergencia1.p
 import cardEmergencia2 from '../../../assets/images/emergencia/cardEmergencia2.png'
 import cardDermato from '../../../assets/images/dermato/cardDermato.png'
 import click from '../../../assets/images/clickScreen.png'
+import Dermatologia from '../../../assets/images/Dermatologia.jpeg'
+import Radiologia from '../../../assets/images/Radiologia.jpeg'
 
 
 export default function TodosCursos({setScript}) {
@@ -51,11 +53,11 @@ export default function TodosCursos({setScript}) {
         { nome: '', area: scripts.Curso.Clinica, background: cardOftalmo },
         { nome: '', area: scripts.Curso.Clinica, background: cardOrtopedia },
         { nome: '', area: scripts.Curso.Clinica, background: cardPediatria },
-        { nome: '', area: scripts.Curso.Clinica, background: cardRadiologia },
+        { nome: '', area: scripts.Curso.Clinica, background: Radiologia },
         { nome: '', area: scripts.Curso.Clinica, background: cardAnestesia },
         { nome: '', area: scripts.Curso.Clinica, background: cardEmergencia1 },
         { nome: '', area: scripts.Curso.Clinica, background: cardEmergencia2 },
-        { nome: '', area: scripts.Curso.Clinica, background: cardDermato },
+        { nome: '', area: scripts.Curso.Clinica, background: Dermatologia },
         { nome: '', area: scripts.Curso.Clinica, background: cardClinica },
         { nome: '', area: scripts.Curso.Clinica, background: cardClinica},
         { nome: '', area: scripts.Curso.Clinica, background: cardClinica },
