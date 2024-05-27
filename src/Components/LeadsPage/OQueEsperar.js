@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { IoIosMedical } from "react-icons/io";
 import { Fade, Slide } from 'react-awesome-reveal';
-import background from '../../assets/images/backgroundHome.png'
+import background from '../../assets/images/BackgroundHome.png'
 import { MdCheckCircleOutline } from "react-icons/md";
 
 
