@@ -19,8 +19,6 @@ import { IoIosPin } from "react-icons/io";
 import { MdOutlineAttachMoney } from "react-icons/md";
 import { BsExclamationCircle } from "react-icons/bs";
 import { BrowserRouter as Router, Route, Link, useNavigate } from 'react-router-dom';
-import cardClinica from '../../../assets/images/clinicamedica/cardClinica.png'
-import cardOftalmo from '../../../assets/images/oftalmo/cardOftalmo.png'
 import { Fade,Slide } from 'react-awesome-reveal';
 
 
@@ -49,10 +47,10 @@ export default function Eventos({setScript}) {
     const navigate = useNavigate();
 
     const cursos = [
-        { nome: '', area: scripts.Curso.Clinica, background: cardClinica },
-        { nome: '', area: scripts.Curso.Clinica, background: cardOftalmo },
-        { nome: '', area: scripts.Curso.Clinica, background: cardOftalmo },
-        { nome: '', area: scripts.Curso.Clinica, background: cardOftalmo },
+        { nome: '' },
+        { nome: '' },
+        { nome: '' },
+        { nome: '' },
     ];
 
     return (
@@ -85,7 +83,7 @@ export default function Eventos({setScript}) {
             >
 
               {cursos.map((curso) => (
-                  <StyledSwiperSlide background={curso.background}>
+                  <StyledSwiperSlide>
                   <img src={evento} alt='imagem'/>
                   <h1>Imersão GTMED</h1>
                   <p>{<FaRegCalendarAlt />} Quinta, 7/12 às 17h</p>

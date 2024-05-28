@@ -14,15 +14,22 @@ import scripts from '../../../scripts';
 import { CgMoreO } from "react-icons/cg";
 import { BrowserRouter as Router, Route, Link, useNavigate } from 'react-router-dom';
 import background from '../../../assets/images/backgroundTelaCursos.png'
-import cardClinica from '../../../assets/images/clinicamedica/cardClinica.png'
-import cardOftalmo from '../../../assets/images/oftalmo/cardOftalmo.png'
-import cardOrtopedia from '../../../assets/images/ortopedia/cardOrtopedia.png'
-import cardPediatria from "../../../assets/images/pediatria/cardPediatria.png"
-import cardRadiologia from '../../../assets/images/radiologia/cardRadiologia.png'
-import cardAnestesia from "../../../assets/images/anestesia/cardAnestesia.png"
+import cardClinica from '../../../assets/images/clinicamedica/cardClinica.jpg'
+import cardOftalmo from '../../../assets/images/oftalmo/cardOftalmo.jpg'
+import cardOrtopedia from '../../../assets/images/ortopedia/cardOrtopedia.jpg'
+import cardPediatria from "../../../assets/images/pediatria/cardPediatria.jpg"
+import cardRadiologia from '../../../assets/images/radiologia/cardRadio.jpg'
+import cardAnestesio from "../../../assets/images/anestesio/cardAnestesio.jpg"
 import cardEmergencia1 from '../../../assets/images/emergencia/cardEmergencia1.png'
 import cardEmergencia2 from '../../../assets/images/emergencia/cardEmergencia2.png'
-import cardDermato from '../../../assets/images/dermato/cardDermato.png'
+import cardDermato from '../../../assets/images/dermato/cardDermato.jpg'
+import cardCardio from '../../../assets/images/cardio/cardCardio.jpg'
+import cardGineco from '../../../assets/images/gineco/cardGineco.jpg'
+import cardInfecto from '../../../assets/images/infectologia/cardInfectologia.jpg'
+import cardNeuro from '../../../assets/images/neuro/cardNeuro.jpg'
+import cardObstetro from '../../../assets/images/obstetro/cardObstetricia.jpg'
+import cardOrtorrino from '../../../assets/images/ortorrino/cardOrtorrino.jpg'
+import cardPsiquiatria from '../../../assets/images/psiquiatria/cardPsiquiatria.jpg'
 import click from '../../../assets/images/clickScreen.png'
 
 
@@ -47,20 +54,19 @@ export default function TodosCursos({setScript}) {
     const navigate = useNavigate();
 
     const cursos = [
-        { nome: '', area: scripts.Curso.Clinica, background: cardClinica },
-        { nome: '', area: scripts.Curso.Clinica, background: cardOftalmo },
+        { nome: '', area: scripts.Curso.Clinica, background: cardCardio },
         { nome: '', area: scripts.Curso.Clinica, background: cardOrtopedia },
-        { nome: '', area: scripts.Curso.Clinica, background: cardPediatria },
+        { nome: '', area: scripts.Curso.Clinica, background: cardObstetro },
+        { nome: '', area: scripts.Curso.Clinica, background: cardGineco },
+        { nome: '', area: scripts.Curso.Clinica, background: cardInfecto },
         { nome: '', area: scripts.Curso.Clinica, background: cardRadiologia },
-        { nome: '', area: scripts.Curso.Clinica, background: cardAnestesia },
-        { nome: '', area: scripts.Curso.Clinica, background: cardEmergencia1 },
-        { nome: '', area: scripts.Curso.Clinica, background: cardEmergencia2 },
-        { nome: '', area: scripts.Curso.Clinica, background: cardDermato },
+        { nome: '', area: scripts.Curso.Clinica, background: cardNeuro },
+        { nome: '', area: scripts.Curso.Clinica, background: cardOftalmo },
         { nome: '', area: scripts.Curso.Clinica, background: cardClinica },
-        { nome: '', area: scripts.Curso.Clinica, background: cardClinica},
-        { nome: '', area: scripts.Curso.Clinica, background: cardClinica },
-        { nome: '', area: scripts.Curso.Clinica, background: cardClinica },
-        { nome: '', area: scripts.Curso.Clinica, background: cardClinica },
+        { nome: '', area: scripts.Curso.Clinica, background: cardPsiquiatria },
+        { nome: '', area: scripts.Curso.Clinica, background: cardAnestesio},
+        { nome: '', area: scripts.Curso.Clinica, background: cardOrtorrino },
+        { nome: '', area: scripts.Curso.Clinica, background: cardPediatria },
     ];
 
     function setPage(curso){
