@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/landing" element={<LandingPage script={script}/>} />
           <Route path="/evento-gtmed" element={<LeadsPage/>} />
-          <Route path="/home" element={<HomePage script={script} setScript={setScript}/>} />
+          <Route path="/" element={<HomePage script={script} setScript={setScript}/>} />
           <Route path="/obrigado" element={<Obrigado />} />
 
           <Route path="*" element={<NotFound />} />

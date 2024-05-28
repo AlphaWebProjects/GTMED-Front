@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import React from 'react';
 import { Fade,Slide } from 'react-awesome-reveal';
-import background from '../../../assets/images/backgroundFAQ.png'
+import background from '../../../assets/images/Background1.png'
 
 export default function PerguntasHome() {
 
@@ -53,6 +53,7 @@ const PageQuestionsContainer = styled.div`
     background-image: ${props => `url(${props.background})`};
     background-position: center;     
     background-repeat: no-repeat;
+    background-size: cover; 
     background-color:black;
     height: 90vh;
     display: flex;
@@ -102,6 +103,7 @@ const Answer = styled.div`
   border-bottom: 1px solid white;
   width:100%;
   margin-bottom: 10px;
+  font-weight: 500;
 `;
 
 const Title = styled.div`
