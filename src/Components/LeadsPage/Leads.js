@@ -3,9 +3,19 @@ import styled from 'styled-components';
 import background from '../../assets/images/lead/backgroundLead.png'
 import { Fade, Zoom } from 'react-awesome-reveal';
 import { BiSolidDownArrow } from "react-icons/bi";
+import { toast } from 'react-toastify';
+import api from '../../services/API';
+import { Spinner } from '../../common/spinner/Spinner';
+import { BrowserRouter as Router, Route, Link, useNavigate } from 'react-router-dom';
 
 function LeadsHome() {
   const [width, setWidth] = useState(window.innerWidth);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [bool, setBool] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     
@@ -21,8 +31,63 @@ function LeadsHome() {
     };
   }, []);
 
+  function isValidEmail(email) {
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function isValidPhone(phone) {
+  const str = phone.toString();
+  const phoneRegex = /^\d{2}(?:9)?\d{8}$/;
+  return phoneRegex.test(str);
+}
+
+  async function send(){
+
+    setBool(true);
+
+    if(name === ''){
+      return toast.error('Insira um nome válido')
+    }
+
+    const validateEmail = isValidEmail(email);
+    if(!validateEmail){
+      return toast.error('Insira um email válido')
+    }
+
+    const validatePhone = isValidPhone(phone);
+    if(!validatePhone){
+      return toast.error('Insira um número de celular válido (DDD seguido do número, sem espaços ou outros caracteres)')
+    }
+
+    try {
+      
+      await api.SendLead(name, email, phone)
+
+      toast('Cadastro realizado');
+
+      setBool(false);
+
+      setEmail('');
+      setName('');
+      setPhone('');
+
+      navigate('/obrigado');
+
+      return 
+
+    } catch (error) {
+      
+      console.log(error)
+      return toast.error('Não foi possível realizar o seu cadastro')
+
+    }
+
+  }
+
   return (
-    <Fade delay={0.5} cascade  damping={0.3} triggerOnce={true}>
+    
       <Container backgroundimage={background}>
 
           <CenterContent> 
@@ -49,29 +114,31 @@ function LeadsHome() {
                   <Fade delay={1500} cascade  damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
                   <form>
 
-                    <StyledInput type='text' placeholder='Seu nome'/>
+                    <StyledInput value={name} onChange={(e) => setName(e.target.value)} type='text' placeholder='Seu nome' />
 
-                    <StyledInput type='email' placeholder='Seu melhor email'/>
+                    <StyledInput value={email} onChange={(e) => setEmail(e.target.value)} type='email' placeholder='Seu melhor email'/>
 
-                    <StyledInput type='email' placeholder='Celular com DDD'/>
+                    <StyledInput value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='Celular com DDD'/>
                     
                   </form>
                   </Fade>
                   
                   <Zoom delay={1450} duration={500} cascade triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-
-                    <StyledButton>
+                   
+                    <StyledButton onClick={send}>
                       Realizar cadastro
                     </StyledButton>
 
                   </Zoom>
+
+                  {bool ? <p>Realizando seu cadastro...</p> : ''}
 
                 </span>
 
           </CenterContent>
 
       </Container>
-    </Fade>
+
   );
 }
 
@@ -205,6 +272,7 @@ const CenterContent = styled.div`
   }
   @media (max-width: 1000px) {
     margin-top: 10px;
+    max-width: 95% !important;
   }
 `;
 
@@ -235,6 +303,7 @@ text-align: center;
 `
 
 const StyledButton = styled.div`
+margin-bottom: 2vh;
 background-color: #094A58;
 padding: 2.1vh 3.4vh;
 color: white;

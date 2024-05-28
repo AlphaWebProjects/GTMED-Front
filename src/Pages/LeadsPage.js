@@ -2,14 +2,23 @@ import styled from 'styled-components';
 import Leads from '../Components/LeadsPage/Leads';
 import { FaWhatsapp } from 'react-icons/fa';
 import OQueEsperar from '../Components/LeadsPage/OQueEsperar';
+import PorqueParticipar from '../Components/LeadsPage/PorqueParticipar';
+import NaoFiqueDeFora from '../Components/LeadsPage/NaoFiqueDeFora';
+import React, { useEffect, useState } from 'react';
 
 
-export default function LeadsPage({script, setScript}) {
+
+export default function LeadsPage() {
+
+  
 
 
     return (
         <Container>
             <Leads />
+            <OQueEsperar />
+            <PorqueParticipar />
+            <NaoFiqueDeFora />
             <WhatsAppButton
             // href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
             target="_blank"
