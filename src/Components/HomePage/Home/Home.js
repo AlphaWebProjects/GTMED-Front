@@ -5,6 +5,8 @@ import { Fade, Zoom } from 'react-awesome-reveal';
 import logo from '../../../assets/images/logoGTMEDmelhorada.png'
 import { BiSolidDownArrow } from "react-icons/bi";
 import card from '../../../assets/images/cardSobreGTMED.png'
+import bannerMobile from '../../../assets/images/bannerMobile.jpg'
+import banner from '../../../assets/images/banner.jpg'
 
 function Home() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -27,46 +29,36 @@ function Home() {
     <Fade delay={0.5} cascade  damping={0.3} triggerOnce={true}>
       <Container backgroundImage={backgroundHome} backgroundPosition={width > 1200 ? 'center' : 'left'}>
 
+          <Fade delay={300} cascade  damping={0.3} triggerOnce={true} direction='down' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+              <Logo src={logo} alt='Logo'/>
+          </Fade>
+
+        <Banner src={width > 1200 ? banner : bannerMobile} />
+
           <CenterContent> 
-
-                <span>
-
-                  <Fade delay={300} cascade  damping={0.3} triggerOnce={true} direction='down' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                    <Logo src={logo} alt='Logo'/>
-                  </Fade>
-
-                  <Fade delay={800} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                  <p>
-                  Oferecendo uma experiência única e transformadora para médicos e estudantes de medicina. 
-                  </p> 
-                  </Fade>
-
-                  </span>
 
                   <span>
 
-                  <Fade delay={1200} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                  <Card src={card}/>
-                  </Fade>
+                    <Fade delay={1200} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                    <Card src={card}/>
+                    </Fade>
 
-                  <Fade delay={1200} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                  <b>Por que escolher a GTMED?</b>
-                  </Fade>
-
-                  <Zoom delay={1750} duration={500} cascade triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                    <Fade delay={1200} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                    <b>Por que escolher a GTMED?</b>
+                    </Fade>
 
                     <StyledButton>
-                      Conheça nossos cursos
+                      CONHEÇA NOSSOS CURSOS
                     </StyledButton>
 
                     <Arrow />
 
-                  </Zoom>
-                
-
                   </span>
 
+                  
+
           </CenterContent>
+
 
       </Container>
     </Fade>
@@ -75,13 +67,26 @@ function Home() {
 
 export default Home;
 
-const Logo = styled.img`
-  height: 48.0684vh;
-  width: 109.312vh;
-  margin-bottom: 5vh;
+const Banner = styled.img`
+  border-radius: 20px;
+  margin-bottom: 0vh;
       @media (max-width: 1200px) {
         height: 25.1512vh;
-        width: 58.729vh;
+        width: 50.729vh;
+        margin-bottom: 3 vh;
+        margin-top: 3vh;
+      }
+`
+
+const Logo = styled.img`
+  height: 16.4874612vh;
+  width: 34.554016vh;
+  margin-top: 5vh;
+      @media (max-width: 1200px) {
+        height: 17.60584vh;
+        width: 35.5103vh;
+        margin-top: 0;
+        margin: 0 !important;
       }
 `
 
@@ -89,12 +94,11 @@ const Card = styled.img`
   width: 47.879vh;
   height: 27vh;
   border-radius: 25px;
-  margin: 5vh 0 2vh 0;
       @media (max-width: 1200px) {
         margin-top: 0;
-        width: 29.445vh;
-        height: 16vh;
-
+        height: 20.8vh;
+        width: 38.2785vh;
+        margin: 0 !important;
       }
 `
 
@@ -106,23 +110,16 @@ const Container = styled.div`
   background-size: cover;     
   background-repeat: no-repeat;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-left: 7vh;
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.0);
-    backdrop-filter: blur(2.5px);
-  }
+  padding-top: 2vh;
   @media (max-width: 1200px) {
     margin-top: 0;
     height: 102.2vh !important;
     padding-left: 0;
+    padding-top: 6vh;
   }
 `;
 
@@ -132,26 +129,23 @@ const CenterContent = styled.div`
   max-height: 90vh !important;
   height: 100% !important;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding-bottom: 5vh !important;
-  //background-color: green;
   @media (max-width: 1200px) {
-    flex-direction: column;
-    padding-top: 10vh;
+    flex-direction: row;
   }
   span{
     z-index: 10;
     border-radius: 8px;
     display: flex;
     align-items: center;
-    padding-top: 13vh;
+    padding-top: 1vh;
     flex-direction: column;
     width: 45%;
     @media (max-width: 1200px) {
     padding-top: 0;
     margin: 0 !important;
     width: 100%;
+    
   }
     p{
       font-size: 2.5vh;
@@ -168,7 +162,7 @@ const CenterContent = styled.div`
       }
     }
     b{
-      font-weight: 600;
+      font-weight: 800;
       text-align: center;
       max-width: 100%;
       letter-spacing: 1.5px;
@@ -201,25 +195,19 @@ const CenterContent = styled.div`
 `;
 
 const StyledButton = styled.div`
-background-color: #094A58;
+background-color: #f74242;
 padding: 2.1vh 3.4vh;
 color: white;
+font-weight: 700;
 font-family: "Montserrat", sans-serif;
-font-size: 2.5vh;
+font-size: 2.2vh;
 border-radius: 10px;
-background-image: linear-gradient(45deg, #f74242, #D13838, #9B2B2B, #811717);
-background-size: 400% 200%;
-animation: textura 3.4s cubic-bezier(0.2, 0.5, 0.9, 0.6) 2s infinite;
-transition: background 1.6s cubic-bezier(0.55, 0.1, 0.47, 0.94);
-box-shadow: 0px 0px 21px 0px rgba(250, 70, 70, 0.8);
 transition: scale 0.3s ease;
-fill: #FFFFFF;
 @media (max-width: 1200px) {
       font-size: 2vh !important;
       }
 &:hover{
     scale:1.05;
-    background-image: linear-gradient(45deg, #CA3636, #FA4646, #B83333, #B92727);
     cursor: pointer;
 }
 `
