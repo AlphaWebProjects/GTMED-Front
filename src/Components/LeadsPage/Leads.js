@@ -86,9 +86,17 @@ function isValidPhone(phone) {
 
     try {
 
-      const {utm_source, utm_medium, utm_campaign, utm_content, utm_term} = utmParams
-      
       await api.SendLead({name, email, phone, ...utmParams})
+
+      // Enviar evento para o Google Tag Manager
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          event: 'form_submit',
+          category: 'Formulário',
+          action: 'Envio',
+          label: 'Leads',
+        });
+      }
 
       toast('Cadastro realizado');
 
