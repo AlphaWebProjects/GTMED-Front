@@ -26,42 +26,75 @@ function Home() {
   }, []);
 
   return (
-    <Fade delay={0.5} cascade  damping={0.3} triggerOnce={true}>
+    
       <Container backgroundImage={backgroundHome} backgroundPosition={width > 1200 ? 'center' : 'left'}>
 
           <Fade delay={300} cascade  damping={0.3} triggerOnce={true} direction='down' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
               <Logo src={logo} alt='Logo'/>
           </Fade>
 
-        <Banner src={width > 1200 ? banner : bannerMobile} />
+          <Zoom delay={500}  damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+            <Banner src={width > 1200 ? banner : bannerMobile} />
+          </Zoom>
 
           <CenterContent> 
 
+            {width < 1200 ? 
+            
+            <span>
+
+                <Fade delay={1200} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                <Card src={card}/>
+                </Fade>
+
+                <Fade delay={1200} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                <b>Por que escolher a GTMED?</b>
+                </Fade>
+
+                <StyledButton>
+                  CONHEÇA NOSSOS CURSOS
+                </StyledButton>
+
+                <Arrow />
+
+            </span>
+            
+            : 
+                <>
                   <span>
 
-                    <Fade delay={1200} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                    <Zoom delay={1200} cascade  damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
                     <Card src={card}/>
-                    </Fade>
-
-                    <Fade delay={1200} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                    <b>Por que escolher a GTMED?</b>
-                    </Fade>
-
-                    <StyledButton>
-                      CONHEÇA NOSSOS CURSOS
-                    </StyledButton>
-
-                    <Arrow />
+                    </Zoom>
 
                   </span>
 
-                  
+                  <span>
 
+                    <Zoom delay={1200} cascade  damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                      <b>Por que escolher a GTMED?</b>
+                    </Zoom>
+
+                    <Zoom delay={1200} cascade  damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                      <StyledButton>
+                        CONHEÇA NOSSOS CURSOS
+                      </StyledButton>
+
+                      <Arrow />
+                    </Zoom>
+
+                    
+
+                  </span>
+                </>
+                  
+            }
+                                
           </CenterContent>
 
 
       </Container>
-    </Fade>
+
   );
 }
 
@@ -69,7 +102,7 @@ export default Home;
 
 const Banner = styled.img`
   border-radius: 20px;
-  margin-bottom: 0vh;
+  margin-bottom: 5vh;
       @media (max-width: 1200px) {
         height: 25.1512vh;
         width: 50.729vh;
@@ -114,7 +147,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   padding-left: 7vh;
-  padding-top: 2vh;
+  padding-top: 8vh;
   @media (max-width: 1200px) {
     margin-top: 0;
     height: 102.2vh !important;
@@ -153,7 +186,7 @@ const CenterContent = styled.div`
     align-items: center;
     padding-top: 1vh;
     flex-direction: column;
-    width: 45%;
+    width: 35%;
     @media (max-width: 1200px) {
     padding-top: 0;
     margin: 0 !important;
@@ -192,16 +225,18 @@ const CenterContent = styled.div`
       box-shadow: 0px 0px 21px 0px rgba(6, 25, 122, 0.8);
       transition: scale 0.3s ease;
       fill: #FFFFFF;
+      margin-bottom:4vh;
+      margin-top: 3vh;
 &:hover{
     scale:1.05;
     cursor: pointer;
 }
-      margin-bottom:8vh;
       cursor: pointer;
       @media (max-width: 1200px) {
         font-size: 1.5vh !important;
         max-width: 100%;
         margin-bottom: 7vh;
+        margin-top: 0 !important;
       }
     }
   }
