@@ -6,9 +6,32 @@ import { BiSolidDownArrow } from "react-icons/bi";
 import { toast } from 'react-toastify';
 import api from '../../services/API';
 import { Spinner } from '../../common/spinner/Spinner';
-import { BrowserRouter as Router, Route, Link, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, useNavigate, useLocation } from 'react-router-dom';
+
+const useQuery = () => {
+  return new URLSearchParams(useLocation().search);
+};
 
 function LeadsHome() {
+  const query = useQuery();
+  const [utmParams, setUtmParams] = useState({
+    utm_source: query.get('utm_source') || '',
+    utm_medium: query.get('utm_medium') || '',
+    utm_campaign: query.get('utm_campaign') || '',
+    utm_content: query.get('utm_content') || '',
+    utm_term: query.get('utm_term') || ''
+  });
+
+  // useEffect(() => {
+  //   setUtmParams({
+  //     utm_source: query.get('utm_source') || '',
+  //     utm_medium: query.get('utm_medium') || '',
+  //     utm_campaign: query.get('utm_campaign') || '',
+  //     utm_content: query.get('utm_content') || '',
+  //     utm_term: query.get('utm_term') || ''
+  //   });
+  // }, [query]);
+  
   const [width, setWidth] = useState(window.innerWidth);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -62,8 +85,18 @@ function isValidPhone(phone) {
     }
 
     try {
-      
-      await api.SendLead(name, email, phone)
+
+      await api.SendLead({name, email, phone, ...utmParams})
+
+      // Enviar evento para o Google Tag Manager
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          event: 'form_submit',
+          category: 'Formulário',
+          action: 'Envio',
+          label: 'Leads',
+        });
+      }
 
       toast('Cadastro realizado');
 
@@ -125,7 +158,7 @@ function isValidPhone(phone) {
                   
                   <Zoom delay={1450} duration={500} cascade triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
                    
-                    <StyledButton onClick={send}>
+                    <StyledButton onClick={send} id={"btn-send-leads"}>
                       Realizar cadastro
                     </StyledButton>
 
@@ -304,13 +337,13 @@ text-align: center;
 
 const StyledButton = styled.div`
 margin-bottom: 2vh;
-background-color: #094A58;
 padding: 2.1vh 3.4vh;
 color: white;
 font-family: "Montserrat", sans-serif;
 font-size: 2.8vh;
 border-radius: 10px;
-background-image: linear-gradient(45deg, #255C68, #20545F, #164249, #0B2A30);
+//background-image: linear-gradient(45deg, #255C68, #20545F, #164249, #0B2A30);
+background-color: #209DB9;
 background-size: 400% 200%;
 animation: textura 3.4s cubic-bezier(0.2, 0.5, 0.9, 0.6) 2s infinite;
 transition: background 1.6s cubic-bezier(0.55, 0.1, 0.47, 0.94);
@@ -319,7 +352,8 @@ transition: scale 0.3s ease;
 fill: #FFFFFF;
 &:hover{
     scale:1.05;
-    background-image: linear-gradient(45deg, #255C68, #4B94A3, #164249, #0B2A30);
+    //background-image: linear-gradient(45deg, #255C68, #4B94A3, #164249, #0B2A30);
+    background-color: #1BBADD;
     cursor: pointer;
 }
 `
