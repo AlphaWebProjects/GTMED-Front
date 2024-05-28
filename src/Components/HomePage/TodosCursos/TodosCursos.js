@@ -13,26 +13,19 @@ import { Fade } from 'react-awesome-reveal';
 import scripts from '../../../scripts';
 import { CgMoreO } from "react-icons/cg";
 import { BrowserRouter as Router, Route, Link, useNavigate } from 'react-router-dom';
-import background from '../../../assets/images/backgroundTelaCursos.png'
+import background from '../../../assets/images/Background2.png'
 import cardClinica from '../../../assets/images/clinicamedica/cardClinica.jpg'
 import cardOftalmo from '../../../assets/images/oftalmo/cardOftalmo.jpg'
 import cardOrtopedia from '../../../assets/images/ortopedia/cardOrtopedia.jpg'
 import cardPediatria from "../../../assets/images/pediatria/cardPediatria.jpg"
 import cardRadiologia from '../../../assets/images/radiologia/cardRadio.jpg'
 import cardAnestesio from "../../../assets/images/anestesio/cardAnestesio.jpg"
-import cardEmergencia1 from '../../../assets/images/emergencia/cardEmergencia1.png'
-import cardEmergencia2 from '../../../assets/images/emergencia/cardEmergencia2.png'
-import cardDermato from '../../../assets/images/dermato/cardDermato.jpg'
 import cardCardio from '../../../assets/images/cardio/cardCardio.jpg'
-import cardGineco from '../../../assets/images/gineco/cardGineco.jpg'
 import cardInfecto from '../../../assets/images/infectologia/cardInfectologia.jpg'
 import cardNeuro from '../../../assets/images/neuro/cardNeuro.jpg'
 import cardObstetro from '../../../assets/images/obstetro/cardObstetricia.jpg'
 import cardOrtorrino from '../../../assets/images/ortorrino/cardOrtorrino.jpg'
 import cardPsiquiatria from '../../../assets/images/psiquiatria/cardPsiquiatria.jpg'
-import click from '../../../assets/images/clickScreen.png'
-import Dermatologia from '../../../assets/images/Dermatologia.jpeg'
-import Radiologia from '../../../assets/images/Radiologia.jpeg'
 
 
 export default function TodosCursos({setScript}) {
@@ -59,7 +52,6 @@ export default function TodosCursos({setScript}) {
         { nome: '', area: scripts.Curso.Clinica, background: cardCardio },
         { nome: '', area: scripts.Curso.Clinica, background: cardOrtopedia },
         { nome: '', area: scripts.Curso.Clinica, background: cardObstetro },
-        { nome: '', area: scripts.Curso.Clinica, background: cardGineco },
         { nome: '', area: scripts.Curso.Clinica, background: cardInfecto },
         { nome: '', area: scripts.Curso.Clinica, background: cardRadiologia },
         { nome: '', area: scripts.Curso.Clinica, background: cardNeuro },
@@ -120,6 +112,7 @@ width: 100%;
 height: auto;
 display: flex;
 flex-direction: column;
+box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 justify-content: center;
 background-image: ${props => `url(${props.backgroundImage})`};
 background-position: center;

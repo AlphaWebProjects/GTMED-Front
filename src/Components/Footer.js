@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Slide, Fade } from "react-awesome-reveal";
 import logo from '../assets/images/logoGTMEDmelhorada.png'
-import background from '../assets/images/backgroundFooterHome.png'
+import background from '../assets/images/Background2.png'
 
 
 export default function Footer(){

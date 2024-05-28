@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import backgroundHome from "../../../assets/images/BackgroundHome.png"
+import backgroundHome from "../../../assets/images/Background1.png"
 import { Fade, Zoom } from 'react-awesome-reveal';
 import logo from '../../../assets/images/logoGTMEDmelhorada.png'
 import { BiSolidDownArrow } from "react-icons/bi";
@@ -120,6 +120,19 @@ const Container = styled.div`
     height: 102.2vh !important;
     padding-left: 0;
     padding-top: 6vh;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: ${props => `url(${props.backgroundImage})`};
+    background-position: ${props => `${props.backgroundPosition}`};
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(5px);
   }
 `;
 
