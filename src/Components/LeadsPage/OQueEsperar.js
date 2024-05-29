@@ -1,11 +1,29 @@
 import styled from "styled-components";
 import { IoIosMedical } from "react-icons/io";
 import { Fade, Slide } from 'react-awesome-reveal';
-import background from '../../assets/images/BackgroundHome.png'
+import background from '../../assets/images/backgroundLeads.png'
+import backgroundDesktop from '../../assets/images/backgroundLeadsDesktop.png'
 import { MdCheckCircleOutline } from "react-icons/md";
+import React, { useEffect, useState } from 'react';
 
 
 export default function OQueEsperar(){
+
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+    
+        const handleResize = () => {
+          setWidth(window.innerWidth);
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+    
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
 
 
     const body = {
@@ -27,7 +45,7 @@ export default function OQueEsperar(){
     }
 
     return (
-        <Container backgroundImage={background}>
+        <Container backgroundImage={ width > 1200 ? backgroundDesktop : background}>
             <SubContainer>
             <Slide triggerOnce={true}><Title>O que esperar do evento?</Title></Slide>
             <Fade delay={0.5} cascade damping={0.3} triggerOnce={true} style={{width:'100%'}}>

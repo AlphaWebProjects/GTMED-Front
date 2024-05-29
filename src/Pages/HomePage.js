@@ -10,13 +10,13 @@ import PerguntasHome from '../Components/HomePage/Home/PerguntasHome';
 
 export default function HomePage({script, setScript}) {
 
-
+    //tela de sobre desabilitada até mandarem o vídeo
 
     return (
         <Container>
             <Home />
             <TodosCursos setScript={setScript}/>
-            <SobreGTMED />
+            {/* <SobreGTMED /> */}
             <Eventos />
             <PerguntasHome />
             <Footer />

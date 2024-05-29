@@ -1,14 +1,32 @@
 import styled from "styled-components";
 import { IoIosMedical } from "react-icons/io";
 import { Fade, Slide } from 'react-awesome-reveal';
-import background from '../../assets/images/BackgroundHome.png'
+import background from '../../assets/images/backgroundLeads.png'
+import backgroundDesktop from '../../assets/images/backgroundLeadsDesktop.png'
 import { MdOutlineWorkspacePremium } from "react-icons/md";
 import { BiUserVoice } from "react-icons/bi";
 import { BsPlusSquare } from "react-icons/bs";
 import { MdCheckCircleOutline } from "react-icons/md";
+import React, { useEffect, useState } from 'react';
 
 
 export default function PorqueParticipar(){
+
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+    
+        const handleResize = () => {
+          setWidth(window.innerWidth);
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+    
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
 
 
     const body = {
@@ -34,7 +52,7 @@ export default function PorqueParticipar(){
     }
 
     return (
-        <Container backgroundImage={background}>
+        <Container backgroundImage={ width > 1200 ? backgroundDesktop : background}>
             <SubContainer>
             <Slide triggerOnce={true}><Title>Porque participar?</Title></Slide>
             <Fade delay={0.5} cascade damping={0.3} triggerOnce={true} style={{width:'100%'}}>

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { IoIosMedical } from "react-icons/io";
 import { Fade, Slide, Zoom } from 'react-awesome-reveal';
-import background from '../../assets/images/BackgroundHome.png'
+import background from '../../assets/images/backgroundLeads.png'
+import backgroundDesktop from '../../assets/images/backgroundLeadsDesktop.png'
 import { FaMapPin } from "react-icons/fa";
 import { FaExclamation } from "react-icons/fa";
 import { FaArrowTrendUp } from "react-icons/fa6";
@@ -95,14 +96,14 @@ function isValidPhone(phone) {
   }
 
     return (
-        <Container backgroundImage={background}>
+        <Container backgroundImage={ width > 1200 ? backgroundDesktop : background}>
             <Slide triggerOnce={true}><Title>Não fique de fora dessa experiência transformadora!</Title></Slide>
             <SubContainer>
             <Fade delay={0.5} cascade damping={0.3} triggerOnce={true} style={{width:'100%'}}>
 
                 <CenterContent>
                     <p> <FaMapPin /> Participe do evento online no dia 15/06, às 19h (horário de Brasília)</p>
-                    <p> <FaExclamation/> Vagas limitadas! Preencha o formulário ao lado para garantir sua inscrição gratuita</p>
+                    <p> <FaExclamation/> Vagas limitadas! Preencha o formulário {width > 1200 ? 'ao lado' : 'abaixo'} para garantir sua inscrição gratuita</p>
                     <p> <FaArrowTrendUp /> Prepare-se para dar o primeiro passo rumo a uma nova forma de se capacitar para os desafios da medicina</p>
                 </CenterContent>
 
@@ -250,24 +251,26 @@ margin: 2vh 0;
 `
 
 const StyledButton = styled.div`
-margin-bottom: 3vh;
-background-color: #094A58;
+margin-bottom: 2vh;
+margin-top: 2vh;
 padding: 2.1vh 3.4vh;
 color: white;
 font-family: "Montserrat", sans-serif;
-font-size: 2vh;
+font-size: 2.8vh;
 border-radius: 10px;
-background-image: linear-gradient(45deg, #255C68, #20545F, #164249, #0B2A30);
+font-weight: 600;
+//background-image: linear-gradient(45deg, #255C68, #20545F, #164249, #0B2A30);
+background-color: #209DB9;
 background-size: 400% 200%;
 animation: textura 3.4s cubic-bezier(0.2, 0.5, 0.9, 0.6) 2s infinite;
 transition: background 1.6s cubic-bezier(0.55, 0.1, 0.47, 0.94);
 box-shadow: 0px 0px 21px 0px rgba(104, 197, 218, 0.8);
 transition: scale 0.3s ease;
 fill: #FFFFFF;
-margin-top: 2vh;
 &:hover{
     scale:1.05;
-    background-image: linear-gradient(45deg, #255C68, #4B94A3, #164249, #0B2A30);
+    //background-image: linear-gradient(45deg, #255C68, #4B94A3, #164249, #0B2A30);
+    background-color: #1BBADD;
     cursor: pointer;
 }
 `

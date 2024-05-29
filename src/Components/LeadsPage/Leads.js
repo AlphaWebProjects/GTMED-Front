@@ -159,7 +159,7 @@ function isValidPhone(phone) {
                   <Zoom delay={1450} duration={500} cascade triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
                    
                     <StyledButton onClick={send} id={"btn-send-leads"}>
-                      Realizar cadastro
+                      REALIZAR CADASTRO
                     </StyledButton>
 
                   </Zoom>
@@ -342,6 +342,7 @@ color: white;
 font-family: "Montserrat", sans-serif;
 font-size: 2.8vh;
 border-radius: 10px;
+font-weight: 600;
 //background-image: linear-gradient(45deg, #255C68, #20545F, #164249, #0B2A30);
 background-color: #209DB9;
 background-size: 400% 200%;
@@ -354,19 +355,6 @@ fill: #FFFFFF;
     scale:1.05;
     //background-image: linear-gradient(45deg, #255C68, #4B94A3, #164249, #0B2A30);
     background-color: #1BBADD;
-    cursor: pointer;
-}
-`
-
-const Arrow = styled(BiSolidDownArrow)`
-color: #164249;
-transition: scale 0.3s ease;
-height: 2vh;
-width: 2vh;
-margin-top: 10px;
-&:hover{
-    scale:1.3;
-    color: #4B94A3;
     cursor: pointer;
 }
 `
