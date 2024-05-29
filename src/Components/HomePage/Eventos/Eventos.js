@@ -78,7 +78,7 @@ export default function Eventos({setScript}) {
                   delay: 4500,
                   disableOnInteraction: true,
                 }}
-                spaceBetween={width > 1200 ? '30' : '8'}
+                spaceBetween={width > 1200 ? '25' : '8'}
               modules={[Pagination, Navigation, Autoplay, FreeMode]}
             >
 
@@ -161,6 +161,20 @@ const StyledSwiperSlide = styled(SwiperSlide)`
   border-radius: 2%;
   display: flex;
   flex-direction: column;
+  transition: all 0.2s ease-in-out; 
+  &:hover{
+      transform: scale(1.03);
+      cursor: pointer;
+      span{
+        opacity: 1;
+      }
+      @media (max-width: 1200px) {
+        transform: scale(1.0);
+  }
+  &:active{
+    cursor: pointer;
+  }
+  }
   h1{
     font-size: 3vh;
     letter-spacing: 0px;
@@ -174,7 +188,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     margin: 0 0 1vh 2vh;
   }
   img{
-    width: 30vh;
+    width: 30.2vh;
     height: 20vh;
   }
   @media (max-width: 1200px) {
@@ -198,19 +212,6 @@ const StyledSwiperSlide = styled(SwiperSlide)`
         margin: 2vh 0 4vh 0vh;
       }
   }
-  &:hover{
-      transform: scale(1.03);
-      cursor: pointer;
-      span{
-        opacity: 1;
-      }
-      @media (max-width: 1200px) {
-        transform: scale(1.0);
-  }
-  &:active{
-    cursor: pointer;
-  }
-  }
 `;
 
 const StyledSwiperContainer = styled(Swiper)`
@@ -222,6 +223,7 @@ const StyledSwiperContainer = styled(Swiper)`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 1vh;
   @media (max-width: 1500px) {
     max-width: 35vh !important;
     height: auto;
