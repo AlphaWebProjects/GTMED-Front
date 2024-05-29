@@ -78,7 +78,7 @@ export default function Eventos({setScript}) {
                   delay: 4500,
                   disableOnInteraction: true,
                 }}
-                spaceBetween={width > 1200 ? '20' : '8'}
+                spaceBetween={width > 1200 ? '30' : '8'}
               modules={[Pagination, Navigation, Autoplay, FreeMode]}
             >
 
