@@ -62,14 +62,14 @@ export default function Eventos({setScript}) {
               <h1>Eventos presenciais</h1>
             </Fade>
 
-            <Fade delay={600} cascade damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: align, flexDirection: 'column', textAlign:'center',width:'100%'}}> 
+            <Fade delay={600} cascade damping={0.3} triggerOnce={true} direction='up' style={{ flexDirection: 'column',width:'100%'}}> 
               <p>Veja como foram os ultimos eventos da GTMED e fique por dentro dos próximos que irão ocorrer.</p>
             </Fade>
             </TextContainer>
           
             <Fade delay={1000} cascade damping={0.3} triggerOnce={true} direction='up'> 
               <StyledSwiperContainer
-              slidesPerView={1}
+              slidesPerView={width > 1200 ? 2 : 1}
               navigation={false}
               pagination={{
                 clickable: true,
@@ -117,8 +117,9 @@ background-repeat: no-repeat;
 padding: 15vh 45vh 8vh 40vh;
 h1{
   color: rgb(0,100,255);
-  font-size: 6vh;
+  font-size: 5vh;
   letter-spacing: 1px;
+  margin-bottom: 3vh;
   font-weight: 500;
   font-family: "Montserrat"
 }
@@ -134,17 +135,19 @@ p{
 `;
 
 const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 8% 0 0 8%;
+  
   @media (max-width: 1200px) {
       align-items: center;
-      text-align: center;
+      max-width: 95% !important;
       h1{
-        margin-bottom: 4vh;
+        margin-bottom: 2vh;
+        font-size: 4.3vh;
       }
       p{
-        max-width: 90%;
+        max-width: 100%;
+        @media (max-width: 1200px) {
+      }
       }
       margin-bottom: 7vh;
   }
@@ -153,7 +156,7 @@ const TextContainer = styled.div`
 const StyledSwiperSlide = styled(SwiperSlide)`
   background-color: none !important;
   background-color: white;
-  width: 35vh !important;
+  width: 30vh !important;
   height: 50vh !important;
   border-radius: 2%;
   display: flex;
@@ -171,40 +174,28 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     margin: 0 0 1vh 2vh;
   }
   img{
-    width: 35vh;
+    width: 30vh;
     height: 20vh;
   }
-  span {
-    height: 12% !important;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    backdrop-filter: blur(5px); 
-    background-color: rgba(50, 50, 50, 0.5);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    p{
-      font-size: 3vh;
-      color:  RGB(180, 180, 180);
-    }
-  }
   @media (max-width: 1200px) {
-      width: 100% !important;
-      height: 65vh !important;
+      width: 35vh !important;
+      height: 55vh !important;
       span{
         opacity: 1;
       }
       img{
-        width: 100%;
-        height: 35vh;
+        width: 35vh;
+        height: 20vh;
         border-radius: 2%;
       }
       align-items: center;
       p{
         font-size: 2.5vh;
+        margin: 0 0 1vh 0vh;
       }
       h1{
-        font-size: 4vh;
+        font-size: 3.5vh;
+        margin: 2vh 0 4vh 0vh;
       }
   }
   &:hover{
@@ -223,7 +214,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
 `;
 
 const StyledSwiperContainer = styled(Swiper)`
-  max-width: 35vh !important; 
+  max-width: 64vh !important; 
   background-color: none !important;
   height: auto;
   margin-top: 1.5vh;
@@ -232,7 +223,7 @@ const StyledSwiperContainer = styled(Swiper)`
   justify-content: center;
   align-items: center;
   @media (max-width: 1500px) {
-    max-width: 100% !important;
+    max-width: 35vh !important;
     height: auto;
     padding-bottom: 8vh;
   }
@@ -255,9 +246,4 @@ const StyledSwiperContainer = styled(Swiper)`
   }
 `;
 
-const More = styled(CgMoreO)`
-width: 3vh;
-height: 3vh;
-color:  RGB(180, 180, 180)
-`
   

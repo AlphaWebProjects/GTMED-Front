@@ -5,8 +5,8 @@ import { Fade, Zoom } from 'react-awesome-reveal';
 import logo from '../../../assets/images/logoGTMEDmelhorada.png'
 import { BiSolidDownArrow } from "react-icons/bi";
 import card from '../../../assets/images/cardSobreGTMED.png'
-import bannerMobile from '../../../assets/images/bannerMobile.jpg'
-import banner from '../../../assets/images/banner.jpg'
+import bannerMobile from '../../../assets/images/bannerMobile.png'
+import banner from '../../../assets/images/banner.png'
 
 function Home() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -103,6 +103,8 @@ export default Home;
 const Banner = styled.img`
   border-radius: 20px;
   margin-bottom: 5vh;
+  width: 135vh;
+  height: 26vh;
       @media (max-width: 1200px) {
         height: 25.1512vh;
         width: 50.729vh;
