@@ -198,7 +198,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
         opacity: 1;
       }
       img{
-        width: 35vh;
+        width: 35.1vh;
         height: 20vh;
         border-radius: 2%;
       }
@@ -225,9 +225,10 @@ const StyledSwiperContainer = styled(Swiper)`
   align-items: center;
   padding-left: 1vh;
   @media (max-width: 1500px) {
-    max-width: 35vh !important;
+    max-width: 35.1vh !important;
     height: auto;
     padding-bottom: 8vh;
+    padding-left: 0 !important;
   }
   .swiper-pagination-bullet {
     background: white;
