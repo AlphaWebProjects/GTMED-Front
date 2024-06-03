@@ -250,7 +250,7 @@ margin: 2vh 0;
   }
 `
 
-const StyledButton = styled.div`
+const StyledButton = styled.button`
 margin-bottom: 2vh;
 margin-top: 2vh;
 padding: 2.1vh 3.4vh;
