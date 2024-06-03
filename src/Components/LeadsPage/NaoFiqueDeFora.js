@@ -102,7 +102,7 @@ function isValidPhone(phone) {
             <Fade delay={0.5} cascade damping={0.3} triggerOnce={true} style={{width:'100%'}}>
 
                 <CenterContent>
-                    <p> <FaMapPin /> Participe do evento online no dia 15/06, às 19h (horário de Brasília)</p>
+                    <p> <FaMapPin /> Participe do evento online no dia 15/06, às 9h (horário de Brasília)</p>
                     <p> <FaExclamation/> Vagas limitadas! Preencha o formulário {width > 1200 ? 'ao lado' : 'abaixo'} para garantir sua inscrição gratuita</p>
                     <p> <FaArrowTrendUp /> Prepare-se para dar o primeiro passo rumo a uma nova forma de se capacitar para os desafios da medicina</p>
                 </CenterContent>
