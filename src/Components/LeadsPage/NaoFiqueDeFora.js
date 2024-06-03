@@ -48,7 +48,9 @@ function isValidPhone(phone) {
   return phoneRegex.test(str);
 }
 
-  async function send(){
+  async function send(event){
+
+    event.preventDefault();
 
     setLoadingBool(true);
 

@@ -66,7 +66,9 @@ function isValidPhone(phone) {
   return phoneRegex.test(str);
 }
 
-  async function send(){
+  async function send(event){
+
+    event.preventDefault();
 
     setBool(true);
 
@@ -85,6 +87,7 @@ function isValidPhone(phone) {
     }
 
     try {
+      console.log('antes do redirect')
 
       await api.SendLead({name, email, phone, ...utmParams})
 
@@ -95,7 +98,7 @@ function isValidPhone(phone) {
       setEmail('');
       setName('');
       setPhone('');
-
+      
       navigate('/obrigado');
 
       return 
@@ -103,7 +106,9 @@ function isValidPhone(phone) {
     } catch (error) {
       
       console.log(error)
-      return toast.error('Não foi possível realizar o seu cadastro')
+      setBool(false);
+      toast.error('Não foi possível realizar o seu cadastro');
+      return 
 
     }
 
