@@ -97,37 +97,42 @@ function isValidPhone(phone) {
 
     return (
         <Container backgroundImage={ width > 1200 ? backgroundDesktop : background}>
+
             <Slide triggerOnce={true}><Title>Não fique de fora dessa experiência transformadora!</Title></Slide>
-            <SubContainer>
-            <Fade delay={0.5} cascade damping={0.3} triggerOnce={true} style={{width:'100%'}}>
 
-                <CenterContent>
-                    <p> <FaMapPin /> Participe do evento online no dia 15/06, às 9h (horário de Brasília)</p>
-                    <p> <FaExclamation/> Vagas limitadas! Preencha o formulário {width > 1200 ? 'ao lado' : 'abaixo'} para garantir sua inscrição gratuita</p>
-                    <p> <FaArrowTrendUp /> Prepare-se para dar o primeiro passo rumo a uma nova forma de se capacitar para os desafios da medicina</p>
-                </CenterContent>
+              <SubContainer>
 
-                <form>
-                    <StyledInput value={name} onChange={(e) => setName(e.target.value)} type='text' placeholder='Seu nome' />
+              <Fade delay={0.5} cascade damping={0.3} triggerOnce={true} style={{width:'100%'}}>
 
-                    <StyledInput value={email} onChange={(e) => setEmail(e.target.value)} type='email' placeholder='Seu melhor email'/>
+                  <CenterContent>
+                      <p> <FaMapPin /> Participe do evento online no dia 15/06, às 9h (horário de Brasília)</p>
+                      <p> <FaExclamation/> Vagas limitadas! Preencha o formulário {width > 1200 ? 'ao lado' : 'abaixo'} para garantir sua inscrição gratuita</p>
+                      <p> <FaArrowTrendUp /> Prepare-se para dar o primeiro passo rumo a uma nova forma de se capacitar para os desafios da medicina</p>
+                  </CenterContent>
 
-                    <StyledInput value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='Celular com DDD'/>
+                  <form onSubmit={send} id={"btn-send-leads"}>
+                      <StyledInput value={name} onChange={(e) => setName(e.target.value)} type='text' placeholder='Seu nome' />
 
-                    <Zoom delay={600} duration={500} cascade triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                        <StyledButton onClick={send}>
-                            Realizar cadastro
-                        </StyledButton>
-                    </Zoom>
+                      <StyledInput value={email} onChange={(e) => setEmail(e.target.value)} type='email' placeholder='Seu melhor email'/>
 
-                    {loadingBool ? <p>Realizando seu cadastro...</p> : ''}
+                      <StyledInput value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='Celular com DDD'/>
 
-                </form>
+                      <Zoom delay={600} duration={500} cascade triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                          <StyledButton type="submit">
+                              Realizar cadastro
+                          </StyledButton>
+                      </Zoom>
 
-                
+                      {loadingBool ? <p>Realizando seu cadastro...</p> : ''}
 
-            </Fade>
-            </SubContainer>
+                  </form>
+
+                  
+
+              </Fade>
+
+              </SubContainer>
+
         </Container>
     )
     }
@@ -175,8 +180,8 @@ const SubContainer = styled.div`
             font-size: 2.8vh;
             font-weight: 700;
         }
-        @media (max-width: 1000px) {
-        flex-direction: column;
+        @media (max-width: 1200px) {
+        flex-direction: column !important;
         width: 100%;
         margin-left: 0 !important;
     }
@@ -254,6 +259,7 @@ const StyledButton = styled.button`
 margin-bottom: 2vh;
 margin-top: 2vh;
 padding: 2.1vh 3.4vh;
+border: none;
 color: white;
 font-family: "Montserrat", sans-serif;
 font-size: 2.8vh;

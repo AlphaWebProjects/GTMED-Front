@@ -116,46 +116,47 @@ function isValidPhone(phone) {
           <CenterContent> 
                 <span>
 
-                <Fade delay={800} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                  <h1>
-                    Médico, 
-                  </h1> 
-                  </Fade>
+                      <Fade delay={800} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                        <h1>
+                          Médico, 
+                        </h1> 
+                      </Fade>
 
-                  <Fade delay={1000} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                  <h2>
-                    você está pronto para <b>REVOLUCIONAR</b> a forma como se prepara para os <b>PLANTÕES</b>? 
-                  </h2> 
-                  </Fade>
+                      <Fade delay={1000} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                        <h2>
+                          você está pronto para <b>REVOLUCIONAR</b> a forma como se prepara para os <b>PLANTÕES</b>? 
+                        </h2> 
+                      </Fade>
 
-                  <Fade delay={1200} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                  <p>
-                    Participe do evento GTMED e aprenda como perder o medo em situações de emergência em plantões, seja você estudante do 6º ano de medicina ou médico recém formado. 
-                  </p> 
-                  </Fade>
-                  <form onSubmit={send} id={"btn-send-leads"}>
-                  <Fade delay={1500} cascade  damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                  <AntigoForm>
+                      <Fade delay={1200} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                        <p>
+                          Participe do evento GTMED e aprenda como perder o medo em situações de emergência em plantões, seja você estudante do 6º ano de medicina ou médico recém formado. 
+                        </p> 
+                      </Fade>
 
-                    <StyledInput value={name} onChange={(e) => setName(e.target.value)} type='text' placeholder='Seu nome' />
+                      <form onSubmit={send} id={"btn-send-leads"}>
+                          <Fade delay={1500} cascade  damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                          <AntigoForm>
 
-                    <StyledInput value={email} onChange={(e) => setEmail(e.target.value)} type='email' placeholder='Seu melhor email'/>
+                            <StyledInput value={name} onChange={(e) => setName(e.target.value)} type='text' placeholder='Seu nome' />
 
-                    <StyledInput value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='Celular com DDD'/>
-                    
-                  </AntigoForm>
-                  </Fade>
-                  
-                  <Zoom delay={1450} duration={500} cascade triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                   
-                    <StyledButton onClick={send} type="submit">
-                      Realizar cadastro
-                    </StyledButton>
+                            <StyledInput value={email} onChange={(e) => setEmail(e.target.value)} type='email' placeholder='Seu melhor email'/>
 
-                  </Zoom>
-                  </form>
+                            <StyledInput value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='Celular com DDD'/>
+                            
+                          </AntigoForm>
+                          </Fade>
+                          
+                          <Zoom delay={1450} duration={500} cascade triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                          
+                            <StyledButton type="submit">
+                              Realizar cadastro
+                            </StyledButton>
 
-                  {bool ? <p>Realizando seu cadastro...</p> : ''}
+                          </Zoom>
+                      </form>
+
+                      {bool ? <p>Realizando seu cadastro...</p> : ''}
 
                 </span>
 
@@ -294,12 +295,15 @@ const AntigoForm = styled.div`
   justify-content: space-around;
   width: 135vh;
   min-height: 55%;
-  margin-bottom: 9vh;
+  margin-bottom: 4vh;
   label{
       font-family: "Montserrat", sans-serif;
       color: white;
       font-size: 2.8vh;
       font-weight: 700;
+  }
+  @media (max-width: 1000px) {
+    flex-direction: column;
   }
 `
 
@@ -329,10 +333,11 @@ text-align: center;
   }
 `
 
-const StyledButton = styled.div`
+const StyledButton = styled.button`
 margin-bottom: 2vh;
 padding: 2.1vh 3.4vh;
 color: white;
+border: none;
 font-family: "Montserrat", sans-serif;
 font-size: 2.8vh;
 border-radius: 10px;
