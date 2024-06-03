@@ -295,7 +295,7 @@ const AntigoForm = styled.div`
   justify-content: space-around;
   width: 135vh;
   min-height: 55%;
-  margin-bottom: 4vh;
+  margin-bottom: 9vh;
   label{
       font-family: "Montserrat", sans-serif;
       color: white;
@@ -304,6 +304,7 @@ const AntigoForm = styled.div`
   }
   @media (max-width: 1000px) {
     flex-direction: column;
+    margin-bottom: 4vh;
   }
 `
 
