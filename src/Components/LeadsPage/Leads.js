@@ -88,16 +88,6 @@ function isValidPhone(phone) {
 
       await api.SendLead({name, email, phone, ...utmParams})
 
-      // Enviar evento para o Google Tag Manager
-      if (window.dataLayer) {
-        window.dataLayer.push({
-          event: 'form_submit',
-          category: 'Formulário',
-          action: 'Envio',
-          label: 'Leads',
-        });
-      }
-
       toast('Cadastro realizado');
 
       setBool(false);
@@ -143,9 +133,9 @@ function isValidPhone(phone) {
                     Participe do evento GTMED e aprenda como perder o medo em situações de emergência em plantões, seja você estudante do 6º ano de medicina ou médico recém formado. 
                   </p> 
                   </Fade>
-
+                  <form onSubmit={send} id={"btn-send-leads"}>
                   <Fade delay={1500} cascade  damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                  <form>
+                  <AntigoForm>
 
                     <StyledInput value={name} onChange={(e) => setName(e.target.value)} type='text' placeholder='Seu nome' />
 
@@ -153,16 +143,17 @@ function isValidPhone(phone) {
 
                     <StyledInput value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='Celular com DDD'/>
                     
-                  </form>
+                  </AntigoForm>
                   </Fade>
                   
                   <Zoom delay={1450} duration={500} cascade triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
                    
-                    <StyledButton onClick={send} id={"btn-send-leads"}>
-                      REALIZAR CADASTRO
+                    <StyledButton onClick={send} type="submit">
+                      Realizar cadastro
                     </StyledButton>
 
                   </Zoom>
+                  </form>
 
                   {bool ? <p>Realizando seu cadastro...</p> : ''}
 
@@ -278,22 +269,7 @@ const CenterContent = styled.div`
             max-width: 99%;
         }
     }
-    form{
-    z-index: 10;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 135vh;
-    min-height: 55%;
-    margin-bottom: 9vh;
-    label{
-        font-family: "Montserrat", sans-serif;
-        color: white;
-        font-size: 2.8vh;
-        font-weight: 700;
-    }
+    
     @media (max-width: 1000px) {
     flex-direction: column;
     width: 100%;
@@ -302,12 +278,30 @@ const CenterContent = styled.div`
   @media (max-width: 1000px) {
     max-width: 100%;
   }
-  }
+
   @media (max-width: 1000px) {
     margin-top: 10px;
     max-width: 95% !important;
   }
 `;
+
+const AntigoForm = styled.div`
+  z-index: 10;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 135vh;
+  min-height: 55%;
+  margin-bottom: 9vh;
+  label{
+      font-family: "Montserrat", sans-serif;
+      color: white;
+      font-size: 2.8vh;
+      font-weight: 700;
+  }
+`
 
 const StyledInput = styled.input`
 width: 40vh;
@@ -342,7 +336,6 @@ color: white;
 font-family: "Montserrat", sans-serif;
 font-size: 2.8vh;
 border-radius: 10px;
-font-weight: 600;
 //background-image: linear-gradient(45deg, #255C68, #20545F, #164249, #0B2A30);
 background-color: #209DB9;
 background-size: 400% 200%;
@@ -355,6 +348,19 @@ fill: #FFFFFF;
     scale:1.05;
     //background-image: linear-gradient(45deg, #255C68, #4B94A3, #164249, #0B2A30);
     background-color: #1BBADD;
+    cursor: pointer;
+}
+`
+
+const Arrow = styled(BiSolidDownArrow)`
+color: #164249;
+transition: scale 0.3s ease;
+height: 2vh;
+width: 2vh;
+margin-top: 10px;
+&:hover{
+    scale:1.3;
+    color: #4B94A3;
     cursor: pointer;
 }
 `
