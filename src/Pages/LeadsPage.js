@@ -19,13 +19,13 @@ export default function LeadsPage() {
             <OQueEsperar />
             <PorqueParticipar />
             <NaoFiqueDeFora />
-            <WhatsAppButton
-            // href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
+            {/* <WhatsAppButton
+             href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
             target="_blank"
-            // onClick={(e) => e.stopPropagation()}
+             onClick={(e) => e.stopPropagation()}
             >
                 <FaWhatsapp size={30} color="white" />
-            </WhatsAppButton>
+            </WhatsAppButton> */}
         </Container>
     );
 }

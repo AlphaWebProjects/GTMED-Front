@@ -20,13 +20,13 @@ export default function HomePage({script, setScript}) {
             <Eventos />
             <PerguntasHome />
             <Footer />
-            <WhatsAppButton
-            // href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
+            {/* <WhatsAppButton
+             href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
             target="_blank"
-            // onClick={(e) => e.stopPropagation()}
+             onClick={(e) => e.stopPropagation()}
             >
                 <FaWhatsapp size={30} color="white" />
-            </WhatsAppButton>
+            </WhatsAppButton> */}
         </Container>
     );
 }
