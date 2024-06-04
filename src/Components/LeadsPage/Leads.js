@@ -310,6 +310,7 @@ const AntigoForm = styled.div`
   @media (max-width: 1000px) {
     flex-direction: column;
     margin-bottom: 4vh;
+    width: auto;
   }
 `
 
