@@ -30,16 +30,16 @@ export default function OQueEsperar(){
         title: "AO FINAL DO CURSO VOCÊ SERÁ CAPAZ DE:",
         topics: [
             {
-                details: " Seja um dos primeiros a conhecer essa abordagem revolucionária de ensino médico",
+                details: "Demonstrações ao vivo de simulações realistas de casos clínicos",
             },
             {
-                details: "Tenha a oportunidade de interagir com professores altamente capacitados",
+                details: "Bate-papo com especialistas renomados sobre os desafios dos plantões",
             },
             {
-                details: "Descubra como a GTMED pode ajudá-lo a ganhar confiança e competência para enfrentar os plantões",
+                details: "Apresentação exclusiva da metodologia inovadora da GTMED",
             },
             {
-                details: "Garanta vantagens exclusivas ao se inscrever durante o evento de lançamento",
+                details: "Lançamento da plataforma de cursos GTMED, com condições exclusivas para os participantes do evento",
             },
         ]
     }
