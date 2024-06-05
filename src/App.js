@@ -9,6 +9,7 @@ import { UserProvider } from './context/UserContext';
 import React, { useEffect, useState } from 'react';
 import scripts from './scripts'
 import Obrigado from './Components/LeadsPage/Obrigado';
+import LeadsPage2 from './Pages/LeadsPage2';
 
 //pasta de imagens está em assets
 
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/landing" element={<LandingPage script={script}/>} />
           <Route path="/evento-gtmed" element={<LeadsPage/>} />
+          <Route path="/gtmed-evento" element={<LeadsPage2/>} />
           <Route path="/" element={<HomePage script={script} setScript={setScript}/>} />
           <Route path="/obrigado" element={<Obrigado />} />
 
