@@ -35,7 +35,7 @@ function Home() {
   };
 
   const handleScrollToCourses = () => {
-    const offset = width > 1200 ? 800 : 600; // Ajuste o valor conforme necessário
+    const offset = width > 1200 ? 800 : 800; // Ajuste o valor conforme necessário
     window.scrollTo({
       top: offset,
       behavior: 'smooth',
@@ -49,7 +49,7 @@ function Home() {
       </Fade>
 
       <Zoom delay={500} damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-        <Banner src={width > 1200 ? banner : bannerMobile} />
+        <Banner src={width > 1200 ? banner : bannerMobile} style={{ width:width > 1200 ?'100%':'90%',height:width > 1200 ?'60%':'100%'  }}/>
       </Zoom>
 
       <CenterContent> 

@@ -221,6 +221,7 @@ const StyledSwiperContainer = styled(Swiper)`
     &:hover{
       cursor: pointer;
       scale: 1.05;
+      border-radius: 40%;
     }
   }
 `;
