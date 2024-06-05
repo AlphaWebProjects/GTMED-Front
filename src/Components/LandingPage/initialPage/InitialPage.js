@@ -8,7 +8,13 @@ export default function InitialPage({intro}) {
 
     const [width, setWidth] = useState(window.innerWidth);
   
-
+    const handleScrollToPayment = () => {
+        const offset = width > 1200 ? 4400 : 4100; 
+        window.scrollTo({
+          top: offset,
+          behavior: 'smooth',
+        });
+      };
   useEffect(() => {
 
     const handleResize = () => {
@@ -30,7 +36,7 @@ export default function InitialPage({intro}) {
                 <Fade delay={500} cascade damping={0.4} style={{ display: width > 1200 ? '' : 'flex', alignItems: width > 1200 ? '' : 'center', flexDirection: width > 1200 ? '' : 'center' }} triggerOnce={true}>
                     <img src={intro.logo} alt='logo'/>
                     <p>{intro.descricao}.</p>
-                    <button>{intro.botao}</button>
+                    <button onClick={handleScrollToPayment} >{intro.botao}</button>
                 </Fade>
             </MainContent>
         </InitialContainer>

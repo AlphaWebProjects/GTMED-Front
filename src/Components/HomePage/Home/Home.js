@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import backgroundHome from "../../../assets/images/Background1.png"
 import { Fade, Zoom } from 'react-awesome-reveal';
@@ -11,8 +11,10 @@ import banner from '../../../assets/images/banner.png'
 function Home() {
   const [width, setWidth] = useState(window.innerWidth);
 
+  const scrollToCoursesRef = useRef(null);
+  const scrollToWhyGTRef = useRef(null);
+
   useEffect(() => {
-    
     const handleResize = () => {
       setWidth(window.innerWidth);
     };
@@ -20,81 +22,78 @@ function Home() {
     window.addEventListener('resize', handleResize);
 
     return () => {
-
       window.removeEventListener('resize', handleResize);
     };
   }, []);
 
+  const handleScrollToWhyGT = () => {
+    const offset = width > 1200 ? 500 : 300; // Ajuste o valor conforme necessário
+    window.scrollTo({
+      top: offset,
+      behavior: 'smooth',
+    });
+  };
+
+  const handleScrollToCourses = () => {
+    const offset = width > 1200 ? 800 : 600; // Ajuste o valor conforme necessário
+    window.scrollTo({
+      top: offset,
+      behavior: 'smooth',
+    });
+  };
+
   return (
-    
-      <Container backgroundImage={backgroundHome} backgroundPosition={width > 1200 ? 'center' : 'left'}>
+    <Container backgroundImage={backgroundHome} backgroundPosition={width > 1200 ? 'center' : 'left'}>
+      <Fade delay={300} cascade damping={0.3} triggerOnce={true} direction='down' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+        <Logo src={logo} alt='Logo'/>
+      </Fade>
 
-          <Fade delay={300} cascade  damping={0.3} triggerOnce={true} direction='down' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-              <Logo src={logo} alt='Logo'/>
-          </Fade>
+      <Zoom delay={500} damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+        <Banner src={width > 1200 ? banner : bannerMobile} />
+      </Zoom>
 
-          <Zoom delay={500}  damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-            <Banner src={width > 1200 ? banner : bannerMobile} />
-          </Zoom>
+      <CenterContent> 
+        {width < 1200 ? 
+          <span>
+            <Fade delay={1200} cascade damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+              <Card src={card}/>
+            </Fade>
 
-          <CenterContent> 
+            <Fade delay={1200} cascade damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+              <b onClick={handleScrollToCourses}  ref={scrollToWhyGTRef}>Por que escolher a GTMED?</b>
+            </Fade>
 
-            {width < 1200 ? 
-            
+            <StyledButton onClick={handleScrollToCourses}>
+              CONHEÇA NOSSOS CURSOS
+            </StyledButton>
+
+            <Arrow  onClick={handleScrollToCourses} />
+          </span>
+        : 
+          <>
             <span>
-
-                <Fade delay={1200} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+              <Zoom delay={1200} cascade damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
                 <Card src={card}/>
-                </Fade>
+              </Zoom>
+            </span>
 
-                <Fade delay={1200} cascade  damping={0.3} triggerOnce={true} direction='up' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                <b>Por que escolher a GTMED?</b>
-                </Fade>
+            <span>
+              <Zoom delay={1200} cascade damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                <b onClick={handleScrollToCourses} ref={scrollToWhyGTRef}>Por que escolher a GTMED?</b>
+              </Zoom>
 
-                <StyledButton>
+              <Zoom delay={1200} cascade damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                <StyledButton onClick={handleScrollToCourses}>
                   CONHEÇA NOSSOS CURSOS
                 </StyledButton>
 
-                <Arrow />
-
+                <Arrow  onClick={handleScrollToCourses} />
+              </Zoom>
             </span>
-            
-            : 
-                <>
-                  <span>
-
-                    <Zoom delay={1200} cascade  damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                    <Card src={card}/>
-                    </Zoom>
-
-                  </span>
-
-                  <span>
-
-                    <Zoom delay={1200} cascade  damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                      <b>Por que escolher a GTMED?</b>
-                    </Zoom>
-
-                    <Zoom delay={1200} cascade  damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                      <StyledButton>
-                        CONHEÇA NOSSOS CURSOS
-                      </StyledButton>
-
-                      <Arrow />
-                    </Zoom>
-
-                    
-
-                  </span>
-                </>
-                  
-            }
-                                
-          </CenterContent>
-
-
-      </Container>
-
+          </>
+        }
+      </CenterContent>
+    </Container>
   );
 }
 

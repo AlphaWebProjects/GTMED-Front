@@ -12,7 +12,6 @@ import LastPage from '../Components/LandingPage/lastPage/LastPage';
 import { FaWhatsapp } from 'react-icons/fa';
 
 export default function LandingPage({script}) {
-
     return (
         <Container>
             <InitialPage intro={script.intro} />
