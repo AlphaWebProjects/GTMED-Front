@@ -75,7 +75,7 @@ function LeadsHome2() {
           </Fade>
           <Fade delay={1000} cascade damping={0.3} triggerOnce direction="up">
             <Heading2>
-              domine a <b>PRÁTICA</b> dos plantões com a expertise de 15 especialistas renomados em nosso <b>EVENTO GRATUITO</b>
+              domine a <b>PRÁTICA</b> dos plantões com a expertise de <b>15 médicos da USP</b> em nosso <b>EVENTO GRATUITO</b>
             </Heading2>
           </Fade>
           <Fade delay={1200} cascade damping={0.3} triggerOnce direction="up">
