@@ -202,10 +202,17 @@ const StyledSwiperContainer = styled(Swiper)`
   }
   .swiper-button-next,
   .swiper-button-prev {
-    color: lightblue;
+    display:flex;
+    color:#020A32;
+    align-items: center;
+    justify-content: center;
     margin-right: 50px;
-    width: 9vh;
+    width: 6vh;
     height: 6vh;
+    background-color: rgb(200,200,255,0.5);
+    border-radius: 25%;
+   transition: all 0.2s ease-in-out;
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     @media (max-width: 1500px) {
     width: 3vh;
     height: 1vh;
@@ -213,6 +220,8 @@ const StyledSwiperContainer = styled(Swiper)`
   }
     &:hover{
       cursor: pointer;
+      scale: 1.05;
+      border-radius: 40%;
     }
   }
 `;
