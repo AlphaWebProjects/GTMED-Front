@@ -31,12 +31,12 @@ export default function InitialPage({intro}) {
     //style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}
     
     return (
-        <InitialContainer backgroundImage={width > 810 ? intro.backgroundImage : intro.backgroundImageMobile}>
-            <MainContent cores={intro.cores[0]}>
+        <InitialContainer backgroundImage={width > 810 ? intro?.backgroundImage : intro?.backgroundImageMobile}>
+            <MainContent cores={intro?.cores[0]}>
                 <Fade delay={500} cascade damping={0.4} style={{ display: width > 1200 ? '' : 'flex', alignItems: width > 1200 ? '' : 'center', flexDirection: width > 1200 ? '' : 'center' }} triggerOnce={true}>
-                    <img src={intro.logo} alt='logo'/>
-                    <p>{intro.descricao}.</p>
-                    <button onClick={handleScrollToPayment} >{intro.botao}</button>
+                    <img src={intro?.logo} alt='logo'/>
+                    <p>{intro?.descricao}.</p>
+                    <button onClick={handleScrollToPayment} >{intro?.botao}</button>
                 </Fade>
             </MainContent>
         </InitialContainer>

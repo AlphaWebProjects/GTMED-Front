@@ -15,16 +15,14 @@ import LeadsPage2 from './Pages/LeadsPage2';
 
 function App() {
 
-  const [script, setScript] = useState(scripts.Curso.Clinica);
-
   return (
     <UserProvider>
       <Router>
         <Routes>
-          <Route path="/landing" element={<LandingPage script={script}/>} />
+          <Route path="/" element={<HomePage cardsData={scripts.Cards}/>} />
+          <Route path="/landing/:courseName" element={<LandingPage courseData={scripts.LandingPages}/>} />
           <Route path="/evento-gtmed" element={<LeadsPage/>} />
           <Route path="/gtmed-evento" element={<LeadsPage2/>} />
-          <Route path="/" element={<HomePage script={script} setScript={setScript}/>} />
           <Route path="/obrigado" element={<Obrigado />} />
 
           <Route path="*" element={<NotFound />} />

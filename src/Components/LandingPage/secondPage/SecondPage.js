@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import allScripts from '../../../allScripts.json';
 import { FaAngleDown } from "react-icons/fa";
 import { Fade } from 'react-awesome-reveal';
 export default function SecondPage({pontuacoes}) {
@@ -7,15 +6,15 @@ export default function SecondPage({pontuacoes}) {
         <SecondPageContainer>
             <Fade delay={0.3} cascade damping={0.3} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }} triggerOnce={true}>
             <Description style={{fontWeight:'bold'}}>
-            {pontuacoes.descricao1}
+            {pontuacoes?.descricao1}
             </Description>
             
             <Description>
-            <h3>{pontuacoes.descricao2}</h3>
+            <h3>{pontuacoes?.descricao2}</h3>
             </Description>
 
-            <Description style={{backgroundColor: pontuacoes.cores[0].fundoDescricao3,borderRadius:"20px",fontWeight:'bold'}}>
-            {pontuacoes.descricao3}
+            <Description style={{backgroundColor: pontuacoes?.cores[0]?.fundoDescricao3,borderRadius:"20px",fontWeight:'bold'}}>
+            {pontuacoes?.descricao3}
             </Description>
             <ButtonDown>
             <FaAngleDown color='white' size={40}/>
