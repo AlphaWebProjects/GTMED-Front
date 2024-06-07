@@ -37,15 +37,18 @@ export default function LandingPage({ courseData }) {
     courseDetails && (
       <Container>
         <InitialPage intro={courseDetails?.intro} />
-        <SecondPage pontuacoes={courseDetails?.pontuacoes} />
-        <SobreOCurso sobreOCurso={courseDetails?.sobreOCurso} />
+        {/* <SecondPage pontuacoes={courseDetails?.pontuacoes} />*/}
+        <SobreOCurso sobreOCurso={courseDetails?.sobreOCurso} /> 
         <ParaQuem paraQuem={courseDetails?.paraQuem} />
         <AoFimDoCurso aoFimDoCurso={courseDetails?.aoFimDoCurso} />
         {/* <Depoimentos depoimentos={courseDetails?.depoimentos}/> */}
-        <Oferta oferta={courseDetails?.oferta} />
         <PageQuestions />
         <LastPage />
         {/* <Footer/> por enquanto mantém sem footer*/}
+        
+
+        <Oferta oferta={courseDetails?.oferta} />
+
         <WhatsAppButton
           // href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
           target="_blank"
@@ -53,6 +56,7 @@ export default function LandingPage({ courseData }) {
         >
           <FaWhatsapp size={30} color="white" />
         </WhatsAppButton>
+
       </Container>
     )
   );

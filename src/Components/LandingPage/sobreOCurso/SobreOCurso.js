@@ -37,15 +37,10 @@ function SobreOCurso(sobreOCurso) {
       <MainContentHome>
 
         <CenterContent borderColor={sobreOCurso.sobreOCurso.cores.bordaDescricao1}>
-          <Fade delay={0.5} cascade  damping={0.3} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }} triggerOnce={true} direction='left'>
-            <p>
-              {sobreOCurso.sobreOCurso.descricao1}
-            </p>
-          </Fade>
 
           <Fade delay={2} cascade  damping={0.3} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }} triggerOnce={true} direction='right'>
           <h1>
-            {sobreOCurso.sobreOCurso.descricao2}
+            {"NESSE TREINAMENTO, VOCÊ VAI APRENDER:"}
           </h1>
           </Fade>
           

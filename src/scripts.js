@@ -21,16 +21,18 @@ import cardPsiquiatria from './assets/images/psiquiatria/cardPsiquiatria.jpg'
 
 const scripts = {
   Cards: [
+    { nome: 'anestesio', background: cardAnestesio},
+    { nome: 'radiologia', background: cardRadiologia },
     { nome: 'cardio', background: cardCardio },
     { nome: 'ortopedia', background: cardOrtopedia },
     { nome: 'obstetro', background: cardObstetro },
     { nome: 'infecto', background: cardInfecto },
-    { nome: 'cadiologia', background: cardRadiologia },
+    //{ nome: 'radiologia', background: cardRadiologia },
     { nome: 'neuro', background: cardNeuro },
     { nome: 'oftamologia', background: cardOftalmo },
     { nome: 'clinica', background: cardClinica },
     { nome: 'psiquiatria', background: cardPsiquiatria },
-    { nome: 'anestesio', background: cardAnestesio},
+    //{ nome: 'anestesio', background: cardAnestesio},
     { nome: 'ortorrino', background: cardOrtorrino },
     { nome: 'pediatria', background: cardPediatria },
   ],
