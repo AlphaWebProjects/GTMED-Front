@@ -16,10 +16,12 @@ import background from "../../../assets/images/Background2.png";
 
 export default function TodosCursos({ cardsData }) {
   const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
 
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
+      setHeight(window.innerHeight)
     };
 
     window.addEventListener("resize", handleResize);
@@ -47,7 +49,7 @@ export default function TodosCursos({ cardsData }) {
       <Fade delay={1000} cascade damping={0.3} triggerOnce={true}>
         <StyledSwiperContainer
           freeMode={true}
-          slidesPerView={width > 1200 ? 5.5 : 2.4}
+          slidesPerView={'auto'}
           navigation={true}
           pagination={{
             clickable: true,
@@ -171,18 +173,17 @@ const StyledSwiperContainer = styled(Swiper)`
   .swiper-button-next,
   .swiper-button-prev {
     display: flex;
-    color: #020a32;
+    color: white;
     align-items: center;
     justify-content: center;
     margin-right: 50px;
     width: 6vh;
     height: 6vh;
-    background-color: rgb(200, 200, 255, 0.5);
     border-radius: 25%;
     transition: all 0.2s ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     @media (max-width: 1500px) {
       width: 3vh;
       height: 1vh;
@@ -194,10 +195,4 @@ const StyledSwiperContainer = styled(Swiper)`
       border-radius: 40%;
     }
   }
-`;
-
-const More = styled(CgMoreO)`
-  width: 3vh;
-  height: 3vh;
-  color: RGB(180, 180, 180);
 `;

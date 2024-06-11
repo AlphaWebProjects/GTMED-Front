@@ -7,6 +7,7 @@ import SobreGTMED from "../Components/HomePage/SobreGTMed/SobreGTMED";
 import Eventos from "../Components/HomePage/Eventos/Eventos";
 import { FaWhatsapp } from "react-icons/fa";
 import PerguntasHome from "../Components/HomePage/Home/PerguntasHome";
+import Compra from "../Components/HomePage/Compra/Compra";
 
 export default function HomePage({ cardsData }) {
   //tela de sobre desabilitada até mandarem o vídeo
@@ -18,6 +19,7 @@ export default function HomePage({ cardsData }) {
       {/* <SobreGTMED /> */}
       <Eventos />
       <PerguntasHome />
+      <Compra />
       <Footer />
       {/* <WhatsAppButton
              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
