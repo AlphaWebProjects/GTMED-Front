@@ -84,7 +84,7 @@ export default function Beneficios({ aoFimDoCurso }) {
 const Container = styled.div`
   user-select: none;
   width: 100%;
-  padding: 30vh 10vw;
+  padding: 30vh 0;
   height: 50.1875rem;
   background-position: center;
   background-size: cover;
@@ -93,10 +93,9 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (max-width: 1200px) {
+  @media (max-width: 1500px) {
     height: auto;
     padding: 5vh 4vw;
-    background-position: top;
   }
 `;
 
@@ -126,7 +125,7 @@ const Row = styled.div`
   justify-content: space-around;
   width: 80%;
   margin-bottom: 4vh;
-  @media (max-width: 1200px) {
+  @media (max-width: 1500px) {
     flex-direction: column;
     margin-bottom: 0;
   }
