@@ -230,7 +230,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     border-radius: 8% 8% 0 0;
   }
   @media (max-width: 1200px) {
-    width: 52vh !important;
+    width: 45vh !important;
     height: 74vh !important;
     h1, p{
       margin: 0 !important;
@@ -250,7 +250,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     }
     img {
       width: 100%;
-      height: 30vh;
+      height: 27vh;
       border-radius: 2%;
       margin-bottom: 3vh;
     }
