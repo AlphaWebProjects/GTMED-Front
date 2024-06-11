@@ -11,9 +11,22 @@ import Compra from "../Components/HomePage/Compra/Compra";
 import oferta1 from '../assets/images/iconesOferta/1.png'
 import oferta2 from '../assets/images/iconesOferta/2.png'
 import oferta3 from '../assets/images/iconesOferta/3.png'
+import React, { useState, useEffect, useRef } from 'react';
 
 export default function HomePage({ cardsData }) {
-  //tela de sobre desabilitada até mandarem o vídeo
+  
+  function offerIcon(position){
+
+    console.log('clicou')
+
+    window.scrollTo(
+      {
+        top: window.innerWidth > 1200 ? 3700 : 2450,
+        behavior: 'smooth'
+      }
+    )
+
+  }
 
   return (
     <Container>
@@ -24,7 +37,7 @@ export default function HomePage({ cardsData }) {
       <PerguntasHome />
       <Compra />
       <Footer />
-      <OfferIcon src={oferta3} alt='oferta' />
+      <OfferIcon src={oferta3} alt='oferta' onClick={() => offerIcon()}/>
       {/* <WhatsAppButton
              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
             target="_blank"
