@@ -199,10 +199,12 @@ const Option = styled.div`
       width: 5rem !important;
       height: 5rem !important;
     }
+    @media (max-width: 1500px) {
+      margin-bottom: 4vh;
+    }
     @media (max-width: 1200px) {
       width: 29rem;
       height: 16rem;
-      margin-bottom: 4vh;
       padding: 5vh 0;
     }
   }
