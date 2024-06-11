@@ -177,9 +177,14 @@ const CenterContent = styled.div`
     }
   }
   h1{
+    background: linear-gradient(45deg, ${(props) => props.borderColor}, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: ${(props) => props.borderColor};
     text-align: center;
-    width: 50%;
-    font-size: 22px;
+    width: 100%;
+    font-size: 2.8rem;
     padding: 1vh;
     border-radius: 30px;
     margin-bottom: 0;
@@ -187,7 +192,7 @@ const CenterContent = styled.div`
     transition: transform 0.8s ease;
     @media (max-width: 1200px) {
       width: 95%;
-      font-size: 17px;
+      font-size: 3.5vh;
       padding: 2vh;
   }
     &:hover{
@@ -229,7 +234,6 @@ const StyledSwiperSlide = styled(SwiperSlide)`
 const StyledSwiperContainer = styled(Swiper)`
   max-width: 80% !important; 
   height: auto;
-  margin-top: 1.5vh;
   padding-bottom: 4vh;
   @media (max-width: 1500px) {
     max-width: 100% !important;

@@ -45,7 +45,7 @@ export default function AoFimDoCurso({ aoFimDoCurso }) {
     <Container backgroundImage={aoFimDoCurso.backgroundImage}>
       <SubContainer>
         <Slide triggerOnce={true}>
-          <Title>COM O FIM DO CURSO VOCÊ SERÁ CAPAZ DE:</Title>
+          <Title>COM O CURSO VOCÊ SERÁ CAPAZ DE:</Title>
         </Slide>
         <Fade
           delay={0.5}

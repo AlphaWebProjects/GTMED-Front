@@ -12,6 +12,7 @@ import LastPage from "../Components/LandingPage/lastPage/LastPage";
 import { FaWhatsapp } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Beneficios from "../Components/LandingPage/Beneficios/Beneficios";
 import { toast } from "react-toastify";
 
 export default function LandingPage({ courseData }) {
@@ -37,6 +38,7 @@ export default function LandingPage({ courseData }) {
     courseDetails && (
       <Container>
         <InitialPage intro={courseDetails?.intro} />
+        <Beneficios aoFimDoCurso={courseDetails?.aoFimDoCurso}/>
         {/* <SecondPage pontuacoes={courseDetails?.pontuacoes} />*/}
         <SobreOCurso sobreOCurso={courseDetails?.sobreOCurso} /> 
         <ParaQuem paraQuem={courseDetails?.paraQuem} />

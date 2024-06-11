@@ -58,10 +58,10 @@ const Container = styled.div`
 
 const OfferIcon = styled.img`
 position: fixed;
-  top: 110px;
-  right: 7vw;
-  width: 90px;
-  height: 90px;
+  top: 70px;
+  right: 5vw;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   display: flex;
   align-items: center;
