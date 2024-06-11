@@ -8,6 +8,9 @@ import Eventos from "../Components/HomePage/Eventos/Eventos";
 import { FaWhatsapp } from "react-icons/fa";
 import PerguntasHome from "../Components/HomePage/Home/PerguntasHome";
 import Compra from "../Components/HomePage/Compra/Compra";
+import oferta1 from '../assets/images/iconesOferta/1.png'
+import oferta2 from '../assets/images/iconesOferta/2.png'
+import oferta3 from '../assets/images/iconesOferta/3.png'
 
 export default function HomePage({ cardsData }) {
   //tela de sobre desabilitada até mandarem o vídeo
@@ -21,6 +24,7 @@ export default function HomePage({ cardsData }) {
       <PerguntasHome />
       <Compra />
       <Footer />
+      <OfferIcon src={oferta3} alt='oferta' />
       {/* <WhatsAppButton
              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
             target="_blank"
@@ -38,6 +42,48 @@ const Container = styled.div`
   margin-top: -21px;
   box-sizing: border-box;
 `;
+
+const OfferIcon = styled.img`
+position: fixed;
+  top: 110px;
+  right: 7vw;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  z-index: 100000000;
+  @media (max-width: 1200px) {
+      width: 60px;
+      height: 60px;
+      top: 13px;
+      right: 2vw;
+    }
+  &:hover {
+    box-shadow: 0 3px 6px rgba(0, 128, 0, 0.3);
+    transform: scale(1.1);
+  }
+
+  &:active {
+    box-shadow: 0 1px 3px rgba(0, 128, 0, 0.3);
+    transform: scale(0.9);
+  }
+
+  svg {
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover svg {
+    transform: scale(1.1);
+  }
+
+  &:active svg {
+    transform: scale(0.9);
+  }
+`
 
 const WhatsAppButton = styled.a`
   position: fixed;

@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Fade } from 'react-awesome-reveal';
-import sobregtmed from '../../../assets/images/sobregtmed.png'
 import logo from '../../../assets/images/logoGTMEDmelhorada.png'
 import background from '../../../assets/images/Background1.png'
-import backgroundMobile from '../../../assets/images/backgroundSobreGTMEDmobile.png'
 
 function SobreGTMED() {
 
