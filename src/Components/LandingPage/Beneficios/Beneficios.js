@@ -28,24 +28,24 @@ export default function Beneficios({ aoFimDoCurso }) {
               <Option color={aoFimDoCurso.cores.corTopicos}>
                 <div>
                   <FaUniversity size="80px"/>
-                  <h1>Da USP para você</h1>
-                  <p>Uma plataforma elaborada por <b>especialistas da USP</b> visando o seu aprendizado</p>
+                  <h1>Da Usp para você</h1>
+                  <p>Uma plataforma estruturadas por especialistas da USP pensada para você</p>
                 </div>
               </Option>
 
               <Option color={aoFimDoCurso.cores.corTopicos}>
                 <div>
                   <FaClinicMedical size="80px"/>
-                  <h1>Casos clínicos <b>reais</b></h1>
-                  <p>Aulas voltadas para a <b>imersão</b> em situações médicas</p>
+                  <h1>Casos Clínicos Reais</h1>
+                  <p>Aulas voltadas para imersão da prática Médica</p>
                 </div>
               </Option>
 
               <Option color={aoFimDoCurso.cores.corTopicos}>
                 <div>
                   <FaHandshake size="80px"/>
-                  <h1>Garantia de <b>7 dias</b></h1>
-                  <p>Você poderá realizar o <b>reembolso integral</b> em até <b>7 dias após a compra</b></p>
+                  <h1>Garantia de 7 dias</h1>
+                  <p>Você poderá solicitar reembolso integral em até 7 dias da compra</p>
                 </div>
               </Option>
             </Row>
@@ -54,8 +54,8 @@ export default function Beneficios({ aoFimDoCurso }) {
               <Option color={aoFimDoCurso.cores.corTopicos}>
                 <div>
                   <FaCheckCircle size="80px"/>
-                  <h1><b>1 ano</b> de acesso</h1>
-                  <p>Acesso ao <b>curso</b> e <b>demais conteúdos especiais</b> por <b>12 meses</b></p>
+                  <h1>12 Meses de Acesso</h1>
+                  <p>Acesso ao curso e condições especiais para os usuários por 12 meses</p>
                 </div>
               </Option>
 
@@ -63,15 +63,15 @@ export default function Beneficios({ aoFimDoCurso }) {
                 <div>
                   <PiCertificateBold size="80px"/>
                   <h1><b>Certificado</b></h1>
-                  <p>Emissão do <b>certificado exclusivo</b> após a finalização do curso</p>
+                  <p>Certificado exclusivo de conclusão do curso</p>
                 </div>
               </Option>
 
               <Option color={aoFimDoCurso.cores.corTopicos}>
                 <div>
                   <FaArrowUpWideShort size="80px"/>
-                  <h1><b>Aulas direcionadas</b></h1>
-                  <p>Conteúdo focado para o que você <b>realmente</b> precisa saber</p>
+                  <h1>Aulas Direcionadas</h1>
+                  <p>Conteúdo focado para o que você realmente precisa saber</p>
                 </div>
               </Option>
             </Row>
