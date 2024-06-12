@@ -129,6 +129,7 @@ const Row = styled.div`
   @media (max-width: 1500px) {
     flex-direction: column;
     margin-bottom: 0;
+    width: 90% !important;
   }
 `;
 
