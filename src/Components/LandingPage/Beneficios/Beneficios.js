@@ -7,6 +7,7 @@ import { FaClinicMedical } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
 import { PiCertificateBold } from "react-icons/pi";
+import { FaArrowUpWideShort } from "react-icons/fa6";
 
 export default function Beneficios({ aoFimDoCurso }) {
   return (
@@ -26,7 +27,7 @@ export default function Beneficios({ aoFimDoCurso }) {
             <Row>
               <Option color={aoFimDoCurso.cores.corTopicos}>
                 <div>
-                  <FaUniversity size="10vh"/>
+                  <FaUniversity size="80px"/>
                   <h1>Da USP para você</h1>
                   <p>Uma plataforma elaborada por <b>especialistas da USP</b> visando o seu aprendizado</p>
                 </div>
@@ -34,7 +35,7 @@ export default function Beneficios({ aoFimDoCurso }) {
 
               <Option color={aoFimDoCurso.cores.corTopicos}>
                 <div>
-                  <FaClinicMedical size="10vh"/>
+                  <FaClinicMedical size="80px"/>
                   <h1>Casos clínicos <b>reais</b></h1>
                   <p>Aulas voltadas para a <b>imersão</b> em situações médicas</p>
                 </div>
@@ -42,7 +43,7 @@ export default function Beneficios({ aoFimDoCurso }) {
 
               <Option color={aoFimDoCurso.cores.corTopicos}>
                 <div>
-                  <FaHandshake size="10vh"/>
+                  <FaHandshake size="80px"/>
                   <h1>Garantia de <b>7 dias</b></h1>
                   <p>Você poderá realizar o <b>reembolso integral</b> em até <b>7 dias após a compra</b></p>
                 </div>
@@ -52,7 +53,7 @@ export default function Beneficios({ aoFimDoCurso }) {
             <Row>
               <Option color={aoFimDoCurso.cores.corTopicos}>
                 <div>
-                  <FaCheckCircle size="10vh"/>
+                  <FaCheckCircle size="80px"/>
                   <h1><b>1 ano</b> de acesso</h1>
                   <p>Acesso ao <b>curso</b> e <b>demais conteúdos especiais</b> por <b>12 meses</b></p>
                 </div>
@@ -60,7 +61,7 @@ export default function Beneficios({ aoFimDoCurso }) {
 
               <Option color={aoFimDoCurso.cores.corTopicos}>
                 <div>
-                  <PiCertificateBold size="10vh"/>
+                  <PiCertificateBold size="80px"/>
                   <h1><b>Certificado</b></h1>
                   <p>Emissão do <b>certificado exclusivo</b> após a finalização do curso</p>
                 </div>
@@ -68,9 +69,9 @@ export default function Beneficios({ aoFimDoCurso }) {
 
               <Option color={aoFimDoCurso.cores.corTopicos}>
                 <div>
-                  <PiCertificateBold size="10vh"/>
-                  <h1><b>Certificado</b></h1>
-                  <p>Emissão do <b>certificado exclusivo</b> após a finalização do curso</p>
+                  <FaArrowUpWideShort size="80px"/>
+                  <h1><b>Aulas direcionadas</b></h1>
+                  <p>Conteúdo focado para o que você <b>realmente</b> precisa saber</p>
                 </div>
               </Option>
             </Row>
@@ -123,7 +124,7 @@ const Row = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  width: 80%;
+  width: 75%;
   margin-bottom: 4vh;
   @media (max-width: 1500px) {
     flex-direction: column;
@@ -155,10 +156,10 @@ const Option = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 0 1.25rem;
+  margin: 0 3vh;
   > div {
-    width: 22rem;
-    height: 18rem;
+    width: 400px;
+    height: 280px;
     border-radius: 1rem;
     display: flex;
     align-items: center;
@@ -168,14 +169,14 @@ const Option = styled.div`
     border: 5px solid ${(props) => props.color};
     padding: 2vh 0;
     h1 {
-      font-size: 3.2vh;
+      font-size: 25px !important;
       margin: 2vh 0;
       background: linear-gradient(45deg, ${(props) => props.color}, #ffffff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       @media (max-width: 1200px) {
-        font-size: 3.5vh;
+        font-size: 25px !important;
       }
     }
     p {
@@ -190,7 +191,7 @@ const Option = styled.div`
       @media (max-width: 1200px) {
         font-weight: 600;
         width: calc(100% - (3.75rem * 0.75));
-        font-size: 2.5vh;
+        font-size: 18px !important;
         width: 93%;
       }
     }
@@ -203,8 +204,8 @@ const Option = styled.div`
       margin-bottom: 4vh;
     }
     @media (max-width: 1200px) {
-      width: 29rem;
-      height: 16rem;
+      width: 500px;
+      height: 300px;
       padding: 5vh 0;
     }
   }
