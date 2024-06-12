@@ -14,7 +14,7 @@ export default function Beneficios({ aoFimDoCurso }) {
     <Container backgroundImage={aoFimDoCurso.backgroundImage}>
       <SubContainer>
         <Slide triggerOnce={true}>
-          <Title color={aoFimDoCurso.cores.corTopicos} > <b>PORQUE</b> devo adquirir este curso?</Title>
+          <Title color={aoFimDoCurso.cores.corTopicos}><b>PORQUE</b> devo adquirir este curso?</Title>
         </Slide>
         <Fade
           delay={0.5}
@@ -87,6 +87,7 @@ const Container = styled.div`
   width: 100%;
   padding: 30vh 0;
   height: 50.1875rem;
+  //background-image: url(${props => props.backgroundImage});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -106,6 +107,7 @@ const SubContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0 5vw;
   @media (max-width: 1200px) {
     width: 100%;
   }
@@ -121,15 +123,14 @@ const RowContainer = styled.div`
 
 const Row = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-around;
-  width: 75%;
+  width: 100%;
   margin-bottom: 4vh;
   @media (max-width: 1500px) {
-    flex-direction: column;
+    justify-content: center;
     margin-bottom: 0;
-    width: 90% !important;
+    width: 90%;
   }
 `;
 
@@ -156,11 +157,17 @@ const Option = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  margin: 0 3vh;
+  width: calc(33% - 20px);
+  margin: 10px;
+  @media (max-width: 1200px) {
+    width: calc(50% - 20px);
+  }
+  @media (max-width: 768px) {
+    width: calc(100% - 20px);
+  }
   > div {
-    width: 400px;
-    height: 280px;
+    width: 100%;
+    height: 100%;
     border-radius: 1rem;
     display: flex;
     align-items: center;
