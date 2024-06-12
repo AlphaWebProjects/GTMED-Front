@@ -178,6 +178,9 @@ const LeftSide = styled.div`
 `
 const RightSide = styled(LeftSide)`
     width: 45%;
+    @media (max-width: 1200px) {
+        width: 96%;
+    }
 
 `
 
@@ -255,6 +258,7 @@ const Option = styled.div`
         width: calc(100% - 30px);
         @media (max-width: 1200px) {
             width: calc(95% - 1.875rem);
+            font-size: .95rem;
         }
     }
 `
