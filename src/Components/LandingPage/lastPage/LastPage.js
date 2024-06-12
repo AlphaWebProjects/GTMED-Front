@@ -47,6 +47,7 @@ const Foto = styled.div`
     }
     @media (max-width: 768px) {
         height: 20vh;
+        width: 50%;
         margin-bottom: 20px;
     }
 `;
@@ -62,6 +63,9 @@ const Texto = styled.div`
     max-width: 40%;
     &:hover {
         transform: scale(1.05);
+    }
+    @media (max-width: 768px) {
+        max-width: 80%;
     }
 `;
 
