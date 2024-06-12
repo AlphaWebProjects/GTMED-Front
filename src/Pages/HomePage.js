@@ -76,12 +76,12 @@ position: fixed;
       right: 2vw;
     }
   &:hover {
-    box-shadow: 0 3px 6px rgba(0, 128, 0, 0.3);
+    //box-shadow: 0 3px 6px rgba(0, 128, 0, 0.3);
     transform: scale(1.1);
   }
 
   &:active {
-    box-shadow: 0 1px 3px rgba(0, 128, 0, 0.3);
+    //box-shadow: 0 1px 3px rgba(0, 128, 0, 0.3);
     transform: scale(0.9);
   }
 
