@@ -59,7 +59,7 @@ export default function Eventos({ setScript }) {
           triggerOnce={true}
           direction="up"
         >
-          <h1>Eventos GTMED</h1>
+          <h1>Eventos Presenciais</h1>
         </Fade>
 
         <Fade
@@ -144,6 +144,7 @@ const Container = styled.div`
     margin-bottom: 1vh;
     font-weight: 600;
     font-family: "Montserrat";
+    text-align: center;
   }
   p {
     color: white;
