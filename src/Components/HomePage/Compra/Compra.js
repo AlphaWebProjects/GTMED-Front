@@ -157,6 +157,7 @@ const Container = styled.div`
 const TextContainer = styled.div`
   margin-bottom: 5vh;
   padding: 0 8vh 0 8vh;
+  text-align: center;
   @media (max-width: 1200px) {
     align-items: center;
     max-width: 95% !important;
