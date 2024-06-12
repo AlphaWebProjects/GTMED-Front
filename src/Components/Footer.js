@@ -13,44 +13,34 @@ export default function Footer() {
   return (
     <Container backgroundImage={background}>
       <SubContainer>
-        <Fade delay={1} cascade damping={2} triggerOnce={true}>
-          <TextColumn>
-            <h4>Contato</h4>
-            <h5>Email: email@email.com</h5>
-            <h5>Celular: (11) 99999-9999</h5>
-          </TextColumn>
+        <TextColumn>
+          <h4>Contato</h4>
+          <h5>Email: email@email.com</h5>
+          <h5>Celular: (11) 99999-9999</h5>
+        </TextColumn>
 
-          <ImageContainer>
-            <img src={logo} alt="Logo" />
-          </ImageContainer>
+        <ImageContainer>
+          <img src={logo} alt="Logo" />
+        </ImageContainer>
 
-          <SocialContainer>
-            <SocialLink
-              href={instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram />
-            </SocialLink>
-            <SocialLink
-              href={youtube}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaYoutube />
-            </SocialLink>
-            <SocialLink href={tiktok} target="_blank" rel="noopener noreferrer">
-              <FaTiktok />
-            </SocialLink>
-            <SocialLink
-              href={linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin />
-            </SocialLink>
-          </SocialContainer>
-        </Fade>
+        <SocialContainer>
+          <SocialLink
+            href={instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram />
+          </SocialLink>
+          <SocialLink href={youtube} target="_blank" rel="noopener noreferrer">
+            <FaYoutube />
+          </SocialLink>
+          <SocialLink href={tiktok} target="_blank" rel="noopener noreferrer">
+            <FaTiktok />
+          </SocialLink>
+          <SocialLink href={linkedin} target="_blank" rel="noopener noreferrer">
+            <FaLinkedin />
+          </SocialLink>
+        </SocialContainer>
       </SubContainer>
 
       <AboutContainer>
