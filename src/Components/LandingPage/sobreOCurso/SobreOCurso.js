@@ -177,7 +177,7 @@ const CenterContent = styled.div`
     }
   }
   h1{
-    background: linear-gradient(45deg, ${(props) => props.borderColor}, #ffffff);
+    background: linear-gradient(0deg, ${(props) => props.borderColor}, #FFFFFF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

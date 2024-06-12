@@ -94,7 +94,7 @@ const scripts = {
           "O entendimento de questões oculares em plantões não é um conhecimento isolado, reservado apenas para os privilegiados intelectualmente, ou para os raros colegas que, após dominarem e interpretarem os casos mais específicos, optam por não compartilhar o conhecimento com mais ninguém.",
         cores: [
           {
-            fundoDescricao3: "#43A5A8",
+            fundoDescricao3: "#4AC3FF",
           },
         ],
         },
@@ -141,7 +141,7 @@ const scripts = {
           {
             corTitulo: "#475DDB",
             backgroundImageBotao:
-              "linear-gradient(45deg, #5ce1e6, #56CDD1, #41A2A3, #43A5A8)",
+              "linear-gradient(45deg, #5ce1e6, #56CDD1, #41A2A3, #4AC3FF)",
             backgroundImageBotaoHover:
               "linear-gradient(45deg, #5ce1e6, #4CBBBE, #3D989B, #5ABBBE)",
             backgroundColorBotao: "#8593E7",
@@ -159,7 +159,7 @@ const scripts = {
           "O conhecimento sobre questões clínicas em plantões não é exclusivo de alguns poucos privilegiados intelectualmente ou de colegas que optam por não compartilhar o que aprenderam. É uma habilidade acessível a todos, que pode ser adquirida e compartilhada para benefício de todos os profissionais da área médica.",
         cores: [
           {
-            fundoDescricao3: "#43A5A8",
+            fundoDescricao3: "#4AC3FF",
           },
         ],
       },
@@ -170,7 +170,7 @@ const scripts = {
           "Exploramos minuciosamente e nos dedicamos a estruturar e apresentar nosso método de raciocínio para análises médicas em plantões de clínica, com foco especial na resolução de questões clínicas.",
         imagensAulas: [],
         cores: {
-          bordaDescricao1: "#43A5A8",
+          bordaDescricao1: "#4AC3FF",
         },
       },
       paraQuem: {
@@ -182,7 +182,7 @@ const scripts = {
         backgroundImage: clinicamedicabackground2,
         backgroundImageMobile: backgroundParaQuemClinicaMobile,
         cores: {
-          corTopicos: "#43A5A8",
+          corTopicos: "#4AC3FF",
         },
       },
       aoFimDoCurso: {
@@ -198,7 +198,7 @@ const scripts = {
           "Estabilizar e tratar complicações agudas da cirrose hepática",
         ],
         cores: {
-          corTopicos: "#43A5A8",
+          corTopicos: "#4AC3FF",
         },
         backgroundImage: backgroundAoFimDoCursoClinica,
       },

@@ -140,7 +140,7 @@ const Title = styled.h3`
   font-size: 3rem;
   font-weight: 600;
   margin-bottom: 2rem;
-  background: linear-gradient(45deg, ${(props) => props.color}, #ffffff);
+  background: linear-gradient(0deg, ${(props) => props.color}, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -174,12 +174,23 @@ const Option = styled.div`
     font-size: 2.5rem;
     flex-direction: column;
     color: ${(props) => props.color};
-    border: 5px solid ${(props) => props.color};
-    padding: 2vh 0;
+    border: 5px solid;
+    border-color: ${(props) => {
+    const hex = props.color;
+    const opacity = 0.25; // Define a opacidade desejada
+
+    // Converte hexadecimal para RGB
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+
+    return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+    }};
+    padding: 3vh 0;
     h1 {
       font-size: 25px !important;
       margin: 2vh 0;
-      background: linear-gradient(45deg, ${(props) => props.color}, #ffffff);
+      background: linear-gradient(0deg, ${(props) => props.color}, #ffffff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -192,7 +203,8 @@ const Option = styled.div`
       font-weight: 500;
       width: 90%;
       text-align: center;
-      background: linear-gradient(45deg, ${(props) => props.color}, #ffffff);
+      background:  #ffffff;
+      font-weight: 600;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
