@@ -55,7 +55,7 @@ export default function TodosCursos({ cardsData }) {
             clickable: true,
           }}
           autoplay={{
-            delay: 2500,
+            delay: 10000,
             disableOnInteraction: true,
           }}
           spaceBetween={width > 1200 ? "10" : "8"}

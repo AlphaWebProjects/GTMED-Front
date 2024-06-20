@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import backgroundHome from "../../../assets/images/BackgroundHome.png"
-import backgroundHomeMobile from '../../../assets/images/backgroundHomeMobile.png'
+import backgroundHome from "../../../assets/images/Background1.png"
 import { Fade, Zoom } from 'react-awesome-reveal';
 import logo from '../../../assets/images/logoGTMEDmelhorada.png'
 import { BiSolidDownArrow } from "react-icons/bi";
@@ -11,6 +10,9 @@ import banner from '../../../assets/images/banner.png'
 
 function Home() {
   const [width, setWidth] = useState(window.innerWidth);
+
+  const scrollToCoursesRef = useRef(null);
+  const scrollToWhyGTRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
