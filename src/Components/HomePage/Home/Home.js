@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import backgroundHome from "../../../assets/images/backgroundHome.png"
+import backgroundHome from "../../../assets/images/BackgroundHome.png"
 import backgroundHomeMobile from '../../../assets/images/backgroundHomeMobile.png'
 import { Fade, Zoom } from 'react-awesome-reveal';
 import logo from '../../../assets/images/logoGTMEDmelhorada.png'
