@@ -1,194 +1,139 @@
 import styled from "styled-components";
 import { Slide, Fade } from "react-awesome-reveal";
-import logo from '../assets/images/logoGTMEDmelhorada.png'
-import background from '../assets/images/backgroundFooterHome.png'
+import { FaInstagram, FaYoutube, FaTiktok, FaLinkedin } from "react-icons/fa";
+import logo from "../assets/images/logoGTMEDmelhorada.png";
+import background from "../assets/images/Background2.png";
 
-
-export default function Footer(){
-  const instagram = "https://www.instagram.com"
-  const whatsappNumber = "";
-  const whatsappMessage = ``;
-
-  const handleItemClick = (item) => {
-    window.scrollTo({ top: item.position, behavior: 'smooth' })
-  };
+export default function Footer() {
+  const instagram = "https://www.instagram.com";
+  const youtube = "https://www.youtube.com";
+  const tiktok = "https://www.tiktok.com";
+  const linkedin = "https://www.linkedin.com";
 
   return (
     <Container backgroundImage={background}>
-
-      <TitleContainer>
-      <Slide  triggerOnce={true}><h3>{"Conecte-se Conosco"}</h3></Slide>
-        <SocialContainer>
-          <a href={instagram} target="_blank" rel="noopener noreferrer"></a>
-          <a
-            target="_blank"
-            onClick={(e) => e.stopPropagation()} rel="noopener noreferrer"></a>
-        </SocialContainer>
-      </TitleContainer>
-      <Fade delay={1} cascade damping={2}  triggerOnce={true} >
       <SubContainer>
+        <TextColumn>
+          <h4>Contato</h4>
+          <h5>Email: email@email.com</h5>
+          <h5>Celular: (11) 99999-9999</h5>
+        </TextColumn>
+
         <ImageContainer>
           <img src={logo} alt="Logo" />
         </ImageContainer>
 
-        <TextColumn>
-          <h4>{"Nosso Site"}</h4>
-          <h5 onClick={() => handleItemClick({position: 0})}>{"none"}</h5>
-          <h5 onClick={() => handleItemClick({position: 0})}>{"none"}</h5>
-          <h5 onClick={() => handleItemClick({position: 0})}>{"none"}</h5>
-          <h5 onClick={() => handleItemClick({position: 0})}>{"none"}</h5>
-          <h5 onClick={() => handleItemClick({position: 0})}>{"none"}</h5>
-          <h5 onClick={() => handleItemClick({position: 0})}>{"none"}</h5>
-        </TextColumn>
-
-        <TextColumn>
-          <h4>{"Contato"}</h4>
-          <h5>{"Email: email@email.com"}</h5>
-          <h5>{"Endereço: Av. Prof. Lúcio Martins Rodrigues, 445 - Cidade Universitária Butantã, São Paulo - SP, 05508-020, sala 12 do prédio Prédio da Faculdade de Medicina da USP (FMUSP)"}</h5>
-          <h5>{"Celular: (11) 99999-9999"}</h5>
-        </TextColumn>
-
+        <SocialContainer>
+          <SocialLink
+            href={instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram />
+          </SocialLink>
+          <SocialLink href={youtube} target="_blank" rel="noopener noreferrer">
+            <FaYoutube />
+          </SocialLink>
+          <SocialLink href={tiktok} target="_blank" rel="noopener noreferrer">
+            <FaTiktok />
+          </SocialLink>
+          <SocialLink href={linkedin} target="_blank" rel="noopener noreferrer">
+            <FaLinkedin />
+          </SocialLink>
+        </SocialContainer>
       </SubContainer>
-      </Fade>
+
       <AboutContainer>
-        <span>{"Todos Direitos Reservados ©"}</span>
+        <p>Todos Direitos Reservados ©</p>
+        <p>CNPJ: 11.111.111/1111-11</p>
       </AboutContainer>
     </Container>
-  )
+  );
 }
 
-const Container = styled.footer`
-  border-top: 1px solid white;
-  background-image: ${props => `url(${props.backgroundImage})`};
+const Container = styled.div`
+  background-image: url(${(props) => props.backgroundImage});
+  background-size: cover;
   background-position: center;
-  background-size: cover;     
-  background-repeat: no-repeat;
-  width: 100%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 2vh 0;
+  text-align: center;
   color: white;
-  row-gap: 4vh;
-  @media (max-width: 850px) {
-    padding: 2vh 0vw;
+  padding: 3vh 10vw;
+  border-top: 2px solid #54545445;
+  @media (max-width: 768px) {
+    padding: 3vh 5vw;
   }
-  h3{
-    margin: 0 !important;
-  }
-  h4{
-    margin: 0 !important;
-  }
-  h5{
-    margin: 0 !important;
-  }
-  span{
-    margin: 0 !important;
-  }
-  a{
-    margin: 0 !important;
-  }
-`
-const TitleContainer = styled.div`
-  width: 80%;
-  padding: 1.7vh 0;
+`;
+
+const SubContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid black;
-  > h3 {
-    font-size: 24px;
+  flex-wrap: wrap;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
   }
-  svg {
-    font-size: 27px;
-    cursor: pointer;
+`;
+
+const ImageContainer = styled.div`
+  margin-bottom: 20px;
+  img {
+    width: 250px;
   }
-  @media (max-width: 850px) {
-    > h3 {
-      font-size: 20px;
-    }
-    svg {
-      font-size: 24px;
-    }
-  }
-`
+`;
+
 const SocialContainer = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
-  column-gap: 1.6vw;
-  @media (max-width: 850px) {
-    column-gap: 4vw;
+  margin-bottom: 20px;
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
   }
-`
-const SubContainer = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 5vw;
-  @media (max-width: 850px) {
-    justify-content: space-between;
-    flex-wrap: wrap;
+`;
+
+const SocialLink = styled.a`
+  color: white;
+  font-size: 24px;
+  margin: 0 10px;
+  transition: color 0.3s;
+  &:hover {
+    color: #33cfff;
   }
-`
-const ImageContainer = styled.div`
-border-radius: 15px;
-margin: 0 !important;
-  img {
-    height: 34.2342vh;
-    width: 47.445vh;
-    cursor: pointer;
-  }
-  @media (max-width: 850px) {
-    display: none;
-  }
-`
+`;
+
 const TextColumn = styled.div`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  row-gap: 2vh;
+  margin-bottom: 20px;
   h4 {
-    font-size: 22px;
-    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    text-align: left;
   }
   h5 {
-    font-size: 16px;
-    max-width: 300px;
-    cursor: pointer;
+    margin-bottom: 5px;
+    font-size: 1rem;
   }
-  @media (max-width: 850px) {
-    width: auto;
-    max-width: 58%;
-    padding-left: 5vh;
-    h5 {
-      width: 90%;
-      font-size: 12px;
-    }
+  @media (max-width: 768px) {
+    text-align: center;
     h4 {
-      font-size: 20px;
+      text-align: center;
+      font-size: 1.25rem;
+    }
+    h5 {
+      font-size: 0.875rem;
     }
   }
-`
+`;
+
 const AboutContainer = styled.div`
-  width: 100%;
+  background-color: #090619;
+  padding: 10px 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 1vw;
-  padding: 1.2vh 0;
-  > :last-child {
-    text-decoration: underline;
-    cursor: pointer;
+  flex-direction: column;
+  row-gap: 2px;
+  border-radius: 10px;
+  p {
+    margin: 5px 0;
+    font-size: 0.875rem;
   }
-  @media (max-width: 1200px) {
-    font-size: 15px;
-    column-gap: 0;
-    padding: 0;
-    margin: 0 !important;
-  }
-`
+`;

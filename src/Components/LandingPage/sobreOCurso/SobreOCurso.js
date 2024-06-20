@@ -37,15 +37,10 @@ function SobreOCurso(sobreOCurso) {
       <MainContentHome>
 
         <CenterContent borderColor={sobreOCurso.sobreOCurso.cores.bordaDescricao1}>
-          <Fade delay={0.5} cascade  damping={0.3} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }} triggerOnce={true} direction='left'>
-            <p>
-              {sobreOCurso.sobreOCurso.descricao1}
-            </p>
-          </Fade>
 
           <Fade delay={2} cascade  damping={0.3} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }} triggerOnce={true} direction='right'>
           <h1>
-            {sobreOCurso.sobreOCurso.descricao2}
+            {"NESSE TREINAMENTO, VOCÊ VAI APRENDER:"}
           </h1>
           </Fade>
           
@@ -55,7 +50,7 @@ function SobreOCurso(sobreOCurso) {
             color={sobreOCurso.sobreOCurso.cores.bordaDescricao1}
             grabCursor={true}
             freeMode={true}
-            slidesPerView={width > 1200 ? 3.5 : 2}
+            slidesPerView={width > 1200 ? 3.5 : 2.2}
             navigation={width > 1200 ? true : false}
             pagination={{
               clickable: true,
@@ -68,37 +63,37 @@ function SobreOCurso(sobreOCurso) {
           >
             <StyledSwiperSlide>
               <div>
-                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} alt="Logo" />
               </div>
             </StyledSwiperSlide>
 
             <StyledSwiperSlide>
               <div>
-                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} alt="Logo" />
               </div>
             </StyledSwiperSlide>
 
             <StyledSwiperSlide>
               <div>
-                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} alt="Logo" />
               </div>
             </StyledSwiperSlide>
 
             <StyledSwiperSlide>
               <div>
-                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} alt="Logo" />
               </div>
             </StyledSwiperSlide>
 
             <StyledSwiperSlide>
               <div>
-                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} alt="Logo" />
               </div>
             </StyledSwiperSlide>
 
             <StyledSwiperSlide>
               <div>
-                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
+                <img src={aula1Clinica2} alt="Logo" />
               </div>
             </StyledSwiperSlide>
 
@@ -149,7 +144,6 @@ const MainContentHome = styled.div`
   max-height: 100% !important;
   min-height: 100% !important;
   display: flex;
-  padding: 2%;
 `;
 
 const CenterContent = styled.div`
@@ -175,7 +169,7 @@ const CenterContent = styled.div`
     @media (max-width: 1200px) {
       width: 99%;
       font-size: 17px;
-      padding: 2vh;
+      padding: 2.5vh;
   }
     &:hover{
       transform: scale(1.05);
@@ -183,17 +177,22 @@ const CenterContent = styled.div`
     }
   }
   h1{
+    background: linear-gradient(0deg, ${(props) => props.borderColor}, #FFFFFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: ${(props) => props.borderColor};
     text-align: center;
-    width: 50%;
-    font-size: 22px;
+    width: 100%;
+    font-size: 2.8rem;
     padding: 1vh;
     border-radius: 30px;
     margin-bottom: 0;
     margin-top: 0;
     transition: transform 0.8s ease;
     @media (max-width: 1200px) {
-      width: 100%;
-      font-size: 17px;
+      width: 95%;
+      font-size: 3.5vh;
       padding: 2vh;
   }
     &:hover{
@@ -203,6 +202,7 @@ const CenterContent = styled.div`
   }
   @media (max-width: 420px) {
     margin-top: 10px;
+    padding: 2.5vh !important;
   }
 `;
 
@@ -234,7 +234,6 @@ const StyledSwiperSlide = styled(SwiperSlide)`
 const StyledSwiperContainer = styled(Swiper)`
   max-width: 80% !important; 
   height: auto;
-  margin-top: 1.5vh;
   padding-bottom: 4vh;
   @media (max-width: 1500px) {
     max-width: 100% !important;

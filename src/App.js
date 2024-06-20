@@ -4,22 +4,27 @@ import './App.css';
 import LandingPage from './Pages/LandingPage';
 import HomePage from './Pages/HomePage';
 import NotFound from './Pages/NotFound';
+import LeadsPage from './Pages/LeadsPage';
 import { UserProvider } from './context/UserContext';
 import React, { useEffect, useState } from 'react';
 import scripts from './scripts'
+import Obrigado from './Components/LeadsPage/Obrigado';
+import LeadsPage2 from './Pages/LeadsPage2';
 
 //pasta de imagens está em assets
 
 function App() {
 
-  const [script, setScript] = useState(scripts.Curso.Clinica);
-
   return (
     <UserProvider>
       <Router>
         <Routes>
-          <Route path="/landing" element={<LandingPage script={script}/>} />
-          <Route path="/" element={<HomePage script={script} setScript={setScript}/>} />
+          <Route path="/" element={<HomePage cardsData={scripts.Cards}/>} />
+          <Route path="/landing/:courseName" element={<LandingPage courseData={scripts.LandingPages}/>} />
+          <Route path="/evento-gtmed" element={<LeadsPage/>} />
+          <Route path="/gtmed-evento" element={<LeadsPage2/>} />
+          <Route path="/obrigado" element={<Obrigado />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
 

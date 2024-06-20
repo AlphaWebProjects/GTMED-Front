@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Fade } from 'react-awesome-reveal';
-import sobregtmed from '../../../assets/images/sobregtmed.png'
 import logo from '../../../assets/images/logoGTMEDmelhorada.png'
-import background from '../../../assets/images/backgroundSobreGTMED.png'
-import backgroundMobile from '../../../assets/images/backgroundSobreGTMEDmobile.png'
+import background from '../../../assets/images/Background1.png'
 
 function SobreGTMED() {
 
@@ -71,13 +69,7 @@ function SobreGTMED() {
           </p>
 
         </Fade>
-        
-
-        <Fade delay={1200} cascade  damping={0.3} triggerOnce={true} direction='right'>       
-
-          
-
-        </Fade>
+      
 
         </span>
 
