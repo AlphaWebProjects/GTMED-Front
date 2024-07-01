@@ -4,7 +4,7 @@ import imagem from "../../../assets/images/clinicamedica/inicio.png"
 import React, { useEffect, useState } from 'react';
 
 
-export default function InitialPage({intro}) {
+export default function InitialPage({intro, themeColor}) {
 
     const [width, setWidth] = useState(window.innerWidth);
   
@@ -31,12 +31,12 @@ export default function InitialPage({intro}) {
     //style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}
     
     return (
-        <InitialContainer backgroundImage={width > 810 ? intro?.backgroundImage : intro?.backgroundImageMobile}>
-            <MainContent cores={intro?.cores[0]}>
-                <Fade delay={500} cascade damping={0.4} style={{ display: width > 1200 ? '' : 'flex', alignItems: width > 1200 ? '' : 'center', flexDirection: width > 1200 ? '' : 'center' }} triggerOnce={true}>
-                    <img src={intro?.logo} alt='logo'/>
-                    <p>{intro?.descricao}.</p>
-                    <button onClick={handleScrollToPayment} >{intro?.botao}</button>
+        <InitialContainer backgroundImage={intro?.backgroundImage}>
+            <MainContent cores={themeColor}>
+                <Fade delay={500} cascade damping={0.4} style={{ display: width > 1200 ? '' : 'flex'}} triggerOnce={true}>
+                    
+                    <p>{intro?.descricao}</p>
+                    {/* <button onClick={handleScrollToPayment} >{intro?.botao}</button> */}
                 </Fade>
             </MainContent>
         </InitialContainer>
@@ -45,22 +45,24 @@ export default function InitialPage({intro}) {
 
 const InitialContainer = styled.div`
     width: auto;
-    height: 103vh;
+    height: 110vh;
     background-image: url(${props => `${props.backgroundImage}`}) ;
     background-size: cover;
     background-position: center;
     display: flex;
-    justify-content: left;
-    text-align: left;
-    padding: 20vh 0 0 20%;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
     @media (max-width: 810px) {
-        align-items: flex-end;
-        background-position: calc(100% + 20px) right; /* Ajuste o valor 20px conforme necessário */
         padding: 0;
     }
 `;
 
 const MainContent = styled.div`
+    background-color: none;
+    display: flex;
+    justify-content: center;
+    padding-top: 30vh;
     img{
         width: 42vh;
         height: 24vh;
@@ -74,11 +76,9 @@ const MainContent = styled.div`
     p{
         color:#FFFFFF;
         font-weight:500 ;
-        margin:20px 0;
-        width: 40%;
         transition: scale 0.3s ease;
-        font-size: 3vh;
-        font-family: "Montserrat", sans-serif !important;
+        font-size: 20vh;
+        font-family: 'Anton', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif   !important;
         cursor: pointer;
     }
     button {
@@ -109,20 +109,14 @@ const MainContent = styled.div`
         scale:1.05;
     }
 
-    @media (max-width: 810px) {
-    background-color: rgba(0, 0, 0, 0.4); /* Adiciona um fundo escuro */
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    margin-left: 0%;
-    margin-top: 0%;
+    @media (max-width: 1100px) {
     height: auto;
     display: flex !important;
-    justify-content: center !important;
     flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
+    padding-top: 0 !important;
     p{
-        width: 80% !important;
-        margin-left: 12%;
+        width: 100% !important;
+        font-size: 13vh;
     }
     }
 

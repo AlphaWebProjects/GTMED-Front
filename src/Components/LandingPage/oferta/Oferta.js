@@ -6,39 +6,19 @@ import sevenDays from "../../../assets/images/sevenDays.png";
 
 export default function Oferta({oferta}){
 
+    console.log(oferta,     'oferta aqui')
+
     const body = {
-        title: "CLÍNICA MÉDICA",
+        title: oferta.title,
         subtitle: "DE PLANTÃO",
-        price: "1247,00",
-        discountedprice: "R$59,58",
-        fullpricediscount: "R$597",
-        buttontext: "DOMINAR CLÍNICA MÉDICA",
+        price: oferta.price,
+        discountedprice: oferta.discountedprice,
+        fullpricediscount: oferta.fullpricediscount,
+        buttontext: oferta.buttontext,
         buttoncolor: "#655BCE",
         buttonhovercolor: "#5448DA",
         color: "#C8C4F4",
-        topics: [
-            {
-                details: "10 módulos"
-            },
-            {
-                details: "Casos clínicos reais"
-            },
-            {
-                details: "Prescrição na Prática"
-            },
-            {
-                details: `O “Como fazer“ da Especialidade`
-            },
-            {
-                details: `Aulas Bônus`
-            },
-            {
-                details: `1 ano de acesso`
-            },
-            {
-                details: `Certificado de Conclusão do Módulo`
-            },
-        ]
+        topics: oferta.topics
     }
     const cursoCompleto = {
         title: "GTMED",

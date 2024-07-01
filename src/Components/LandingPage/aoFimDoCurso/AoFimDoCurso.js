@@ -2,7 +2,7 @@ import styled from "styled-components";
 import backgroundImage from "../../../assets/images/Screenshot_28.png";
 import { IoIosMedical } from "react-icons/io";
 import { Fade, Slide } from "react-awesome-reveal";
-export default function AoFimDoCurso({ aoFimDoCurso }) {
+export default function AoFimDoCurso({ aoFimDoCurso, themeColor }) {
   console.log(aoFimDoCurso);
 
   const body = {
@@ -55,7 +55,7 @@ export default function AoFimDoCurso({ aoFimDoCurso }) {
           style={{ width: "100%" }}
         >
           {aoFimDoCurso.topicos.map((topic, index) => (
-            <Option color={aoFimDoCurso.cores.corTopicos} key={index}>
+            <Option color={themeColor} key={index}>
               <div>
                 <IoIosMedical />
               </div>

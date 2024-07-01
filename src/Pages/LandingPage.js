@@ -37,19 +37,18 @@ export default function LandingPage({ courseData }) {
   return (
     courseDetails && (
       <Container>
-        <InitialPage intro={courseDetails?.intro} />
-        <Beneficios aoFimDoCurso={courseDetails?.aoFimDoCurso}/>
-        {/* <SecondPage pontuacoes={courseDetails?.pontuacoes} />*/}
-        <SobreOCurso sobreOCurso={courseDetails?.sobreOCurso} /> 
-        <ParaQuem paraQuem={courseDetails?.paraQuem} />
-        <AoFimDoCurso aoFimDoCurso={courseDetails?.aoFimDoCurso} />
+        <InitialPage intro={courseDetails?.intro} themeColor={courseDetails?.themeColor} />
+        <Beneficios themeColor={courseDetails?.themeColor}/>
+        <SobreOCurso themeColor={courseDetails?.themeColor} /> 
+        <ParaQuem paraQuem={courseDetails?.paraQuem} themeColor={courseDetails?.themeColor} />
+        <AoFimDoCurso aoFimDoCurso={courseDetails?.aoFimDoCurso} themeColor={courseDetails?.themeColor}/>
         {/* <Depoimentos depoimentos={courseDetails?.depoimentos}/> */}
-        <PageQuestions />
-        <LastPage />
+        <PageQuestions themeColor={courseDetails?.themeColor}/>
+        <LastPage themeColor={courseDetails?.themeColor}/>
         {/* <Footer/> por enquanto mantém sem footer*/}
         
 
-        <Oferta oferta={courseDetails?.oferta} />
+        <Oferta oferta={courseDetails?.oferta} themeColor={courseDetails?.themeColor}/>
 
         <WhatsAppButton
           // href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}

@@ -13,7 +13,9 @@ import aula1Clinica2 from '../../../assets/images/clinicamedica/aula1Clinica2.pn
 import aula1Clinica from '../../../assets/images/clinicamedica/aula1Clinica.png'
 import { Fade } from 'react-awesome-reveal';
 
-function SobreOCurso(sobreOCurso) {
+function SobreOCurso({themeColor}) {
+
+  console.log(themeColor, 'cor tema AQUI')
 
   const [width, setWidth] = useState(window.innerWidth);
   
@@ -36,7 +38,7 @@ function SobreOCurso(sobreOCurso) {
       
       <MainContentHome>
 
-        <CenterContent borderColor={sobreOCurso.sobreOCurso.cores.bordaDescricao1}>
+        <CenterContent borderColor={themeColor}>
 
           <Fade delay={2} cascade  damping={0.3} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }} triggerOnce={true} direction='right'>
           <h1>
@@ -47,7 +49,7 @@ function SobreOCurso(sobreOCurso) {
           
 
           <StyledSwiperContainer
-            color={sobreOCurso.sobreOCurso.cores.bordaDescricao1}
+            color={themeColor}
             grabCursor={true}
             freeMode={true}
             slidesPerView={width > 1200 ? 3.5 : 2.2}

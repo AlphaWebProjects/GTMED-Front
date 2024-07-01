@@ -6,6 +6,8 @@ import backgroundAoFimDoCursoClinica from "./assets/images/clinicamedica/backgro
 import backgroundParaQuemClinicaMobile from "./assets/images/clinicamedica/paraQuemClinicaMobile.png";
 import depoimento1clinica from "./assets/images/clinicamedica/depoimento1.png";
 
+import inicioOftalmo from './assets/images/oftalmo/inicioOftalmo.png'
+
 import cardClinica from './assets/images/clinicamedica/cardClinica.jpg'
 import cardOftalmo from './assets/images/oftalmo/cardOftalmo.jpg'
 import cardOrtopedia from './assets/images/ortopedia/cardOrtopedia.jpg'
@@ -29,7 +31,7 @@ const scripts = {
     { nome: 'infecto', background: cardInfecto },
     //{ nome: 'radiologia', background: cardRadiologia },
     { nome: 'neuro', background: cardNeuro },
-    { nome: 'oftamologia', background: cardOftalmo },
+    { nome: 'oftalmo', background: cardOftalmo },
     { nome: 'clinica', background: cardClinica },
     { nome: 'psiquiatria', background: cardPsiquiatria },
     //{ nome: 'anestesio', background: cardAnestesio},
@@ -37,141 +39,13 @@ const scripts = {
     { nome: 'pediatria', background: cardPediatria },
   ],
   LandingPages: {
-    gasometria: {
-      pagina1: {
-        titulo: "Gasometria",
-        corTitulo: "#d82121",
-        subtitulo: "Descomplicada",
-        descricao:
-          "Você tranquilo e seguro para interpretar qualquer gasometria arterial",
-        botao: "Quero dominar gasometria",
-        corBotao: "#f74242",
-      },
-      pagina2: {
-        descricao1:
-          "A verdade é que, para grande maioria dos médicos, gasometria é um bicho de sete cabeças invencível. Envolve Nefrologia, Matemática, fórmulas 'decoradas', ventilação mecânica e cálculos para prescrição.",
-        descricao2:
-          "Mas não é fácil admitir isso, certo? Imagina só assumir para alguém que você não saber ler uma gasometria arterial.",
-        descricao3:
-          "São “só” diversos números e letras (diga-se de passagem, corriqueiramente com uma fonte bem pequena) impressos em um papel que, a grande maioria dos médicos, passa os olhos rapidamente e finge normalidade… Como eu posso não saber?",
-        descricao4:
-          "A compreensão da gasometria não é um conhecimento solto, reservado apenas para os privilegiados intelectualmente, ou para os raros colegas que, após compreenderem e decifrarem como se estuda gasometria, fazem questão de manter seu conhecimento guardado, sem a menor chance de compartilhá-lo.",
-      },
-      pagina3: {
-        titulo: "Conclusão",
-        conteudo:
-          "Parabéns, você concluiu o curso! Esperamos que tenha sido útil e informativo.",
-      },
-    },
-    /*
-    oftamologia: {
-      intro: {
-        titulo: "Oftamologia de Plantão",
-        corTitulo: "#475DDB",
-        subTitulo: "de plantão",
-        botao: "Quero dominar oftamologia",
-        descricao:
-          "Você CONFIANTE para enfrentar os desafios nos plantões de oftalmologia",
-        cores: [
-          {
-            corTitulo: "#475DDB",
-            backgroundImageBotao:
-              "linear-gradient(45deg, #7B8CE9, #576DE7, #7B8CE9, #576DE7)",
-            backgroundImageBotaoHover:
-              "linear-gradient(45deg, #8E9CEB, #6C7FE9, #919EE7, #6E81E9)",
-            backgroundColorBotao: "#8593E7",
-          },
-        ],
-      },
-      pontuacoes: {
-        descricao1:
-          "É fato que, para muitos médicos, oftalmologia em plantões é um desafio intimidante. Envolve uma série de aspectos complexos, desde diagnósticos diferenciais até tratamentos emergenciais, lidando com uma variedade de condições oculares que podem ser desconcertantes.",
-        descricao2:
-          "Acreditamos que pode ser difícil reconhecer isso. Imagina só ter que admitir para alguém que você não sabe diagnosticar uma condição ocular durante um plantão.",
-        descricao3:
-          "São 'apenas' uma série de sinais e sintomas oculares (muitas vezes, apresentados em letras miúdas) que, para a maioria dos médicos, são rapidamente examinados e tratados como algo comum... Seria tão difícil identificar algo tão básico?",
-        descricao4:
-          "O entendimento de questões oculares em plantões não é um conhecimento isolado, reservado apenas para os privilegiados intelectualmente, ou para os raros colegas que, após dominarem e interpretarem os casos mais específicos, optam por não compartilhar o conhecimento com mais ninguém.",
-        cores: [
-          {
-            fundoDescricao3: "#4AC3FF",
-          },
-        ],
-        },
-      sobreOCurso: {
-        descricao1:
-          "A interpretação de sinais oculares é como seguir um roteiro meticuloso e bem definido. Cada passo é crucial, e quando compreendido e estudado minuciosamente, dissipa todas as dúvidas que possam surgir ao diagnosticar uma ampla variedade de distúrbios oftalmológicos.É como se fosse um guia claro que nos conduz através das complexidades do mundo ocular, revelando os segredos por trás de cada condição.",
-        descricao2:
-          "Exploramos minuciosamente e nos empenhamos em estruturar e apresentar nosso método de raciocínio para análises oculares em plantões, focando especialmente no Oftamologia de Plantão.",
-        imagensAulas: [],
-      },
-      paraQuem: {
-        titulo: "Oftalmologia de Plantão",
-        topico1:
-          "Para aqueles que se sentem completamente perdidos ao lidar com questões oftalmológicas durante plantões, sem saber por onde começar o diagnóstico em situações de emergência ocular;",
-        topico2:
-          "Para quem já possui conecimento acerca de questões básicas, mas se sentem confusos e perdidos ao lidar com distúrbios secundários, mesmo que mínimos, durante o processo de raciocínio.",
-      },
-      aoFimDoCurso: {
-        topicos: [
-          "Identificar e manejar eficazmente os diagnósticos diferenciais de dor ocular;",
-          "Reconhecer os diagnósticos diferenciais e os critérios para tratamento imediato e encaminhamento.",
-          "Analisar e identificar os diagnósticos diferenciais e intervenções terapêuticas oportunas.",
-          "Diagnosticar e tratar de diferentes tipos de trauma ocular.",
-          "Reconhecer as causas principais e identificar os diagnósticos diferenciais para orientar o tratamento adequado para lacrimejos.",
-        ],
-      },
-      pagina3: {
-        titulo: "Conclusão",
-        conteudo:
-          "Parabéns, você concluiu o curso! Esperamos que tenha sido útil e informativo.",
-      },
-    },
-    */
     clinica: {
+      themeColor: '#166a6c',
       intro: {
         titulo: "Clínica Médica",
         botao: "Quero dominar clínica médica",
-        descricao:
-          "Você MAIS PREPARADO para enfrentar os desafios nos plantões de clínica médica",
+        descricao: "CLÍNICA MÉDICA",
         backgroundImage: clinicamedicabackground1,
-        backgroundImageMobile: inicioClinicaMobile,
-        logo: logoClinica,
-        cores: [
-          {
-            corTitulo: "#475DDB",
-            backgroundImageBotao:
-              "linear-gradient(45deg, #5ce1e6, #56CDD1, #41A2A3, #4AC3FF)",
-            backgroundImageBotaoHover:
-              "linear-gradient(45deg, #5ce1e6, #4CBBBE, #3D989B, #5ABBBE)",
-            backgroundColorBotao: "#8593E7",
-          },
-        ],
-      },
-      pontuacoes: {
-        descricao1:
-          "Para muitos médicos que trabalham em plantões de clínica médica, lidar com emergências médicas representa um desafio significativo. Isso implica compreender uma variedade de condições e procedimentos específicos, desde a diferenciação de diagnósticos até a implementação de tratamentos, o que pode ser desconcertante devido à sua complexidade.",
-        descricao2:
-          "Cremos que pode ser difícil reconhecer isso. Imagina só ter que admitir para alguém que você não sabe diagnosticar uma condição específica durante um plantão.",
-        descricao3:
-          "Para muitos médicos em plantões de clínica médica, os sinais e sintomas apresentados pelos pacientes são considerados rotineiros e muitas vezes são rapidamente avaliados e tratados como algo trivial. No entanto, será que é realmente tão difícil identificar algo que parece tão básico?",
-        descricao4:
-          "O conhecimento sobre questões clínicas em plantões não é exclusivo de alguns poucos privilegiados intelectualmente ou de colegas que optam por não compartilhar o que aprenderam. É uma habilidade acessível a todos, que pode ser adquirida e compartilhada para benefício de todos os profissionais da área médica.",
-        cores: [
-          {
-            fundoDescricao3: "#4AC3FF",
-          },
-        ],
-      },
-      sobreOCurso: {
-        descricao1:
-          "A interpretação dos sinais clínicos durante plantões segue um processo meticuloso e bem definido. Cada passo é essencial e, ao ser compreendido e estudado minuciosamente, resolve todas as dúvidas que possam surgir ao diagnosticar uma ampla gama de condições médicas. É como seguir um guia claro que nos conduz pelas complexidades da prática médica, revelando os detalhes de cada situação.",
-        descricao2:
-          "Exploramos minuciosamente e nos dedicamos a estruturar e apresentar nosso método de raciocínio para análises médicas em plantões de clínica, com foco especial na resolução de questões clínicas.",
-        imagensAulas: [],
-        cores: {
-          bordaDescricao1: "#4AC3FF",
-        },
       },
       paraQuem: {
         titulo: "Clínica Médica de Plantão",
@@ -181,9 +55,6 @@ const scripts = {
         ],
         backgroundImage: clinicamedicabackground2,
         backgroundImageMobile: backgroundParaQuemClinicaMobile,
-        cores: {
-          corTopicos: "#4AC3FF",
-        },
       },
       aoFimDoCurso: {
         topicos: [
@@ -197,14 +68,11 @@ const scripts = {
           "Manejar complicações agudas das neoplasias no Pronto Atendimento",
           "Estabilizar e tratar complicações agudas da cirrose hepática",
         ],
-        cores: {
-          corTopicos: "#4AC3FF",
-        },
         backgroundImage: backgroundAoFimDoCursoClinica,
       },
       depoimentos: {
         cores: {
-          corTitulo: "#3D989B",
+          corTitulo: "#166a6c",
         },
         prints: [
           depoimento1clinica,
@@ -214,16 +82,106 @@ const scripts = {
         ],
       },
       oferta: {
-        cores: {
-          corTema: "#3D989B",
-        },
-        titulo: "Clínica Médica",
-        subTitulo: "de Plantão",
+        title: "CLÍNICA MÉDICA",
+        subTitulo: "DE PLANTÃO",
+        price: "1247,00",
+        discountedprice: "R$59,58",
+        fullpricediscount: "R$597",
+        buttontext: "DOMINAR CLÍNICA MÉDICA",
+        topics: [
+          {
+              details: "10 módulos"
+          },
+          {
+              details: "Casos clínicos reais"
+          },
+          {
+              details: "Prescrição na Prática"
+          },
+          {
+              details: `O “Como fazer“ da Especialidade`
+          },
+          {
+              details: `Aulas Bônus`
+          },
+          {
+              details: `1 ano de acesso`
+          },
+          {
+              details: `Certificado de Conclusão do Módulo`
+          },
+      ]
       },
-      pagina3: {
-        titulo: "Conclusão",
-        conteudo:
-          "Parabéns, você concluiu o curso! Esperamos que tenha sido útil e informativo.",
+    },
+    oftalmo: {
+      themeColor: '#194771',
+      intro: {
+        titulo: "OFTALMO",
+        botao: "Quero dominar oftalmo",
+        descricao:
+          "OFTALMO",
+        backgroundImage: inicioOftalmo,
+      },
+      paraQuem: {
+        titulo: "Oftalmo de Plantão",
+        topicos: [
+          "Para aqueles que se sentem completamente perdidos ao lidar com questões oftalmológicas durante plantões, sem saber por onde começar o diagnóstico em situações de emergência;",
+          "Para quem já possui conecimento acerca de questões básicas, mas se sentem confusos e perdidos ao lidar com distúrbios secundários, mesmo que mínimos, durante o processo de raciocínio.",
+        ],
+        backgroundImage: clinicamedicabackground2,
+        backgroundImageMobile: backgroundParaQuemClinicaMobile,
+      },
+      aoFimDoCurso: {
+        topicos: [
+          "Identificar e manejar eficazmente os diagnósticos diferenciais de dor ocular;",
+          "Reconhecer os diagnósticos diferenciais e os critérios para tratamento imediato e encaminhamento.",
+          "Analisar e identificar os diagnósticos diferenciais e intervenções terapêuticas oportunas.",
+          "Diagnosticar e tratar de diferentes tipos de trauma ocular.",
+          "Reconhecer as causas principais e identificar os diagnósticos diferenciais para orientar o tratamento adequado para lacrimejos."
+        ],
+        backgroundImage: backgroundAoFimDoCursoClinica,
+      },
+      depoimentos: {
+        cores: {
+          corTitulo: "#194771",
+        },
+        prints: [
+          depoimento1clinica,
+          depoimento1clinica,
+          depoimento1clinica,
+          depoimento1clinica,
+        ],
+      },
+      oferta: {
+        title: "OFTALMO",
+        subTitulo: "DE PLANTÃO",
+        price: "1247,00",
+        discountedprice: "R$59,58",
+        fullpricediscount: "R$597",
+        buttontext: "DOMINAR OFTALMO",
+        topics: [
+          {
+              details: "10 módulos"
+          },
+          {
+              details: "Casos clínicos reais"
+          },
+          {
+              details: "Prescrição na Prática"
+          },
+          {
+              details: `O “Como fazer“ da Especialidade`
+          },
+          {
+              details: `Aulas Bônus`
+          },
+          {
+              details: `1 ano de acesso`
+          },
+          {
+              details: `Certificado de Conclusão do Módulo`
+          },
+      ]
       },
     },
   },
