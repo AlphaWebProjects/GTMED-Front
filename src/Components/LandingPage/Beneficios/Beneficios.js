@@ -9,12 +9,12 @@ import { FaCheckCircle } from "react-icons/fa";
 import { PiCertificateBold } from "react-icons/pi";
 import { FaArrowUpWideShort } from "react-icons/fa6";
 
-export default function Beneficios({ aoFimDoCurso }) {
+export default function Beneficios({ themeColor }) {
   return (
-    <Container backgroundImage={aoFimDoCurso.backgroundImage}>
+    <Container >
       <SubContainer>
         <Slide triggerOnce={true}>
-          <Title color={aoFimDoCurso.cores.corTopicos}><b>PORQUE</b> devo adquirir este curso?</Title>
+          <Title color={themeColor}><b>PORQUE</b> devo adquirir este curso?</Title>
         </Slide>
         <Fade
           delay={0.5}
@@ -25,15 +25,15 @@ export default function Beneficios({ aoFimDoCurso }) {
         >
           <RowContainer>
             <Row>
-              <Option color={aoFimDoCurso.cores.corTopicos}>
+              <Option color={themeColor}>
                 <div>
                   <FaUniversity size="80px"/>
-                  <h1>Da Usp para você</h1>
+                  <h1>Da USP para você</h1>
                   <p>Uma plataforma estruturadas por especialistas da USP pensada para você</p>
                 </div>
               </Option>
 
-              <Option color={aoFimDoCurso.cores.corTopicos}>
+              <Option color={themeColor}>
                 <div>
                   <FaClinicMedical size="80px"/>
                   <h1>Casos Clínicos Reais</h1>
@@ -41,7 +41,7 @@ export default function Beneficios({ aoFimDoCurso }) {
                 </div>
               </Option>
 
-              <Option color={aoFimDoCurso.cores.corTopicos}>
+              <Option color={themeColor}>
                 <div>
                   <FaHandshake size="80px"/>
                   <h1>Garantia de 7 dias</h1>
@@ -51,7 +51,7 @@ export default function Beneficios({ aoFimDoCurso }) {
             </Row>
 
             <Row>
-              <Option color={aoFimDoCurso.cores.corTopicos}>
+              <Option color={themeColor}>
                 <div>
                   <FaCheckCircle size="80px"/>
                   <h1>12 Meses de Acesso</h1>
@@ -59,7 +59,7 @@ export default function Beneficios({ aoFimDoCurso }) {
                 </div>
               </Option>
 
-              <Option color={aoFimDoCurso.cores.corTopicos}>
+              <Option color={themeColor}>
                 <div>
                   <PiCertificateBold size="80px"/>
                   <h1><b>Certificado</b></h1>
@@ -67,7 +67,7 @@ export default function Beneficios({ aoFimDoCurso }) {
                 </div>
               </Option>
 
-              <Option color={aoFimDoCurso.cores.corTopicos}>
+              <Option color={themeColor}>
                 <div>
                   <FaArrowUpWideShort size="80px"/>
                   <h1>Aulas Direcionadas</h1>

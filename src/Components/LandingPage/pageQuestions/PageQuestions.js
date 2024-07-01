@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import React from 'react';
 import { Fade,Slide } from 'react-awesome-reveal';
-export default function PageQuestions() {
+export default function PageQuestions({themeColor}) {
 
         //aqui é a tela de FAQ - ajustar responsividade
 
@@ -26,7 +26,7 @@ export default function PageQuestions() {
           return (
             <PageQuestionsContainer>
                 <Slide triggerOnce={true}>
-                <Title>
+                <Title themeColor={themeColor}>
                 <h1>Perguntas</h1>
                 <h2>Frequentes</h2>
               </Title>
@@ -35,7 +35,7 @@ export default function PageQuestions() {
               <Fade delay={0.3} cascade damping={0.3} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', textAlign:'center',width:'100%'}} triggerOnce={true}>
                 {perguntas.map((pergunta, index) => (
                 <React.Fragment key={index}>
-                    <QuestionItem onClick={() => handleQuestionClick(index)}>
+                    <QuestionItem onClick={() => handleQuestionClick(index)} themeColor={themeColor}>
                     <h1>{pergunta.pergunta}</h1>
                     </QuestionItem>
                     <Answer open={selectedQuestion === index}>
@@ -78,7 +78,7 @@ const QuestionItem = styled.li`
   width:100%;
   &:hover {
     scale:1.05;
-    color:#3D989B;
+    color:${(props) => props.themeColor};
   }
 `;
 
@@ -102,7 +102,7 @@ transition: scale 0.3s ease;
         font-size: 45px;
     }
     h2{
-        color:#3D989B;
+        color:${(props) => props.themeColor};
         font-size: 40px;
         font-weight: bold;
     }

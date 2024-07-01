@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import tutor1 from '../../../assets/images/clinicamedica/tutor1Clinica.png';
 
-export default function LastPage() {
+export default function LastPage(themeColor) {
     return (
         <LastPageContainer>
             <Foto style={{ backgroundImage: `url(${tutor1})` }}></Foto>
             <Texto>
                 <Nome>Pedro Santos</Nome>
-                <Cargo>Professor</Cargo>
+                <Cargo themeColor={themeColor}>Professor</Cargo>
                 <Descricao>
                     Bacharel em Biomedicina pela Universidade Federal de São Paulo - UNIFESP, e Especialista em Neurociência Clínica pela Universidade de Brasília - UnB.
                 </Descricao>

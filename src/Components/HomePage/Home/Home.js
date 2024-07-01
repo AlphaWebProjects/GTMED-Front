@@ -48,7 +48,7 @@ function Home() {
         <Logo src={logo} alt='Logo'/>
       </Fade>
 
-      <Zoom delay={500} damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+      <Zoom delay={500} damping={0.3} triggerOnce={true} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', marginBottom: 0}}>
         <Banner src={width > 1200 ? banner : bannerMobile} style={{ width:width > 1200 ?'100%':'90%',height:width > 1200 ?'60%':'100%'  }}/>
       </Zoom>
 
@@ -101,7 +101,7 @@ export default Home;
 
 const Banner = styled.img`
   border-radius: 20px;
-  margin-bottom: 5vh;
+  margin-top: 3vh;
   width: 135vh;
   height: 26vh;
       @media (max-width: 1200px) {
@@ -177,8 +177,10 @@ const CenterContent = styled.div`
   height: 100% !important;
   display: flex;
   justify-content: center;
+  margin-top: -5vh;
   @media (max-width: 1200px) {
     flex-direction: row;
+    margin-top: 0;
   }
   span{
     z-index: 10;

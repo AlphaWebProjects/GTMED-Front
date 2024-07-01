@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { Fade, Slide } from 'react-awesome-reveal';
-export default function ParaQuem({paraQuem}){
+export default function ParaQuem({paraQuem, themeColor}){
 
     return (
         <Container backgroundImage={paraQuem.backgroundImage} backgroundImageMobile={paraQuem.backgroundImageMobile}>
@@ -10,7 +10,7 @@ export default function ParaQuem({paraQuem}){
                 <SubTitle>{paraQuem.titulo}</SubTitle>
                 <Fade delay={0.5} cascade damping={0.3} triggerOnce={true}>
                     {paraQuem.topicos.map((topic, index) => (
-                    <Option backgroundColor={paraQuem.cores.corTopicos} key={index}>
+                    <Option backgroundColor={themeColor} key={index}>
                         <div>{index + 1}</div>
                         <p>{topic}</p>
                     </Option>
