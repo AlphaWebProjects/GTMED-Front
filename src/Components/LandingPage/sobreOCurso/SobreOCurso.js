@@ -50,66 +50,31 @@ function SobreOCurso({themeColor}) {
 
           <StyledSwiperContainer
             color={themeColor}
-            grabCursor={true}
             freeMode={true}
-            slidesPerView={width > 1200 ? 3.5 : 2.2}
-            navigation={width > 1200 ? true : false}
+            slidesPerView={'auto'}
+            navigation={true}
             pagination={{
               clickable: true,
             }}
             autoplay={{
-                delay: 3000,
-                disableOnInteraction: true,
-              }}
+              delay: 8000,
+              disableOnInteraction: true,
+            }}
+            spaceBetween={'30'}
             modules={[Pagination, Navigation, Autoplay, FreeMode]}
           >
-            <StyledSwiperSlide>
-              <div>
-                <img src={aula1Clinica2} alt="Logo" />
-              </div>
-            </StyledSwiperSlide>
+            <StyledSwiperSlide background={aula1Clinica2} />
 
-            <StyledSwiperSlide>
-              <div>
-                <img src={aula1Clinica2} alt="Logo" />
-              </div>
-            </StyledSwiperSlide>
+            <StyledSwiperSlide background={aula1Clinica2} />
 
-            <StyledSwiperSlide>
-              <div>
-                <img src={aula1Clinica2} alt="Logo" />
-              </div>
-            </StyledSwiperSlide>
+            <StyledSwiperSlide background={aula1Clinica2} />
 
-            <StyledSwiperSlide>
-              <div>
-                <img src={aula1Clinica2} alt="Logo" />
-              </div>
-            </StyledSwiperSlide>
+            <StyledSwiperSlide background={aula1Clinica2} />
 
-            <StyledSwiperSlide>
-              <div>
-                <img src={aula1Clinica2} alt="Logo" />
-              </div>
-            </StyledSwiperSlide>
+            <StyledSwiperSlide background={aula1Clinica2} />
 
-            <StyledSwiperSlide>
-              <div>
-                <img src={aula1Clinica2} alt="Logo" />
-              </div>
-            </StyledSwiperSlide>
+            <StyledSwiperSlide background={aula1Clinica2} />
 
-            <StyledSwiperSlide>
-              <div>
-                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
-              </div>
-            </StyledSwiperSlide>
-
-            <StyledSwiperSlide>
-              <div>
-                <img src={aula1Clinica2} width="150" height="150" alt="Logo" />
-              </div>
-            </StyledSwiperSlide>
           </StyledSwiperContainer>
 
         </CenterContent>
@@ -209,53 +174,102 @@ const CenterContent = styled.div`
 `;
 
 const StyledSwiperSlide = styled(SwiperSlide)`
-  padding-top: 5vh !important;
-  img {
-    width: 30vh !important;
-    height: 50vh !important;
-    border-radius: 2%;
+  background-color: none !important;
+  padding-top: 2vh !important;
+  background-image: ${(props) => `url(${props.background})`};
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 30vh !important;
+  height: 50vh !important;
+  border-radius: 2%;
+  transition: transform 0.8s;
+  display: flex;
+  flex-direction: column-reverse;
+  span {
+    height: 12% !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    backdrop-filter: blur(5px);
+    background-color: rgba(50, 50, 50, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
     transition: transform 0.8s;
+    p {
+      font-size: 3vh;
+      color: RGB(180, 180, 180);
+    }
+    img {
+      width: 3vh;
+      height: 3vh;
+    }
+  }
+  @media (max-width: 1200px) {
+    width: 22vh !important;
+    height: 36.57vh !important;
+    span {
+      opacity: 1;
+      background-color: rgba(50, 50, 50, 0.15);
+      right: 0 !important;
+      p {
+        display: none;
+      }
+    }
+  }
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    span {
+      opacity: 1;
+      border-radius: 4% !important;
+    }
     @media (max-width: 1200px) {
-      width: 22vh !important;
-      height: 36.57vh !important;
-  }
-    &:hover{
-      transform: scale(1.03);
-      cursor: grab;
-  }
-  &:active{
-    cursor: grabbing;
-  }
-  }
-  div {
-    height: 90% !important;
-    text-align: center !important;
+      transform: scale(1);
+    }
+    &:active {
+      cursor: pointer;
+    }
   }
 `;
 
 const StyledSwiperContainer = styled(Swiper)`
-  max-width: 80% !important; 
+  max-width: 65% !important;
+  background-color: none !important;
   height: auto;
+  margin-top: 1.5vh;
   padding-bottom: 4vh;
   @media (max-width: 1500px) {
     max-width: 100% !important;
     height: auto;
+    padding-bottom: 8vh;
   }
   .swiper-pagination-bullet {
     background: white;
   }
   .swiper-button-next,
   .swiper-button-prev {
-    color: ${props => `${props.color}`};
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
     margin-right: 50px;
-    width: 9vh;
+    width: 6vh;
     height: 6vh;
+    border-radius: 25%;
+    transition: all 0.2s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     @media (max-width: 1500px) {
-    width: 2vh;
-    height: 1vh;
-  }
-    &:hover{
+      width: 3vh;
+      height: 1vh;
+      margin: 0 !important;
+    }
+    &:hover {
       cursor: pointer;
+      scale: 1.05;
+      border-radius: 40%;
     }
   }
 `;
