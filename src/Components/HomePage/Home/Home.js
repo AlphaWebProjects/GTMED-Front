@@ -10,6 +10,8 @@ import banner from '../../../assets/images/banner.png'
 import whiteBackground1 from '../../../assets/images/whiteBackground.png'
 import whiteBackground2 from '../../../assets/images/whiteBackground2.png'
 
+//manter o whitebackground por enquanto
+
 function Home() {
   const [width, setWidth] = useState(window.innerWidth);
 
