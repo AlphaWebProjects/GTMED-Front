@@ -42,7 +42,7 @@ export default function AoFimDoCurso({ aoFimDoCurso, themeColor }) {
   };
 
   return (
-    <Container backgroundImage={aoFimDoCurso.backgroundImage}>
+    <Container color={ themeColor } backgroundImage={aoFimDoCurso.backgroundImage}>
       <SubContainer>
         <Slide triggerOnce={true}>
           <Title>COM O CURSO VOCÊ SERÁ CAPAZ DE:</Title>
@@ -72,8 +72,9 @@ const Container = styled.div`
   user-select: none;
   width: 100%;
   padding: 10vh 10vw;
-  height: 50.1875rem;
-  background-image: ${(props) => `url(${props.backgroundImage})`};
+  height: auto;
+  background: linear-gradient(to right, black 50%, ${props => `${props.color}`});
+  //background-image: ${props => `url(${props.backgroundImage})`};
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -115,6 +116,7 @@ const Option = styled.div`
   width: 100%;
   margin-bottom: 1.25rem;
   > div {
+    color: ${props => `${props.color}`};
     width: 3.125rem;
     height: 3.125rem;
     border-radius: 0.625rem;
@@ -122,17 +124,16 @@ const Option = styled.div`
     align-items: center;
     justify-content: center;
     font-size: 2.5rem;
-    color: ${(props) => props.color};
     @media (max-width: 1200px) {
       width: calc(3.75rem * 0.75);
       height: calc(3.75rem * 0.75);
     }
   }
   > p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
     padding-left: 1rem;
-    width: 70%;
+    width: 100%;
     @media (max-width: 1200px) {
       font-weight: 600;
       width: calc(100% - (3.75rem * 0.75));
