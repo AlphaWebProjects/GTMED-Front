@@ -7,6 +7,8 @@ import { BiSolidDownArrow } from "react-icons/bi";
 import card from '../../../assets/images/cardSobreGTMED.png'
 import bannerMobile from '../../../assets/images/bannerMobile.png'
 import banner from '../../../assets/images/banner.png'
+import whiteBackground1 from '../../../assets/images/whiteBackground.png'
+import whiteBackground2 from '../../../assets/images/whiteBackground2.png'
 
 function Home() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -43,7 +45,7 @@ function Home() {
   };
 
   return (
-    <Container backgroundImage={backgroundHome} backgroundPosition={width > 1200 ? 'center' : 'left'}>
+    <Container backgroundImage={whiteBackground1} backgroundPosition={width > 1200 ? 'center' : 'left'}>
       <Fade delay={300} cascade damping={0.3} triggerOnce={true} direction='down' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
         <Logo src={logo} alt='Logo'/>
       </Fade>
@@ -107,7 +109,7 @@ const Banner = styled.img`
       @media (max-width: 1200px) {
         height: 25.1512vh;
         width: 50.729vh;
-        margin-bottom: 3 vh;
+        margin-bottom: 3vh;
         margin-top: 3vh;
       }
 `
@@ -125,8 +127,8 @@ const Logo = styled.img`
 `
 
 const Card = styled.img`
-  width: 47.879vh;
-  height: 27vh;
+  width: 62.2437vh;
+  height: 35.1vh;
   border-radius: 25px;
       @media (max-width: 1200px) {
         margin-top: 0;
@@ -166,7 +168,7 @@ const Container = styled.div`
     background-position: ${props => `${props.backgroundPosition}`};
     background-size: cover;
     background-repeat: no-repeat;
-    filter: blur(5px);
+    filter: blur(2px);
   }
 `;
 
@@ -189,7 +191,7 @@ const CenterContent = styled.div`
     align-items: center;
     padding-top: 1vh;
     flex-direction: column;
-    width: 35%;
+    width: 40%;
     @media (max-width: 1200px) {
     padding-top: 0;
     margin: 0 !important;
@@ -215,13 +217,13 @@ const CenterContent = styled.div`
       text-align: center;
       max-width: 100%;
       letter-spacing: 1.5px;
-      color: #051461;
+      color: white;
       font-family: "Montserrat", sans-serif;
-      padding: 1.2vh;
+      padding: 2vh;
       border-radius: 22px;
-      font-size: 2vh;
+      font-size: 2.2vh;
       border-radius: 10px;
-      background-image: linear-gradient(45deg, #DFDDDD, #FFFFFF, #BDBBBB, #979494);
+      background-image: linear-gradient(45deg, #051461, #27305C, #1A286D, #334186);
       background-size: 400% 200%;
       animation: textura 3.4s cubic-bezier(0.2, 0.5, 0.9, 0.6) 2s infinite;
       transition: background 1.6s cubic-bezier(0.55, 0.1, 0.47, 0.94);
@@ -238,8 +240,8 @@ const CenterContent = styled.div`
       @media (max-width: 1200px) {
         font-size: 1.5vh !important;
         max-width: 100%;
-        margin-bottom: 7vh;
-        margin-top: 0 !important;
+        margin-bottom: 3vh;
+        margin-top: 4vh !important;
       }
     }
   }
@@ -247,11 +249,11 @@ const CenterContent = styled.div`
 
 const StyledButton = styled.div`
 background-color: #f74242;
-padding: 2.1vh 3.4vh;
+padding: 2.73vh 4.42vh;
 color: white;
 font-weight: 700;
 font-family: "Montserrat", sans-serif;
-font-size: 2.2vh;
+font-size: 2.9vh;
 border-radius: 10px;
 transition: scale 0.3s ease;
 @media (max-width: 1200px) {
