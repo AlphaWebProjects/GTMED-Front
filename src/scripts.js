@@ -33,6 +33,8 @@ import cardOrtorrino from './assets/images/ortorrino/cardOrtorrino.jpg'
 import cardPsiquiatria from './assets/images/psiquiatria/cardPsiquiatria.jpg'
 import cardDermato from './assets/images/dermato/cardDermato.jpg'
 
+//infos do script
+
 const scripts = {
   Cards: [
     { nome: 'anestesio', background: cardAnestesio},
