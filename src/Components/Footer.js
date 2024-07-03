@@ -9,6 +9,8 @@ export default function Footer() {
   const youtube = "https://www.youtube.com/@GTMED";
   const tiktok = "https://www.tiktok.com/@gtmed";
 
+  //novas infos das redes sociais, falta email
+
   return (
     <Container backgroundImage={background}>
       <SubContainer>
