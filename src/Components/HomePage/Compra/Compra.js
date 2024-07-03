@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import evento from "../../../assets/images/evento.png";
 import background from "../../../assets/images/Background2.png";
+import whiteBackground1 from '../../../assets/images/whiteBackground.png'
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -47,7 +48,7 @@ export default function Compra({ setScript }) {
   const navigate = useNavigate();
 
   return (
-    <Container backgroundImage={background}>
+    <Container backgroundImage={whiteBackground1}>
       <TextContainer>
         <Fade
           delay={300}
@@ -85,7 +86,7 @@ export default function Compra({ setScript }) {
           grabCursor={false}
           centeredSlides={true}
           slidesPerView={'auto'}
-          spaceBetween={50}
+          spaceBetween={0}
           autoplay={{
             delay: 4200,
             disableOnInteraction: true,
@@ -119,6 +120,7 @@ export default function Compra({ setScript }) {
 
 const Container = styled.div`
   width: 100%;
+  max-width: 100% !important;
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
     rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
     rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
@@ -135,7 +137,7 @@ const Container = styled.div`
   background-repeat: no-repeat;
   padding: 15vh 5vh;
   h1 {
-    color: rgb(0, 100, 255);
+    color: #091F8F;
     font-size: 8vh;
     letter-spacing: 1px;
     margin-bottom: 1vh;
@@ -143,7 +145,7 @@ const Container = styled.div`
     font-family: "Montserrat";
   }
   p {
-    color: white;
+    color: #000A3B;
     font-size: 2vh;
     max-width: 100%;
   }
@@ -185,6 +187,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
   display: flex;
   flex-direction: column;
   transition: all 0.2s ease-in-out;
+  border: 2.5px solid #091F8F;
   h1 {
     font-size: 4vh;
     letter-spacing: 0px;
@@ -228,7 +231,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
   img {
     width: 100%;
     height: 32vh;
-    border-radius: 8% 8% 0 0;
+    border-radius: 6% 6% 0 0;
   }
   @media (max-width: 1200px) {
     width: 45vh !important;
@@ -252,7 +255,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     img {
       width: 100%;
       height: 27vh;
-      border-radius: 2%;
+      border-radius: 6%;
       margin-bottom: 3vh;
     }
     p {
@@ -265,7 +268,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
 `;
 
 const StyledSwiperContainer = styled(Swiper)`
-  max-width: 100vh !important;
+  max-width: 100% !important;
   background-color: none !important;
   height: auto;
   margin-top: 1.5vh;
@@ -276,6 +279,7 @@ const StyledSwiperContainer = styled(Swiper)`
   @media (max-width: 1500px) {
     height: auto;
     padding-left: 0 !important;
+    width: 100% !important;
   }
   .swiper-pagination-bullet {
     background: white;

@@ -116,7 +116,7 @@ const MainContent = styled.div`
     padding-top: 0 !important;
     p{
         width: 100% !important;
-        font-size: 13vh;
+        font-size: 10vh;
     }
     }
 

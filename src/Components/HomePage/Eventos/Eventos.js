@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import evento from "../../../assets/images/evento.png";
 import background from "../../../assets/images/Background2.png";
+import whiteBackground1 from '../../../assets/images/whiteBackground.png'
+import whiteBackground2 from '../../../assets/images/whiteBackground2.png'
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -50,7 +52,7 @@ export default function Eventos({ setScript }) {
   const cursos = [{ nome: "" }, { nome: "" }, { nome: "" }, { nome: "" }];
 
   return (
-    <Container backgroundImage={background}>
+    <Container backgroundImage={whiteBackground1}>
       <TextContainer>
         <Fade
           delay={300}
@@ -138,7 +140,7 @@ const Container = styled.div`
   background-repeat: no-repeat;
   padding: 15vh 5vh;
   h1 {
-    color: rgb(0, 100, 255);
+    color: #091F8F;
     font-size: 8vh;
     letter-spacing: 1px;
     margin-bottom: 1vh;
@@ -147,13 +149,14 @@ const Container = styled.div`
     text-align: center;
   }
   p {
-    color: white;
-    font-size: 2vh;
+    color: #000A3B;;
+    font-size: 2.5vh;
     max-width: 100%;
   }
   @media (max-width: 1200px) {
     flex-direction: column;
     padding: 8vh 0 8vh 0;
+
   }
 `;
 
@@ -170,8 +173,10 @@ const TextContainer = styled.div`
     }
     p {
       max-width: 100%;
-      font-size: 4vh;
+      font-size: 3.5vh;
       font-weight: 700 !important;
+      text-align: center;
+      color: #000A3B;
     }
     margin-bottom: 2vh;
   }
@@ -182,10 +187,11 @@ const StyledSwiperSlide = styled(SwiperSlide)`
   background-color: white;
   width: 30vh !important;
   height: 50vh !important;
-  border-radius: 2%;
+  border-radius: 4%;
   display: flex;
   flex-direction: column;
   transition: all 0.2s ease-in-out;
+  border:1px solid #000A3B;
   &:hover {
     transform: scale(1.03);
     cursor: pointer;
@@ -203,7 +209,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     font-size: 3vh;
     letter-spacing: 0px;
     font-weight: 450;
-    margin: 2vh 0 4vh 2vh;
+    margin: 2vh 0 4vh 0vh;
     font-family: "Montserrat";
   }
   p {
@@ -212,8 +218,9 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     margin: 0 0 1vh 2vh;
   }
   img {
-    width: 30.2vh;
+    width: 29.9vh;
     height: 20vh;
+    border-radius: 4%;
   }
   @media (max-width: 1200px) {
     width: 35vh !important;
@@ -222,9 +229,9 @@ const StyledSwiperSlide = styled(SwiperSlide)`
       opacity: 1;
     }
     img {
-      width: 35.1vh;
+      width: 34.6vh;
       height: 20vh;
-      border-radius: 2%;
+      border-radius: 4%;
     }
     align-items: center;
     p {
@@ -253,7 +260,8 @@ const StyledSwiperContainer = styled(Swiper)`
     padding-left: 0 !important;
   }
   .swiper-pagination-bullet {
-    background: white;
+    background: #000A3B;
+    
   }
   .swiper-button-next,
   .swiper-button-prev {

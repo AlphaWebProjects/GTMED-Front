@@ -1,45 +1,9 @@
 import styled from "styled-components";
-import backgroundImage from "../../../assets/images/Screenshot_28.png";
 import { IoIosMedical } from "react-icons/io";
 import { Fade, Slide } from "react-awesome-reveal";
-export default function AoFimDoCurso({ aoFimDoCurso, themeColor }) {
-  console.log(aoFimDoCurso);
 
-  const body = {
-    backgroundimage: backgroundImage,
-    backgroundimagemobile: backgroundImage,
-    title: "AO FINAL DO CURSO VOCÊ SERÁ CAPAZ DE:",
-    topics: [
-      {
-        details: "Diagnosticar de distúrbios de simples até duplos e triplos!",
-      },
-      {
-        details: "Reconhecer facilmente os distúrbios mistos;",
-      },
-      {
-        details:  "Identificar o que cada linha da gasometria representa. Cada linha mesmo!",
-      },
-      {
-        details:
-          "Correlacionar achados na GSA com um raciocínio p2222222ara um diagnóstico precoce;",
-      },
-      {
-        details:
-          "Ter o raciocínio treinado para casos reais através de discussões em GSA de pacientes reais",
-      },
-      {
-        details: "Reconhecer facilmente os distúrbios mistos;",
-      },
-      {
-        details:
-          "Identificar o que cada linha da gasometria representa. Cada linha mesmo!",
-      },
-      {
-        details:
-          "Correlacionar achados na GSA com um raciocínio p2222222ara um diagnóstico precoce;",
-      },
-    ],
-  };
+
+export default function AoFimDoCurso({ aoFimDoCurso, themeColor }) {
 
   return (
     <Container color={ themeColor } backgroundImage={aoFimDoCurso.backgroundImage}>

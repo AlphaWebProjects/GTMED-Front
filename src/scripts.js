@@ -567,7 +567,7 @@ const scripts = {
         titulo: "OBSTETRO",
         botao: "Quero dominar OBSTETRO",
         descricao:
-          "OFTALMO",
+          "OBSTETRO",
         backgroundImage: inicioObstetro,
       },
       paraQuem: {
