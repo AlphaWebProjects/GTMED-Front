@@ -5,10 +5,9 @@ import logo from "../assets/images/logoGTMEDmelhorada.png";
 import background from "../assets/images/Background2.png";
 
 export default function Footer() {
-  const instagram = "https://www.instagram.com";
-  const youtube = "https://www.youtube.com";
-  const tiktok = "https://www.tiktok.com";
-  const linkedin = "https://www.linkedin.com";
+  const instagram = "https://www.instagram.com/plataforma_gtmed?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
+  const youtube = "https://www.youtube.com/@GTMED";
+  const tiktok = "https://www.tiktok.com/@gtmed";
 
   return (
     <Container backgroundImage={background}>
@@ -36,9 +35,6 @@ export default function Footer() {
           </SocialLink>
           <SocialLink href={tiktok} target="_blank" rel="noopener noreferrer">
             <FaTiktok />
-          </SocialLink>
-          <SocialLink href={linkedin} target="_blank" rel="noopener noreferrer">
-            <FaLinkedin />
           </SocialLink>
         </SocialContainer>
       </SubContainer>
