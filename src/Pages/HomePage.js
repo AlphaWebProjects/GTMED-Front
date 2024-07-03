@@ -21,7 +21,7 @@ export default function HomePage({ cardsData }) {
 
     window.scrollTo(
       {
-        top: window.innerWidth > 1200 ? 3700 : 2450,
+        top: window.innerWidth > 1200 ? 3700 : 3150,
         behavior: 'smooth'
       }
     )
@@ -54,12 +54,13 @@ const Container = styled.div`
   min-height: 50vh;
   margin-top: -21px;
   box-sizing: border-box;
+  max-width: 100% !important;
 `;
 
 const OfferIcon = styled.img`
-position: fixed;
+position: fixed !important;
   top: 70px;
-  right: 5vw;
+  right: 4vw;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -72,8 +73,8 @@ position: fixed;
   @media (max-width: 1200px) {
       width: 60px;
       height: 60px;
-      top: 13px;
-      right: 2vw;
+      top: 40px;
+      right: 4vw;
     }
   &:hover {
     //box-shadow: 0 3px 6px rgba(0, 128, 0, 0.3);

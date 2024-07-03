@@ -18,7 +18,6 @@ function SobreOCurso({themeColor}) {
   console.log(themeColor, 'cor tema AQUI')
 
   const [width, setWidth] = useState(window.innerWidth);
-  
 
   useEffect(() => {
 
@@ -57,10 +56,10 @@ function SobreOCurso({themeColor}) {
               clickable: true,
             }}
             autoplay={{
-              delay: 8000,
+              delay: 4000,
               disableOnInteraction: true,
             }}
-            spaceBetween={'30'}
+            spaceBetween={'5'}
             modules={[Pagination, Navigation, Autoplay, FreeMode]}
           >
             <StyledSwiperSlide background={aula1Clinica2} />
@@ -120,7 +119,7 @@ const CenterContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5vh;
+  padding: 2vh 5vh;
   max-height: 100% !important;
   min-height: 100% !important;
   p {
@@ -234,7 +233,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
 `;
 
 const StyledSwiperContainer = styled(Swiper)`
-  max-width: 65% !important;
+  max-width: 95% !important;
   background-color: none !important;
   height: auto;
   margin-top: 1.5vh;
@@ -264,7 +263,7 @@ const StyledSwiperContainer = styled(Swiper)`
     @media (max-width: 1500px) {
       width: 3vh;
       height: 1vh;
-      margin: 0 !important;
+      margin: 0 -4vh;
     }
     &:hover {
       cursor: pointer;

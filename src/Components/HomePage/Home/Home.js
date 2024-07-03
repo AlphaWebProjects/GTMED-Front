@@ -118,11 +118,11 @@ const Banner = styled.img`
 
 const Logo = styled.img`
   height: 16.4874612vh;
-  width: 34.554016vh;
+  width: 38.554016vh;
   margin-top: 5vh;
       @media (max-width: 1200px) {
         height: 17.60584vh;
-        width: 35.5103vh;
+        width: 38.5103vh;
         margin-top: 0;
         margin: 0 !important;
       }
