@@ -11,7 +11,7 @@ import scripts from './scripts'
 import Obrigado from './Components/LeadsPage/Obrigado';
 import LeadsPage2 from './Pages/LeadsPage2';
 
-//pasta de imagens está em assets
+//pasta de imagens está em assets, verificar
 
 function App() {
 

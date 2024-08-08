@@ -207,28 +207,6 @@ const StyledSwiperSlide = styled(SwiperSlide)`
   @media (max-width: 1200px) {
     width: 22vh !important;
     height: 36.57vh !important;
-    span {
-      opacity: 1;
-      background-color: rgba(50, 50, 50, 0.15);
-      right: 0 !important;
-      p {
-        display: none;
-      }
-    }
-  }
-  &:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-    span {
-      opacity: 1;
-      border-radius: 4% !important;
-    }
-    @media (max-width: 1200px) {
-      transform: scale(1);
-    }
-    &:active {
-      cursor: pointer;
-    }
   }
 `;
 

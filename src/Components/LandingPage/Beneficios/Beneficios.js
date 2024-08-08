@@ -195,7 +195,7 @@ const Option = styled.div`
       -webkit-text-fill-color: transparent;
       background-clip: text;
       @media (max-width: 1200px) {
-        font-size: 25px !important;
+        font-size: 22px !important;
       }
     }
     p {
