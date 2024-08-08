@@ -61,7 +61,7 @@ const InitialContainer = styled.div`
 const MainContent = styled.div`
     background-color: none;
     display: flex;
-    justify-content: center;
+    
     padding-top: 30vh;
     img{
         width: 42vh;
@@ -113,7 +113,7 @@ const MainContent = styled.div`
     height: auto;
     display: flex !important;
     flex-direction: column !important;
-    padding-top: 0 !important;
+    margin-top: 25% !important;
     p{
         width: 100% !important;
         font-size: 10vh;
